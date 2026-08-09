@@ -8,6 +8,7 @@ from pathlib import Path
 from .lint import find_skill_dirs, lint_skill_dir
 from .package import package_skill
 from .scaffold import scaffold_skill
+from .scan import scan_skill_dir
 
 
 def _cmd_init(args: argparse.Namespace) -> int:
@@ -56,6 +57,35 @@ def _cmd_package(args: argparse.Namespace) -> int:
     return 0
 
 
+def _cmd_scan(args: argparse.Namespace) -> int:
+    root = Path(args.path)
+    skill_dirs = find_skill_dirs(root)
+    if not skill_dirs:
+        print(f"No SKILL.md files found under {root}", file=sys.stderr)
+        return 1
+
+    exit_code = 0
+    high_risk = 0
+    for skill_dir in skill_dirs:
+        result = scan_skill_dir(skill_dir)
+        lint_result = lint_skill_dir(skill_dir)
+        label = lint_result.frontmatter.get("name", skill_dir)
+        if not result.findings:
+            if args.verbose:
+                print(f"clean   {label}")
+            continue
+        print(f"{result.risk_level.upper():6} risk={result.risk_score:<3} {label} ({skill_dir})")
+        for finding in result.findings:
+            print(f"        [{finding.source}] {finding.message} (+{finding.weight})")
+        if result.risk_level == "high":
+            high_risk += 1
+            if args.fail_on_high:
+                exit_code = 1
+    if args.fail_on_high and high_risk:
+        print(f"\n{high_risk} high-risk skill(s) found.", file=sys.stderr)
+    return exit_code
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="skillsmith", description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
@@ -79,6 +109,12 @@ def build_parser() -> argparse.ArgumentParser:
     p_pkg.add_argument("path", help="skill directory containing SKILL.md")
     p_pkg.add_argument("--out", help="output zip path")
     p_pkg.set_defaults(func=_cmd_package)
+
+    p_scan = sub.add_parser("scan", help="static security/safety scan of skill(s)")
+    p_scan.add_argument("path", nargs="?", default=".", help="skill dir or a dir tree to search")
+    p_scan.add_argument("--verbose", action="store_true", help="also print clean skills")
+    p_scan.add_argument("--fail-on-high", action="store_true", help="exit 1 if any skill scores 'high' risk")
+    p_scan.set_defaults(func=_cmd_scan)
 
     return parser
 

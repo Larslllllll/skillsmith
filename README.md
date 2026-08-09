@@ -25,13 +25,35 @@ WARNING description-length skill-doctor: description is 612 chars; descriptions
 ERROR   missing-field broken-skill: frontmatter is missing required key 'description'
 ```
 
+Four commands, one small dependency (`pyyaml`), zero network calls:
+`init` (scaffold), `lint` (validate), `scan` (security/prompt-injection
+triage), `package` (zip for distribution).
+
 ## Why this exists
 
 Skills are becoming the primary way agents get new, reusable capabilities —
 Anthropic ships them, agent harnesses ship them, and more and more repos
 ship their own. There was no small, focused tool to validate the format,
-scaffold a new skill correctly on the first try, or package one for
-distribution. `skillsmith` is that tool.
+scaffold a new skill correctly on the first try, package one for
+distribution, or **triage it for risky code and prompt-injection phrasing
+before an agent ever loads it.** `skillsmith` is that tool.
+
+Skill/plugin marketplaces already exist where anyone can publish a skill
+that another agent will load into context and, if it ships a
+`python_import`, execute — a real supply-chain surface. We ran `skillsmith`
+against every skill shipped with Prime Agent (13/13 clean, see
+[SCAN_RESULTS.md](SCAN_RESULTS.md)) and against 2,095 live listings from a
+production agent-skill marketplace to sanity-check the heuristics against
+real data, not just fixtures.
+
+```
+$ skillsmith scan ./my-skills --verbose
+clean   web-search
+HIGH   risk=23 sketchy-skill (./my-skills/sketchy-skill)
+        [SKILL.md body] 'ignore previous instructions' phrasing (+10)
+        [sketchy_skill.py] spawns a subprocess (+6)
+        [sketchy_skill.py] reads an environment variable that looks like a credential (+6)
+```
 
 ## Install
 
@@ -85,6 +107,23 @@ for skill_dir in find_skill_dirs("."):
         raise SystemExit(f"{skill_dir} failed lint: {result.errors}")
 ```
 
+## Security scanning
+
+```bash
+skillsmith scan ./my-skills               # static heuristic scan, prints risk per skill
+skillsmith scan ./my-skills --fail-on-high # non-zero exit if anything scores "high" (for CI)
+```
+
+Detects, in the SKILL.md body: prompt-injection phrasing ("ignore previous
+instructions", "you are now in DAN mode", instructions to hide actions or
+exfiltrate credentials from the user). Detects, in any local `python_import`
+module: `os.system`/`subprocess`, `eval`/`exec`, `pickle.loads`,
+`__import__`, raw sockets, outbound HTTP calls, destructive shell commands,
+and reads of credential-shaped environment variables or `~/.ssh` /
+`~/.aws`. It's a static, no-network, no-sandbox heuristic triage tool, not a
+substitute for actually reading the code — see [SCAN_RESULTS.md](SCAN_RESULTS.md)
+for what it found (and didn't find) against real data.
+
 ## Development
 
 ```bash
@@ -92,7 +131,7 @@ pip install -e ".[dev]"
 pytest -q
 ```
 
-14 tests, no network calls, runs in well under a second.
+18 tests, no network calls, runs in well under a second.
 
 ## License
 

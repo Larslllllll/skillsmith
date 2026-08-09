@@ -19,3 +19,4 @@ jobs:
       - run: pip install -e ".[dev]"
       - run: pytest -q
       - run: skillsmith lint examples/skill-doctor
+      - run: skillsmith scan examples/skill-doctor --fail-on-high

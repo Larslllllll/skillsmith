@@ -1,0 +1,120 @@
+"""Security/safety scanning for Claude Agent Skills.
+
+Skill marketplaces (AgentVault-style registries, plugin directories, shared
+SKILL.md repos) let anyone publish a skill that other agents will
+automatically load into context and, if it ships a ``python_import``,
+execute. That is a real supply-chain surface: a skill can smuggle in
+prompt-injection instructions in its markdown body, or dangerous code in its
+python module (arbitrary shell execution, credential exfiltration, network
+calls to attacker infrastructure).
+
+``skillsmith scan`` is a fast, static, no-network heuristic scanner over a
+skill's SKILL.md body and any local python_import module it ships. It is not
+a sandbox and it is not a substitute for actually reading the code — it is a
+triage tool that turns "eyeball 2,000 community skills" into "eyeball the 40
+that scored high risk."
+"""
+from __future__ import annotations
+
+import ast
+import dataclasses
+import re
+from pathlib import Path
+from typing import Iterable
+
+from .lint import lint_skill_dir
+
+# (pattern, weight, message) — weight is added to the risk score when the
+# pattern is found in a skill's python module source.
+_CODE_PATTERNS: list[tuple[re.Pattern, int, str]] = [
+    (re.compile(r"\bos\.system\s*\("), 8, "shells out via os.system"),
+    (re.compile(r"\bsubprocess\.(Popen|call|run|check_output)\s*\("), 6, "spawns a subprocess"),
+    (re.compile(r"\beval\s*\("), 9, "calls eval() on dynamic input"),
+    (re.compile(r"\bexec\s*\("), 9, "calls exec() on dynamic input"),
+    (re.compile(r"\bpickle\.(loads|load)\s*\("), 7, "deserializes with pickle (arbitrary code execution risk)"),
+    (re.compile(r"\b__import__\s*\("), 5, "dynamically imports modules"),
+    (re.compile(r"\brequests\.(post|put|get)\s*\("), 3, "makes outbound network requests"),
+    (re.compile(r"\burllib\.request\.urlopen\s*\("), 3, "makes outbound network requests"),
+    (re.compile(r"\bsocket\.socket\s*\("), 4, "opens raw sockets"),
+    (re.compile(r"(?i)\brm\s+-rf\b"), 8, "contains a destructive shell command (rm -rf)"),
+    (re.compile(r"os\.environ(\.get)?\s*\[?['\"](\w*(KEY|TOKEN|SECRET|PASSWORD)\w*)['\"]"), 6, "reads an environment variable that looks like a credential"),
+    (re.compile(r"\bopen\s*\([^)]*['\"]\.ssh"), 8, "reads from ~/.ssh"),
+    (re.compile(r"\bopen\s*\([^)]*['\"]\.aws"), 8, "reads from ~/.aws credentials"),
+]
+
+# Patterns that suggest the SKILL.md *body itself* is trying to override
+# agent behavior (classic prompt-injection phrasing) rather than just
+# documenting the skill.
+_PROMPT_INJECTION_PATTERNS: list[tuple[re.Pattern, int, str]] = [
+    (re.compile(r"(?i)ignore (all|any|the) (previous|prior|above) instructions"), 10, "'ignore previous instructions' phrasing"),
+    (re.compile(r"(?i)you are now (in )?(developer|debug|jailbreak|dan) mode"), 10, "jailbreak/mode-override phrasing"),
+    (re.compile(r"(?i)do not (tell|inform|mention (this )?to) the user"), 8, "instructs the agent to hide actions from the user"),
+    (re.compile(r"(?i)send (the|this|your) (api[- ]?key|token|password|secret|private key) to"), 10, "instructs exfiltration of credentials"),
+    (re.compile(r"(?i)disregard (your|any) (safety|previous) (guidelines|instructions)"), 10, "safety-override phrasing"),
+]
+
+
+@dataclasses.dataclass
+class ScanFinding:
+    source: str  # "body" or a filename
+    message: str
+    weight: int
+
+
+@dataclasses.dataclass
+class ScanResult:
+    skill_dir: Path
+    findings: list[ScanFinding] = dataclasses.field(default_factory=list)
+
+    @property
+    def risk_score(self) -> int:
+        return sum(f.weight for f in self.findings)
+
+    @property
+    def risk_level(self) -> str:
+        score = self.risk_score
+        if score == 0:
+            return "clean"
+        if score < 8:
+            return "low"
+        if score < 20:
+            return "medium"
+        return "high"
+
+
+def _scan_text(text: str, source: str, patterns: Iterable[tuple[re.Pattern, int, str]]) -> list[ScanFinding]:
+    findings = []
+    for pattern, weight, message in patterns:
+        if pattern.search(text):
+            findings.append(ScanFinding(source=source, message=message, weight=weight))
+    return findings
+
+
+def _python_files(skill_dir: Path) -> list[Path]:
+    return sorted(p for p in skill_dir.rglob("*.py") if "__pycache__" not in p.parts)
+
+
+def is_syntactically_valid_python(source: str) -> bool:
+    try:
+        ast.parse(source)
+        return True
+    except SyntaxError:
+        return False
+
+
+def scan_skill_dir(skill_dir: Path) -> ScanResult:
+    skill_dir = Path(skill_dir)
+    result = ScanResult(skill_dir=skill_dir)
+
+    lint_result = lint_skill_dir(skill_dir)
+    if lint_result.body:
+        result.findings.extend(_scan_text(lint_result.body, "SKILL.md body", _PROMPT_INJECTION_PATTERNS))
+
+    for py_file in _python_files(skill_dir):
+        source = py_file.read_text(encoding="utf-8", errors="replace")
+        rel = str(py_file.relative_to(skill_dir))
+        if not is_syntactically_valid_python(source):
+            result.findings.append(ScanFinding(source=rel, message="does not parse as valid Python", weight=5))
+        result.findings.extend(_scan_text(source, rel, _CODE_PATTERNS))
+
+    return result
