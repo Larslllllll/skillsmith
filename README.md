@@ -1,6 +1,8 @@
 # skillsmith
 
-**Author, lint, and package Claude Agent Skills with confidence.**
+**Author, lint, package, and security-scan Claude Agent Skills with confidence.**
+
+**Try it live, no install:** [skillsmith-web.vercel.app](https://skillsmith-web.vercel.app) — paste a SKILL.md, get instant lint + security-scan results.
 
 [![CI](https://github.com/Larslllllll/skillsmith/actions/workflows/ci.yml/badge.svg)](https://github.com/Larslllllll/skillsmith/actions/workflows/ci.yml)
 [![PyPI-ready](https://img.shields.io/badge/pypi-ready-blue)](https://pypi.org/)
@@ -40,11 +42,16 @@ before an agent ever loads it.** `skillsmith` is that tool.
 
 Skill/plugin marketplaces already exist where anyone can publish a skill
 that another agent will load into context and, if it ships a
-`python_import`, execute — a real supply-chain surface. We ran `skillsmith`
-against every skill shipped with Prime Agent (13/13 clean, see
-[SCAN_RESULTS.md](SCAN_RESULTS.md)) and against 2,095 live listings from a
-production agent-skill marketplace to sanity-check the heuristics against
-real data, not just fixtures.
+`python_import`, execute — a real supply-chain surface. We validated
+`skillsmith` against real data at three scales, not just fixtures:
+
+- **13/13** skills shipped with Prime Agent itself — 100% clean ([SCAN_RESULTS.md](SCAN_RESULTS.md))
+- **2,095** live listings from a production agent-skill marketplace's public API ([SCAN_RESULTS.md](SCAN_RESULTS.md))
+- **400 real public `SKILL.md` files sampled live from GitHub's code search**
+  across 400 distinct repositories — 43 failed to parse, 58 had lint
+  issues, 16 tripped a dangerous-code heuristic worth a second look, fully
+  reproducible with [`scripts/scan_github.py`](scripts/scan_github.py) — see
+  [GITHUB_SCAN_RESULTS.md](GITHUB_SCAN_RESULTS.md)
 
 ```
 $ skillsmith scan ./my-skills --verbose

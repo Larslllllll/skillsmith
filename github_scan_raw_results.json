@@ -1,0 +1,2835 @@
+[
+  {
+    "html_url": "https://github.com/eze-is/web-access/blob/7af34af6a25940d917905f0e5f2a7ef056952971/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/zakirkun/guardian-cli/blob/51864a81f484e2826dccd2f60fd181a040585962/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/Bhanunamikaze/Agentic-SEO-Skill/blob/69199160e18372bc5cdf9ddec20ccb9fb1b509f1/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/autoclaw-cc/xiaohongshu-skills/blob/b043748282a57e347c52f517dfb59819121134ab/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/jinchenma94/bazi-skill/blob/bdd7f863d4450bf0e2fac84579ad6b45cfdfa25c/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/comeonzhj/Auto-Redbook-Skills/blob/6f06770f3662624760a0c885bca6230f40c8b7ad/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/gavdalf/total-recall/blob/437ab3656ecdf52c7ed0c3ee63a3cdae68d5b90f/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/microprediction/precise/blob/d89c883e91138546a785c7c1a81c0eba5433b2f4/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/Free-The-Ai/free-ai/blob/065b12c56a1e5911364aa973a5ab83b6ad114047/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": [
+      "reads an environment variable that looks like a credential"
+    ]
+  },
+  {
+    "html_url": "https://github.com/WJZ-P/gemini-skill/blob/cde1835067660ad6748393127e56af4e683bfbe7/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/Dicklesworthstone/cass_memory_system/blob/89977c582a8cb17b190af2b039fb844e665237be/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": [
+      "contains a destructive shell command (rm -rf)"
+    ]
+  },
+  {
+    "html_url": "https://github.com/Goldentrii/AgentRecall-X/blob/4412718e0c81bf377a9c9626ba9d1220b3ee8ce4/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/gsd-build/gsd-browser/blob/e5ec085e3b726e2ecb3ad1f7f805c39272d5f42c/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/graphsignal/graphsignal-profiler/blob/dd4e33a6c134ae82f2b3d8a81602e3cfa699d8db/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/browser-use/browser-harness-js/blob/95b7a22a923714c45d2f7234b2bfa8fa6322c2eb/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/Virus-Axel/godot-solana-sdk/blob/c7f89894df0135c76b66e4bd053649211d698818/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/haloshin/ip-diagram-creator/blob/dd64ab5d972893f7ca271d9c560362d7788eb2d6/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/TongmingLAIC/AKO4ALL/blob/767175ef4e7d4ac37fe4e245a2fc560c8ca2c339/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/Scottcjn/iota-agent-mcp/blob/56f5e7619eab3a3ea3007f1dd97f65e28faf1266/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/luofengmacheng/algorithms/blob/31ca8d9342a9fe63eda646e781430a3f906b03bd/skill.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/xiongqi123123/awesome-rebuttal/blob/3434455fb2460b85793b4e3082bd28bf86ff7323/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/ParthJadhav/ios-marketing-capture/blob/00ae3cbe2250f6350b66aa23e24ba5883221836c/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/Yonkoo11/hermes-dojo/blob/ee114e72e18b13d3aeb4b76a8d1ade0916972248/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/alchaincyf/naval-skill/blob/259e452ef6f6c2bfdbe30368f7c85bc683fe1949/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/ok-helloworld/vibe-pentest/blob/04d3a99ae3a595dcce1468faa74b66209acf20f8/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/Hao0321/ai-media-generator/blob/0444a9392e094c47e8ee4300acb3a37f87c3c60a/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/ZadAnthony/serenity-skill/blob/ab7fb2ce817a5cdb6f9c046ed40d1a1d2e343742/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/coinluu/resume-jd-optimizer-cn/blob/114c85c32dc77bc9ec7315976a21a1f761868664/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/0xquqi/sun-skill/blob/f34609682095665e37d283bd6fdf6e0c2fceb492/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/zy-zmc/tianming-skill/blob/b5ef6e30817e086022ecbd09f9c2d2e781dd8b43/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/Rimagination/dy-note/blob/9a65f0d069cacdf5b0d7529f2ce1139d38072b47/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/forter/agentic-readiness-guide/blob/dacc2105d17566b885a9417e929f71007e7669c0/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/IanShaw027/wemp-operator/blob/7574534715edf5423b258beb12a2dc63372f8c2a/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/bzd6661/wechat-article-for-ai/blob/69de9e413cca3fe6b770c40a4dec204afd5b2b3c/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/risingwavelabs/box0/blob/66be3af827f27ce87fce885ac0a4c3b85d0aeb81/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/clockless-org/html-anything/blob/1896831a62670eed7424b8f8e37e56c66cbf2351/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/mitkox/megacode/blob/41d1ce2259c1cab03e6a050d716ca8b04b47d156/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/Sunwood-ai-labs/SourceSage/blob/c10b14234239de6248a0347bf9051507e8b2eb2a/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/assafkip/research-mode/blob/fbf5e50f672012ad2bbaddf30a6440a9528a6aed/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/petar-nauka/fact-check-skill/blob/ebfde09a28b5547cbed29f5f66ddfd3595e64ade/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/mycelium-hq/ai-brain-starter/blob/08721ed8fad2e7336ea8bbccaf24ab6c157f3647/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/amanning3390/deepswarm/blob/614d635bc06f643f150d58d07c1beb823a5f3dad/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/guanbear/OctoClaw/blob/62157626b4e6a7c20f13a886d1e38a424cdc5f1d/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/fuwenhao12/academic-ref-inserter/blob/dfa079ec9be76d30a2053522fdc8bb7fc986c136/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/TammyTan516/relationship-training-skill/blob/1ab2334934bcff24596552de091882026173d190/SKILL.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/lucianwhy/final-review/blob/622df4d7334508ed844b5312b8f0ad648b725ccd/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/wzyn20051216/ros-robotics-skill/blob/a07713a746f73c4dd1816389c95bb71a057ef13c/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/saxenauts/syke/blob/d74aa6de38ac1ea0185fd6767dbf4a6bf1f82d77/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/ALBEDO-TABAI/lets-go-rss/blob/08be2901bf3cef5a065651cf8a0bb03f7e5155fe/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/eddmann/strava-cli/blob/819485f6ba1723c2b152e6a5cad0c4e6912a369b/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/Vivixiao980/xhs-cover-skill/blob/25a7279ff36931fc4eab069999adb1ad988b5d27/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/rafsilva85/credit-optimizer-v5/blob/37eb57a8fb2506e8e1c1c5458748bac439c2f521/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/c-narcissus/research-paper-figure-skill-factory/blob/b9cc581e647f5687959af09ace033f8247517e6f/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/Jimmy-Holiday/xxyy-trade-skill/blob/2cc0ff3d95583579f3e1b2b4a2c8429342bb0784/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/cangtianhuang/humanizer-academic-zh/blob/9a30ac38200692916efae5e5128273def2099ae6/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/peixl/ifq-design-skills/blob/10e418862a67a5d2055b4ba8d334a5b445a8df7a/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/maverickgao8848/mav-slide-craft-skill/blob/0371263b23795433e45a0f11a181deeecc2a2648/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/UditAkhourii/branerail/blob/44c4e501efa7ad0e03fa8bbbd24b5229522c136f/SKILL.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/voltwake/xianyu-monitor/blob/1920ada462816c2edc2fd1152d1551833960d5c1/SKILL.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/KingJing1/podcast-transcript-txt-skill/blob/e93217bfe1994017764eafac124e2c425debff35/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/WPeace-HcH/WPeGPT-Analyzer/blob/a6b2488c5e7da47890a82d0f8534ac364de34b31/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/lsmith77/traktor-kontrol-qml/blob/e8fe27247c61dda0dfdf49122f71c08f36d4ac65/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/qingshanliuci/cnki-aigc---skill/blob/8d69669a7e5289ca2c73e7aed79032ef955f39b3/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/zjinhu/SwiftMesh/blob/c93a59c37c0c8336590e91c14139892a70ec5a20/SKILL.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/24601/surreal-skills/blob/4e66534bc9e56699c471cd7739297c7e184656b0/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/SemineChen/yueban-image-to-code/blob/e9f2e8ae66964083abc8481ff1e6a458359107f1/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/icodeface/wayback-archiver/blob/27499ac6ff5577e3ce637a1eb3438f52828d7e28/skill.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/joeseesun/qiaomu-skill-publisher/blob/8bd944b7723e710d38f9fa4034e8ba6addbbdfed/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/sstklen/infinite-gratitude/blob/40e0f9704d4d20c6b58e9eec9137c546bd24a305/SKILL.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/chentao326/teacher-skill/blob/86056ac80f9e5f80c1e965a0de7e358ca54f4bdc/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/claude-skills/sveltekit-svelte5-tailwind-skill/blob/9753f55eb0f8a2b40c23c302c9e17d0772a47fe2/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/momozi1996/DirectorAgents/blob/1a9e8047d9ed328968030341cfe146bd90712584/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/vigorX777/x-ai-topic-selector/blob/0e98c4b2285f3b48056554f8f3f9a9bf01af49c2/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/ychoi-kr/claude-ffmpeg-skill/blob/b88cb5ce08337ab55c66c67674100b8de29cf232/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/naoterumaker/japan-gyousei-data/blob/5658a5f554f751d209e10a47f90662b39c0eb818/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/wsbm393/Fable-Skill/blob/4d52fa3d8940e958ba4a915a404b1be16523e06a/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/yizhiyanhua-ai/youtube-ai-digest/blob/d69a92e0769673dd7fc1bfc1202c526e8dd475d3/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/KaguraTart/paper-to-course/blob/b739c6a20454f4381be26a31109680f87a1d2c46/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/afx-team/agent-skill-npm-boilerplate/blob/e392cafbcd21999e09eae04de1dfbd7bb571c041/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/AgentTestingClamp/r02-alirezarezvani-claude-skills-seo/blob/09a31a051434968f2082d7c070986369bc7826dd/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/oil-oil/grok-designer/blob/dc5bb80b959ae522a29969d6c6685174afed5724/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/ostikwhy-blip/claude-code-handoff-skill/blob/6f3ce0557adb25d10370b26049ca3540d9543203/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/PublicDotCom/claw-skill-public-dot-com/blob/6ffbf85bc1c345fcdf14373641a8c734bd410e90/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/vinceglakas/receipt-pattern/blob/f89efaf50c564c97cf9f0e26d0da2121b5092b8d/SKILL.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/handsomestWei/zhihu-fetch-skill/blob/f0603bfedd26ecc3cbc4f962626f999b56d06592/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/MIKUZ12/ExamPass-Assistant/blob/20453af00c5f165c1403fd14ad9ca86da714bd8a/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/tengj/article-poster-generator/blob/1a7dd593cca58ab27f33b6009c875cb4e7e4698b/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/pearyj/sillytavern-cards-skill/blob/0e4c0d18f8f40525aaa522825339074dd94cf811/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/Y1fe1-Yang/resume-assistant-skill/blob/63a7d76ccca7eb26acc3b117d64010627d7eca6d/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/jnjaeschke/webspec-index/blob/4640e6321adb1460f3353e22e81d00f2ee148ed9/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/SystemTce/dify-skills/blob/b259dcc4ad131b4fe2f70266e6d37a8afbaf869e/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/Lucent-Snow/anti-default-output/blob/1b31c4fa2b08d354faa183ea886c34e1d7e9bca6/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/joshferrara/ghostwriter/blob/619e43d12872aaa316fae8e3ce52ce979160c250/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/singhsume123/xml-to-compose-skill/blob/735bae41e054033c42878dd0f32697b94dee5d71/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/ai-freer/fortune-skill/blob/ea67665e8eb96be8125cd8d5c41d11774fedec91/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/xiaoshiyilangzhao1996-droid/Skill-Schema-V2/blob/8feafdb7ed1ab719e17212e2d5b46a675bfd38dd/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/hltcoe/routir/blob/a5d8fa61d5214595cb5ff42b6008c696c9f34d2e/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/diggiehippie/ai-consulting-onboarding/blob/71cc95387fbea1b8bbfce9e11dad218a143c2ed3/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/DevvGwardo/grok-imagine-video/blob/d68aaf5cf8b62b8bbafc5af7969576e629999f6e/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/YixiaJack/dating-master-skill/blob/a6c92c664c818e776571ddc6f3aa8464e236ef7d/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/117d9c1725d1f0acbb46cd0342dfa397705e9805/einfache-leichte-sprache-jura/skills/texte/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/majiayu000/claude-skill-registry/blob/d7c892920d060569a4e72912da153f514a67051a/skills/skills/axel-skill/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/majiayu000/claude-skill-registry/blob/d7c892920d060569a4e72912da153f514a67051a/skills/data/moai-icons-vector/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/majiayu000/claude-skill-registry/blob/d7c892920d060569a4e72912da153f514a67051a/skills/development/new-column/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/WellApp-ai/Well/blob/782601cc7b2b5aefa4c1f534a376db12f8631da2/plugins/well/skills/connect/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/tonone-ai/tonone/blob/166810ef286b0850755b1950386960f7629327f0/skills/guard-audit/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/crim-ca/weaver/blob/4925f5f66c0c605dcf4838127fafd2c9a5f7da06/.agents/skills/job-inputs/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/tonone-ai/tonone/blob/166810ef286b0850755b1950386960f7629327f0/team/brief/skills/brief-recon/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/mits-pl/wove/blob/8a3ba437a292b434ff64ec8b09ef876090385fc7/.claude/skills/seo-images/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/ECNU-ICALK/AutoSkill/blob/94c47ca488d4ba4117d20272e66d49b9877e68cf/SkillBank/ConvSkill/english_gpt4_8_GLM4.7/generate_twitch_game_outreach/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/The-OASIS-Project/dawn/blob/10d5e28acf97cba9389a5d62d856d41c9fac6a69/.claude/skills/review/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/agentskillexchange/skills/blob/25a312922702fc5275ef040e570e0b13b784d902/skills/outline-knowledge-base-wiki/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/majiayu000/claude-skill-registry-data/blob/f75d9bac47991ca32973048f0a1e258528c41321/integration/alexa-cli/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/redpanda-data/skills/blob/1c8785b70c6819dc50c5c85b18263d3138188382/skills/cloud-byoc/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/majiayu000/claude-skill-registry-data/blob/f75d9bac47991ca32973048f0a1e258528c41321/development/logging-system/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/tinh2/skills-hub-registry/blob/e5e3c5145f5ddba5a27e6eba5c1d3f03f91c1ccf/analysis/skill-gap/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/ComeOnOliver/skillshub/blob/def8531e65114c0fca8fb8551c1871ee0eed705c/skills/aiskillstore/marketplace/zhanlincui/doc-coauthoring/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/xmg2024/sun-skill/blob/db8026dca6dece767f441d84214479c6cef62b8b/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/bulaienaofutuojiesenzhang/bazi-skill/blob/dce55ad9c3607a2bc4afd7d0bb842b666b6ef9df/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/monasprox/openclaw-memory/blob/437ab3656ecdf52c7ed0c3ee63a3cdae68d5b90f/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/yuymf/xiaohongshu-skills/blob/815fa257aa4573b8432a3af0ddba945f04fec29d/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/RaoHai/raohai-test-skill-0210/blob/442eee64bd5bc187abc1889b6d40be91bc2dcec7/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/iBrain-BVBA/gutt-claude-code-plugin/blob/963ee60427f46333248fab13ed9da5a10d61e71c/gutt-core/skills/onboard/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/adrianco/retort/blob/6cadc0a032e4ea244c71d5f0c891614ac39a3d9c/experiments/adrianco/experiment-5/runs/language=python_model=claude-opus-4-8_tooling=beads/rep1/.agents/skills/beads/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/majiayu000/claude-skill-registry-data/blob/f75d9bac47991ca32973048f0a1e258528c41321/development/bpm-transformation-partner/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/ARYPROGRAMMER/ManageMe/blob/1b1d76dd5629401fd559c8895ed5ec99bb5c2216/manageme.skill.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/fang2853/web-access/blob/87fa79601db46abb0788a245f81547ac74a9048a/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/lingxling/awesome-skills-cn/blob/73c65e56f14bab57523ed1d573748a7392d221bb/antigravity-awesome-skills/plugins/antigravity-awesome-skills-claude/skills/apify-ecommerce/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/omega-bred/bluebubbles-chatgpt-agent/blob/2fbd45dbed424f4e9180888c7454ee06b645eebc/.agents/skills/asc-cli-usage/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/dvcrn/openclaw-skills-marketplace/blob/67b1c2373b5ad4a345051bc48b47ca2a5d8f933c/plugins/humanagent--xmtp-cli/skills/xmtp-cli/debugging/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/mocchalera/video-os-v2/blob/5f8ae04173ba9c84da675088b57df4bb3cdfd306/.agents/skills/compile-timeline/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/DangQuangSE/team-development-skills/blob/8dd009c711a23e0279db07a8f1828fad8ca205b7/.agents/skills/problem-solving/inversion-exercise/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/samuelpatro/.claude/blob/d50de41cb9114698b394a5c6225ff4dbb79ae18a/skills/create-pr/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/mission69b/t2000-skills/blob/c2191b162a0842385d58e515eb57bc24c3e22843/skills/t2000-mcp/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/majiayu000/claude-skill-registry-data/blob/f75d9bac47991ca32973048f0a1e258528c41321/other/diagnosing-bugs-sickn33-agentic-awesome-skil/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/LeandroBenjaminL/lend-ai/blob/66e70bfe7cb152c331df398caa42661da1a217c6/skills/ci-cd-pilot/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/martc03/gov-mcp-servers/blob/26427e2c980b6c0a2e341d843eefe50ef79b4b59/openclaw-skills/martc03/gov-business-entity/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/n2g7/agent-skills/blob/976d5c43f5721c59769a395e535499c217d4bb37/azure-eventgrid-java/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/UpayanGhosh/Synapse-OSS/blob/86b79326ff0f27ead49def5e375084873bde3a03/workspace/sci_fi_dashboard/skills/bundled/synapse.web-scrape/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/DrNabeelKhan/maxim/blob/75c0097a8f7a065c2dffda3952adfdf496f2d9db/composable-skills/frameworks/cicd/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 2,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/sakamoto-family-smile/agent_monorepo/blob/f5a345024fbd0850ccbd01419c12e84009911cdd/.claude/skills/ecc/videodb/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/rosendolu/canvas-studio/blob/0c5abb18914cf4be37d638c73105a943736d7fd8/.cursor/skills/code-review/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/garochee33/DSH/blob/417cdc16d790cf97ea7750903d7e62cd5bfd706a/agents/skills/cto-build-framework-validator/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/Lord1Egypt/awesome-skill-forge/blob/4aa004da461d820f4ea5499e58eb8d196cf99016/community/clawhub/a/ai-content-engine/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/kbarbel640-del/skills/blob/7f57c1b6749e40d3530c6d95e356ecb2f1007a29/skills/kelvincai522/comfyui/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/huang-sh/DeepScience/blob/c5d33f01c6bed15188a021624e66357e20b3b512/packages/science/skills/ml-training/pytorch-fsdp/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/pwdev-solucoes/pwdev-claude-marketplace/blob/7c2d0238e0e74cbfb742ca2283d95ea50657dd48/plugins/pwdev-devops/skills/nginx-expert/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/kbarbel640-del/skills/blob/7f57c1b6749e40d3530c6d95e356ecb2f1007a29/skills/ty-teo/nvidia-image-gen/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/SDiamante13/dotfiles/blob/413e5df1fbd64094e3c1ed847e7008494441d8e9/claude/skills/tw-invariant-ace/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/AGLz/agl-hostman/blob/add8e58b5c315d1e95b28c7cdf609bff5a3c4c25/.agents/skills/rest-api/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/nimoqup046-collab/agora-test01/blob/466264adef50ed4b6255b45b1132717751b4a5e0/.claude/skills/loki-mode/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/rhinkle/Mic-Feedback-Monitor/blob/11b3963598378fca989bc935c956c60414c94eab/.claude/skills/prd-local/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/c4kar/ktunDepo/blob/810cd9a652d35c7ee58d15c6a54cf79e18c67b28/.agents/skills/seo-forensic-incident-response/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/sarthkdobriyal/hisaabi/blob/8e4dbbc7b9f2a05006207d21e2a246e8d73e73d0/.codebuddy/skills/seo-project-setup/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/Smarter-Dev/smarter-dev/blob/4b4f45cdbedb27457a5c9b168bc2ee66eea9d913/.claude/skills/skrift-forms/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/NickVanzo/hackathon-eth-global-2026/blob/2f2e9a2830bac478e97c49b875542e2319c1d61c/.claude/skills/swap-planner/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/NeuralBlitz/ncx/blob/ac7ff83e9fea3192019a56aafddd015fae19ab13/ncx/.opencode/skills/practical-power-systems-synthesis/SKILL.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/jcasnellie69/homelab-config/blob/a6b15dfaf1eb4f9edb38cbdad9c659afbab29f51/.recycle/skills/create-readme/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/astroville/sprout/blob/b9abdced77d63b92d462b07ecd6dbac8f803d836/.claude/skills/roadmap-review/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/softnanolab/softnano-plugins/blob/eba9bf03dbcf16b792c9577e0f258ef8d89f7bd2/plugins/softnano/skills/claude/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/NeuralBlitz/ncx/blob/ac7ff83e9fea3192019a56aafddd015fae19ab13/ncx/.opencode/skills/semi-supervised-optogenetics-testing/SKILL.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/limiteinductive/frontclippy/blob/3452c774aa31c94e198f8d3d0b615c8c748dc570/.codex/skills/frontclippy-audit/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/Scoheart/agentskills/blob/82fe3f694b9f46af043292def6b769654f0b2a05/skills/cloud/cloud-cf/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/uiuc-kang-lab/rlvr_generalization_bounds/blob/a5f5a978015ce9a9407593b21026ff18230f6efb/tinker-cookbook/.claude/skills/hyperparams/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/melangoth/ui-only-sheets-state-app/blob/d459bd95d0d86c3e9c2f4d908a43a6f23cc49f12/docs/agent-skills/gcp-onboarding/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/cbbkrd-tech/jl-finishes/blob/afc7f85ddcf20132caf1b0cff962d41fe83baf4d/.claude/skills/local-seo-execute/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/xchang1121/op-autoresearch/blob/08cc3688e8275776fef0b793bb7aa505e73c7cf1/skills/triton-ascend/examples/triton-ascend-example-relu/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/NeuralBlitz/ncx/blob/ac7ff83e9fea3192019a56aafddd015fae19ab13/ncx/.opencode/skills/data-mining-interpretation-fundamental/SKILL.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/bsoc-bitbyte/BattleGround-Mobile-Jabalpur/blob/e309afecd889f2d79485b97fc24e83ad270111f5/.gemini/skills/assets-prefab-open/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/JoshuaShepherd/my-skills/blob/2d57049bb5f975448f3f534c8b70cc4dc1045a65/claude/infrastructure/tenant-check/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/yantianqi1/image-studio/blob/8247955ca4a739c0536250c4b9e4f3ad51e307f8/.codex/skills/comic-studio-workflow/SKILL.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/luokai0/ai-agent-skills-by-luo-kai/blob/4d2fb89cdfb75f3f6fd3c6c5ec9ad90ea129eb3c/ai-agent-skills/21-external-registries/03-agent-skills-hub/bash-linux/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/jorcan/automejora_agentes/blob/6cd7923a48095f3a1418526e9999f3453c2d9bcb/active_skills/helm_chart_scaffolding/skill.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/NeuralBlitz/ncx/blob/ac7ff83e9fea3192019a56aafddd015fae19ab13/buggy/ncx/.opencode/skills/infinite-recommender-systems-measurement/SKILL.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/aAAaqwq/openclaw-team/blob/f3f3769d02e636b7fc3aa4bb845009943b252e8f/workspace/skills/afrexai-investment-engine/SKILL.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/NeuralBlitz/ncx/blob/ac7ff83e9fea3192019a56aafddd015fae19ab13/buggy/ncx/.opencode/skills/univariate-programming-languages-prediction/SKILL.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/gabrielmoreira/agent-skills-mirror/blob/25feef67ea16cee7e5d285c981f4dbed283e3bbb/mirrors/repos/Dokhacgiakhoa@Agent-Skills-4-Vibe-Coding-CLI/.agent/skills/typescript-advanced-types/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/jaysonpantollana/Khubo/blob/7570112d77d7825f1c4fc8ff65340f9703c36164/.opencode/skills/skills/hexagonal-architecture/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/SamyakJhaveri/loam/blob/e4bfb65601114a6b6bb85d14d163221e2009cac7/cultivation/marketplace/business-process/skills/sop-writer/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/marapapman/omp-enhancer/blob/ca2fd51616746a775d2df5d1467285a6cf71b9b3/plugins/omp-config/skills/ecc/agent-payment-x402/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/cjrain-12505614/douzone-forge-marketplace/blob/529df167f917a2b04c6321a9fae656b8a7643a5a/douzone-forge-v1.15.0/skills/dz-qa-scenario-builder/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/MrGr33n98/advini-hub/blob/4cadf9fc9a46b5507b93b8ea0cae2a7fc592057c/.antigravity/skills/carrier-relationship-management/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/dman1313/hermes-brain/blob/e24bdb12dc35dc5c52255754ff7c54b8859cbee8/profiles/dream/skills/devops/hermes-workspace-setup/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": [
+      "contains a destructive shell command (rm -rf)"
+    ]
+  },
+  {
+    "html_url": "https://github.com/middle-chunjie/mywiki/blob/a43962d7558b6f2637f97419be07777c60d14db6/.aris/skill-sync/rendered/20260518_173322_277047/dse-loop/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": [
+      "contains a destructive shell command (rm -rf)"
+    ]
+  },
+  {
+    "html_url": "https://github.com/NeuralBlitz/Agent-Gateway/blob/8b8a2cb8a5a3dfe770b1d69ab7658a124ed4d169/agent-gateway/skills/user/advanced-dark-matter-simulation/SKILL.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/Vibiz-ai/vibiz-saas/blob/f4ff98c9b33e0c5954fdea300fca04cd286bae16/.opencode/skills/vibiz-runtime-repair/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/NeuralBlitz/Agent-Gateway/blob/8b8a2cb8a5a3dfe770b1d69ab7658a124ed4d169/agent-gateway/skills/user/climate-science-based-validation/SKILL.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/Ryanzucchi/Eldritch_Lich/blob/821af426431fdf90173a9881cbd1e57bd4f95d0d/.agents/skills/analise-consistencia-narrativa-tempo-e-eventos/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/FISCFED9/CLI/blob/dc5c68e06bbbffb3a2ddd72a79e277b71b02b0e9/.codex/skills/skills/lightning-channel-factories/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/hefarica/arbitragex-v2/blob/f2fe0cdadc1cf51c63e66a500c328632dd059e3b/.agents/skills/arbx-g-g005-advanced-react-19-usetransitionuseoptimistic/SKILL.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/benchflow-ai/skillsbench-trajectories/blob/37484902dabffa24e91fac710ddcb90395fc5114/xiangyi-jobs/main-with-skills-pass1/find-topk-similiar-chemicals__Yr69ojj/agent/sessions/skills/pubchem-database/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": [
+      "makes outbound network requests"
+    ]
+  },
+  {
+    "html_url": "https://github.com/David-Li0406/meta-skill-evloving/blob/ca3a335628981df10c36e00cb9850df2c247ab9a/skill-flow/data/skills-refined-autoskill-36k/skillsmp/code-review-94/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/Auto-Skiller/plugboot/blob/2c3838c68c47dfd5b99f2da3bb8e9818e3707064/_os/os-inbox/.os-inbox_gateway/engineering_methodologies/Architecture/gsd/skills/forensics/SKILL.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/s7917/vehicle-rental-capstone/blob/75fa951413d65be0b05a4e28bfdd38109af4aac8/frontend/node_modules 5.54.06\u202fPM/@reduxjs/toolkit/skills/build-modern-redux-apps/redux-dataflow/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/MHassan0000/Skills/blob/a4404a75dc81d6b7e58c5906b6aaffbcb5e84747/Claude/awesome-claude-skills (compsio hq)/composio-skills/fluxguard-automation/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/xtofuub/openrecon-ios/blob/e1c6ace94816569f235d905e796535d9240a58c5/skills/_upstream/anthropic-cybersecurity-skills/skills/performing-windows-artifact-analysis-with-eric-zimmerman-tools/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/ibragimov-oasis/vibe-coder/blob/bdd9f958d7bb1a0f19b8ad8da020b0bab0f53eb1/vc-kit/content/COMBINED/COMBINED/skills/skills-antigravity/source-antigravity-awesome-skills/plugins/antigravity-awesome-skills/skills/onboarding-cro/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/ibragimov-oasis/vibe-coder/blob/bdd9f958d7bb1a0f19b8ad8da020b0bab0f53eb1/vc-kit/content/COMBINED/COMBINED/skills/skills-antigravity/source-antigravity-awesome-skills/plugins/antigravity-bundle-data-engineering/skills/airflow-dag-patterns/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/ahmedfawzy8866/arc/blob/8031109cdd5637b7ac27ca70b85a148aad51c1a8/sierra-blu-platform/May 4 last plan/Applications_Data/Gemini/antigravity/scratch/antigravity-awesome-skills/plugins/antigravity-awesome-skills-claude/skills/superpowers-lab/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/pjb0811/ui-kit/blob/51e0dde4b4ddcd89ee9cfbae7c7992fa93d7530b/.github/skills/commit/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/cas-bigdatalab/piflow/blob/da1ce1ebab18fd50488bb4eaba0db37c15e1ae1d/workspace/skills/QC3_NumericDataThresholdCheck/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/117d9c1725d1f0acbb46cd0342dfa397705e9805/forderungsmanagement-klagewerkstatt/skills/redteam-qualitygate/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/majiayu000/claude-skill-registry/blob/d7c892920d060569a4e72912da153f514a67051a/skills/data/survey-sdk-audit/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/majiayu000/claude-skill-registry/blob/d7c892920d060569a4e72912da153f514a67051a/skills/domains/distress-screening/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/majiayu000/claude-skill-registry/blob/d7c892920d060569a4e72912da153f514a67051a/skills/development/skills-audit-improve/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/majiayu000/claude-skill-registry/blob/d7c892920d060569a4e72912da153f514a67051a/skills/development/commands-manager-henmessi-plugin-dev/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/real-simple-labs/parker-brain/blob/b55c441c5b3cd7c0c2d71428f2203f6fb186887b/.claude/skills/update-parker-skill/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/CyberStrikeus/CyberStrike/blob/621525e167174889da3e02370d382f884db1c014/.cyberstrike/skill/CIS_benchmarks/Server_Software/Kubernetes/CIS_Red_Hat_OpenShift_Container_Platform_Benchmark_v1.9.0/cis-ocp-v190-1.3.3/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/majiayu000/claude-skill-registry-data/blob/f75d9bac47991ca32973048f0a1e258528c41321/data/content-linter/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/nWave-ai/nWave-experimental/blob/e3ad31fc6ee8c34425864ad8ee55141739900341/nWave/skills/nw-rigor/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/majiayu000/claude-skill-registry-data/blob/f75d9bac47991ca32973048f0a1e258528c41321/data/firebase-apk-scanner/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/sethmblack/paks-skills/blob/a97079093e4f129351c6321df005dd656bb48374/constraint-innovation/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/diegosouzapw/awesome-omni-skill/blob/a6b3c3005cedf056a48b084671c6282426d6e9fc/skills/development/ui-ux-pro-max-hongbietcode/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/majiayu000/claude-skill-registry-data/blob/f75d9bac47991ca32973048f0a1e258528c41321/design/graphql-schema-generator/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/meltedinhex/analyst-ai-pack/blob/da7600a745bb4c3b487ab775b681c04e71e973d4/skills/writing-a-malware-analysis-report/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/galyarderlabs/galyarder-framework/blob/5fef282e926c9a01a6ee755cfb26e2e4301df40a/integrations/claude-code/skills/generate/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/chimeranext/flutter-boilerplate-monorepo-template/blob/8e3355656e7017c73e2bc13e63987984fcf3bddc/skills/flutter/firebase/SKILL.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/Guild-Agents/guild/blob/07cea3c40dea741ee187dfcbd95286fee2aa7fa5/.claude/skills/create-pr/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/Demerzels-lab/elsamultiskillagent/blob/f45fcb5e73f2335658ba629bf17887f5895c7ccf/public/skills/barnyp/automation-runner/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/majiayu000/claude-skill-registry-data/blob/f75d9bac47991ca32973048f0a1e258528c41321/development/vite-boomnds-new-portfolio/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/mirkosertic/Megahub/blob/8263f312f1ea8673a4cba8ec39aeced4e83e55d4/.claude/skills/frontend/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/seedds/EPUB_Player/blob/c0f1e67b027f5d2604cdcbd61c088752702055f5/.agents/skills/asc-cli-usage/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/cloudthinker-ai/CloudSkills/blob/07669a84e5d310dfc682955c47fdb131fd0b3c0e/skills/connections/managing-filestack/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/0xAidan/polymarket-bot-test/blob/80645dbf754968bf238040b05444bbdfc4d42186/.cursor/skills/vercel-optimize/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/SomtoUgeh/somto-dev-toolkit/blob/2476764565d53f5f63b60a16ebb565128e8b2dd8/skills/blog-post-writer/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/reblocke/tcco2-accuracy/blob/504438a648cbd46e562c0f58baf67173cab16b2c/.agents/skills/docs-sync/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/vikingokft/vikingo-studio-skills/blob/bc7d0d95352bd4f62d33198d23808b9185795c2c/wordpress/wp-presence-api/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/tools-only/X-Skills/blob/efb931b2e3f5d32b229105a9364b072ac5f51d85/productivity/2529-remedies_liability_27cc7977/skill.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/Trompetilla/Skills/blob/a4277979986e03177b86838f836c5d69c11e8052/skills/kelvincai522/comfyui/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/johnalbertini14-glitch/openclaw-skills/blob/87ab194347104d065298db048ae431c5289976a6/skills/kelvincai522/comfyui/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/kvn8888/OpenFoodJournal/blob/0f20c89e3f5474f477f1d6c2ea1a94d05f5f4132/.agents/skills/asc-cli-usage/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/NagareNegishi/DJ-App/blob/4d4e7c54de5973b3be1308277d5509875fb92abb/.claude/skills/session-start/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/knownasnaffy/prompthound/blob/79bd2701cd493573c0f42f05767201e8cb5ac0f5/dataset/case_01119/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/knownasnaffy/prompthound/blob/79bd2701cd493573c0f42f05767201e8cb5ac0f5/dataset/case_02366/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/Trompetilla/Skills/blob/a4277979986e03177b86838f836c5d69c11e8052/skills/ty-teo/nvidia-image-gen/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/johnalbertini14-glitch/openclaw-skills/blob/87ab194347104d065298db048ae431c5289976a6/skills/ty-teo/nvidia-image-gen/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/moonklabs/skills/blob/171556df27ac3c522ec0683871b3251718d2d48e/fundraising/skills/pitch-craft/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/ParamChordiya/ai-skills-library/blob/339cc7f2c47412422accc7bcc818e754bb82593e/algorithms-and-data-structures/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/sige0002/kairos/blob/5b7590adebbcf45c3389beb229f66d5111743638/.claude/skills/rosbag-workflow/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/ColorMath/ci/blob/430d7297808fc13b4170cb5f2ec60c4fe2a39dcc/plugin/skills/refine-initiative/SKILL.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/cirobarone78/dawn/blob/4ca0005113e19884f0e3044ddd266596c590d77e/.claude/skills/review/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/denial-web/clawguard/blob/bd3e655d60db8f7bf4894aca6a93564a0ea1ad08/examples/metadata-mismatch-skill/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/veglezMX/agent-factory/blob/c8a621e1484e806a869ca09a6e8e57f1f0e744ea/skills/creating-stakeholder-packet/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/nimoqup046-collab/agora/blob/f652cfe5e607971590c118c5a1e2435c00147299/.claude/skills/loki-mode/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/cuioss/plan-marshall/blob/cf70cf7870f91044961fc874724525bf669bef91/marketplace/bundles/plan-marshall/skills/phase-5-execute/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/phoroth/AGENTIC/blob/29cd62e80278eeac7dc39bd3716437cc25ecdc51/plugins/ecc/docs/es/skills/python-patterns/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": [
+      "makes outbound network requests"
+    ]
+  },
+  {
+    "html_url": "https://github.com/jcasnellie69/homelab-config/blob/a6b15dfaf1eb4f9edb38cbdad9c659afbab29f51/.mcpjam/skills/context-map/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/rosendolu/cursor-skills/blob/bff560fdc9caf4d1222194ae17eb4bea0dd4aca9/.cursor/skills/code-review/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/NeuralBlitz/ncx/blob/ac7ff83e9fea3192019a56aafddd015fae19ab13/buggy/ncx/.opencode/skills/practical-algebra-modeling/SKILL.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/xotong/claude-marketplace/blob/3dc5509571babcc9c75198aaa887a35f9f42224f/plugins/gstack/skills/health/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/qhjqhj00/research-skills-pool/blob/c247302c836de6438d746b45670990eb71691166/skill-factory/output/calendar-scheduling-eval/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/heath-gtm/Skill-Builder/blob/c9eba035acd22baa711692b346b26ea396f86d59/skills/renewal-health-analyst/SKILL.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/EnesMeyzin98/Meridian/blob/06192ed28f13bee46985baa5e56a4474580d8830/agents/skills/decision-support/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/voxelepic/rat-portfolio/blob/430e8bf27853937a997ed04ff9062a48bfef26e9/.agent/skills/audio-transcriber/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": [
+      "spawns a subprocess"
+    ]
+  },
+  {
+    "html_url": "https://github.com/MayankV004/blockchain-receipt-verification/blob/4676f63073b09782e5fdbb73821d9a6e5ea6106d/.agent/git-pr-workflows-onboard/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/lucaspmarie-a11y/claude-skills-vault/blob/0285161d46732eef797781d03d0349a1071ba54a/plugins/antigravity-awesome-skills/skills/async-python-patterns/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/BdM-15/capture-insights/blob/88e51d65316bbbe5ef89a4895abde1d1d0d920ce/skills/subcontractor-sow-builder/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/NeuralBlitz/ncx/blob/ac7ff83e9fea3192019a56aafddd015fae19ab13/ncx/.opencode/skills/practical-classical-mechanics-simulation/SKILL.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/adelrodriguez/dotfiles/blob/8baf377d94f500e7fba27fd50a1c4b05ce2a8d05/home/.agents/skills/grill-with-docs/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/SKYGOD07/Rakshastra/blob/867b18909390a102185b4cc934ec87659ba3bc2d/optional-skills/mlops/research/dspy/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/NeuralBlitz/ncx/blob/ac7ff83e9fea3192019a56aafddd015fae19ab13/buggy/ncx/.opencode/skills/advanced-statistics-characterization/SKILL.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/christian289/task_20260212/blob/d8c9b57c75a06a18981a2021f59297c34748cde6/.claude/skills/managing-global-usings/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/twidxuga/dotfiles/blob/d08a0bfa3180c6129af95efa08224aa35292b873/opencode/dot-config/opencode/skills/ai-champions/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/NeuralBlitz/buggy/blob/e06cf7ed7ed3d3a90d0443b1b31cb2be4221454c/ncx/.opencode/skills/practical-power-systems-synthesis/SKILL.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/NeuralBlitz/ncx/blob/ac7ff83e9fea3192019a56aafddd015fae19ab13/buggy/ncx/.opencode/skills/experimental-nanotechnology-derivation/SKILL.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/huuanh20/awesome-ai-agent-skills/blob/659b7a01f6a83746017994abaffd6ecf9738a6af/.agents/skills/problem-solving/inversion-exercise/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/issdandavis/scbe-aethermoore-demo/blob/5a1e0369b69e4a0da482063de190d47dc1b99844/research/sphere-grid/skills/aether-phone-lane-ops/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/GeorgeQLe/agentic-skills/blob/4db27d8b6f6302838475f44d995c7d60eaf80edf/packs/devtool/claude/devtool-user-map/archive/v0.2/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/NeuralBlitz/buggy/blob/e06cf7ed7ed3d3a90d0443b1b31cb2be4221454c/ncx/.opencode/skills/semi-supervised-optogenetics-testing/SKILL.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/NeuralBlitz/buggy/blob/e06cf7ed7ed3d3a90d0443b1b31cb2be4221454c/ncx/.opencode/skills/data-mining-interpretation-fundamental/SKILL.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/epci971/claude-epci/blob/48cf76fb9675ebc54b1627825cbe88ca305c21fb/archive/4.9/skills/factory/component-advisor/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/Jeeva0104/connector-service-mini/blob/1b7fea412de5eb89382ef3312e1081fec6d52aac/.claude/skills/loki-mode/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/Yash000/9tattvas/blob/1f6278e818ce34edcc758bb4015b74a68be9ab40/.claude/skills/loki-mode/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/nickgallick/perlantir-fleet/blob/2c004f0fad66dbfa364e382e37f457e6e4298af0/skills/nick-offer-engine/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/jacksonemmerich/farmapub/blob/dd1d83d84fed1198b73dbc6869c8a4e77fa12ba4/.agents/skills/seo-forensic-incident-response/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/mateusoliveiradev1/frescari/blob/a6ba663f1737ad3aba98f1d4327170f0aeebe12b/.agents/skills/seo-forensic-incident-response/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/pratyushdeosingh/mdp/blob/799a460f2c020546ab253305f411a7ed44a70996/.agents/skills/seo-forensic-incident-response/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/seethinajayadileep/PlayForge/blob/5e7c5828e94d18bf622e313d162b69ed7d7df7fb/.agents/skills/seo-forensic-incident-response/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/Angriff36/task-orchestrator/blob/985dbdbfccc5fa2cb77d822e59b7d3f683c0bb51/claude-plugins/task-orchestrator/skills/status-progression/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/Eys-55/ace-workflows/blob/7c4de65d08c99800014103e4d90cdba16723df17/.agents/skills/initiate-task/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/LucasSantana-Dev/forgekit/blob/bc267fa1e8cbf30ce0acec018cb237625fa1000d/packages/core/companies/open-source-maintainer/skills/docs-maintenance/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/nivkazdan/skills-agents-catalog/blob/0221823ecacc03b3ff3eae509b6303cd71e87d18/catalog/development/plugins/perplexity-pack/skills/perplexity-rate-limits/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/TimLai666/installed-skills/blob/c23df53bf5f6cef27bcf87dcb11f7c66be0e6d10/scientific-skills_K-Dense-AI/protocolsio-integration/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": [
+      "makes outbound network requests"
+    ]
+  },
+  {
+    "html_url": "https://github.com/RakameNouya/MR-Bab_10_and_Kel_3/blob/da3a5ebea9f33580215ece20cfe65104946a2bc1/.gemini/skills/assets-prefab-open/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/PhamTheAn123/Demon-King-VS-Rambo-Frog-Hand_tracking-/blob/aa843ba8adfbea84a186b5d27ad0a14aa4c9513f/.gemini/skills/assets-prefab-open/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/InvDog567/NSCwordwolf/blob/ee7301d1441e1534ffe4195a66c37162a9a89abb/.gemini/skills/assets-prefab-open/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/SirNosh/bmad-ml/blob/803216b16b6bd7f7aeca814e04efd9d9d51a6862/bmad-ml/bmad-ml-pi/skills/ai-lab/research/bmad-ml-sage/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/dman1313/hermes-brain/blob/e24bdb12dc35dc5c52255754ff7c54b8859cbee8/profiles/zen-agent/skills/leisure/flight-search-canada/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/FlyFireF/PersonalAgentAPP/blob/355ca73dd3822f3683a9420df054356c713b79a8/growth-companion/skills/research/research-paper-writing/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": [
+      "makes outbound network requests"
+    ]
+  },
+  {
+    "html_url": "https://github.com/MaksymilianCzadowski/skills/blob/4d02d1bd97c8e5a08373d4a3d8eb1239c639f0ae/skills/engineering/setup-maks-skills/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/ahang1598/doubao-workbuddy-qwenwork-skills/blob/7ef348ffe409efe0fad24ae6afc22a784f92f31b/workbuddy/official_experts/plugins/godot-mcp/skills/godot-dev/level-2-modules/player-system/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/fivebucksventures/fiveagents-marketplace/blob/04f1d297da27b46dfbfddf02f86cb8c63bdb0f5d/plugins/link-skills/skills/decision-advisor/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/dataroaring/skills/blob/d4d2127ff68385d5e75d73628e4a4a7f57d6540f/plugins/developer-writing/skills/writing-for-developer/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/Yash000/9tattvas/blob/1f6278e818ce34edcc758bb4015b74a68be9ab40/.claude/skills/azure-monitor-opentelemetry-exporter-java/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/David-Li0406/meta-skill-evloving/blob/ca3a335628981df10c36e00cb9850df2c247ab9a/skill-flow/data/skills-refined-36k/skillsmp/speech-adaptation/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/David-Li0406/meta-skill-evloving/blob/ca3a335628981df10c36e00cb9850df2c247ab9a/skill-flow/data/skills-refined-agentskillos-36k/skillsmp/zoom-1/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": [
+      "dynamically imports modules",
+      "makes outbound network requests"
+    ]
+  },
+  {
+    "html_url": "https://github.com/Sansyuh06/yessit2026-Shorly_Not/blob/e9b7a6be3d0b5e75c47e297175a8e58b9e8679c6/agents/antigravity-awesome-skills-main/plugins/antigravity-awesome-skills/skills/azure-eventhub-rust/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/David-Li0406/meta-skill-evloving/blob/ca3a335628981df10c36e00cb9850df2c247ab9a/skill-flow/data/skills-refined-autoskill-36k/skillsmp/thought-leadership/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/Satya136-dvsn/dev-tools/blob/9284d402167933fe143643880cecbdf072ea2e0a/antigravity-awesome-skills/plugins/antigravity-awesome-skills-claude/skills/apify-ecommerce/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/Suriya-Kodehode/Angular/blob/25c97277902c018747801248f4fc63fc3adbe044/.github/skills/console-service/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/pemsley/coot/blob/f03faf52abc1fdf2a08b635970fb278b891c4669/mcp/docs/skills/NCS/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/117d9c1725d1f0acbb46cd0342dfa397705e9805/handelsvertreterrecht/skills/einstweiliger-rechtsschutz/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/majiayu000/claude-skill-registry/blob/d7c892920d060569a4e72912da153f514a67051a/skills/data/universal-design/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/majiayu000/claude-skill-registry/blob/d7c892920d060569a4e72912da153f514a67051a/skills/domains/bio-annotation/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/brycewang-stanford/Awesome-Journal-Skills/blob/b86e91acd082a673d634a30a04c0c1a5ba064355/FSE-Skills/skills/fse-experiments/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/117d9c1725d1f0acbb46cd0342dfa397705e9805/schriftform-und-textform-bgb/skills/mandantenkorrespondenz-form-und-zugang-templates/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/GongLingRui/screen-creative-skills/blob/6ced54f40c864e13717707bad887c22cd732ec41/english-version/category/series-analysis/series-analyzer/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/prime-skills/runcomfy-agent-skills/blob/fca19ae084c2ae4667f5c8affbb99da5103d5832/runcomfy-cli/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/majiayu000/claude-skill-registry/blob/d7c892920d060569a4e72912da153f514a67051a/skills/design/web-development-skill-pluginagentmarketpla-custom-plugin-nextjs/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/beep-effect/beep-effect/blob/5398819bf12c812abd25168ffbf6595ba47b7fd4/.claude/skills/effect-services/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/akillness/jeo-skills/blob/052828847772f185093c5788e61d812f3b83c77a/.agent-skills/codeflow/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": [
+      "calls eval() on dynamic input"
+    ]
+  },
+  {
+    "html_url": "https://github.com/nikolaygekht/ballistic.calculator.app.avalonia/blob/cd6d530f4b48a98522e8bd4d9b29dd4ca0a044f1/.claude/skills/ballistic-calculator/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/ShulkwiSEC/bb-huge/blob/a4355129341c98ea904c060fe87f25f25c2a70ad/skills/curated/bola-idor/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/bobmatnyc/claude-mpm-skills/blob/718070a7d622921b01687799a1f9613f36c6f615/toolchains/javascript/frameworks/svelte5-runes-static/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/bytesagain/ai-skills/blob/aba92922e3f0ab6037140d02e118e0e9fa81313b/debugger/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/majiayu000/claude-skill-registry-data/blob/f75d9bac47991ca32973048f0a1e258528c41321/data/iron-condor/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/pjt222/agent-almanac/blob/6b1e0756a35bbb0cfbdd7ff8ba7decd5c1529d27/i18n/es/skills/generate-statistical-tables/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/chardigio/pappardelle/blob/d3f3471a2efa696bcc286adbb4feda99e24cdb79/plugins/pappardelle/skills/init-pappardelle/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/x402agent/SolanaOS/blob/37041b5d74e4da89b4f23b688588953911547651/.agents/skills/honcho-integration/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": [
+      "reads an environment variable that looks like a credential"
+    ]
+  },
+  {
+    "html_url": "https://github.com/InternScience/DrClaw/blob/4f96df0d9df0eae24a992afabe08edec5fc575f0/drclaw/agent_hub/templates/pharmacy/skills/drug-interaction-checker/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/ranbot-ai/awesome-skills/blob/53b872b3531dbd81c546f1684edea5422f7f3757/skills/cal-automation/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/relocate-with-us/relocate-with-us.github.io/blob/985094929cef6b10d888438518ba0e6ca3ace975/.cursor/skills/site-deploy/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/DracoUnion/dankoe-skills/blob/3a221458c0f3042f55cb3c6b186f3b4e117cb9a9/bpas-content-deepening-framework/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/artubss/SKILLS-CLAUDE-CODE/blob/ac67ed85889b15fa9e784e2a93a83f8916870698/skills/skills/railway/railway-docs/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/AxelMrak/ai/blob/a848d1e90abc75ed721c27e12fca849b474c160f/skills/workflow-automation/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/aleconstancio/bindrunes/blob/f455b55b6fe1f0fa14299b15ab37eebdae92046e/.skills/svelte-best-practices/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/kursku/skills/blob/346c313fd2ec241a088c68274da26c538422568b/packs/kit-510-ptbr/09-redes-sociais/viral-content-formula/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/aupowell22-code/Claudecode-/blob/2234088b3f1c98bb5676e0b870d4dea93cdf815b/skills/lovable/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/inho-team/qe-framework/blob/5a358e06d03e1192c86efe88c5efac87eb877fc3/scripts/fixtures/skill-frontmatter/dupe-b/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/kunhai-88/skills/blob/2742b5f777038de67de1f56d9c4694dd619313fa/brand-guidelines/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/Theycallmeholla/skills/blob/24b4772799680cab841abd767cfd2300d4637836/skills/code-audit/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/dvy1987/agent-loom/blob/54960e6b73986113709765f8515650589be64198/.agents/skills/venture-exploration/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/bitwikiorg/skills.md/blob/66c3e1d569dfd3e2191263d10b363a1c64fc5f12/sources/openai/one_on_one_template/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/majiayu000/claude-skill-registry-data/blob/f75d9bac47991ca32973048f0a1e258528c41321/development/using-webctl-oaustegard-claude-skills-2/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/H4D3ZS/FlutterSentinel/blob/fa51e61847c642c5f75eb50f2509e5def2ad4665/core/fbhbot/skills/mission-orchestration/SKILL.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/fwerkor/ConfigFuzz/blob/19d26396642ad7a014b9350fbb3f9468f94c3e03/docs/task6_skill.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/majiayu000/claude-skill-registry-data/blob/f75d9bac47991ca32973048f0a1e258528c41321/devops/learning-practice-generator-pauljbernard-content/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/altrupets/monorepo/blob/693b8c6bcfcb190a537dddea6f85f6dd30b7d16e/skills/flutter/firebase/SKILL.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/HabitaNexus/monorepo/blob/7017474614e6f4fa7732f9084b12dd96b048b213/skills/flutter/firebase/SKILL.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/vertivolatam/monorepo/blob/8a5ef7e102eeb7c5c5122d6cb3da9a14a7c2f70d/skills/flutter/firebase/SKILL.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/reblocke/sodium_change/blob/96c5d60a859d76c9432d54200cc13e8e5be578ed/.agents/skills/docs-sync/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/reblocke/conf_curve_likelihood/blob/06e2013ed9af8a38c9499fedde8a756cb244db57/.agents/skills/docs-sync/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/reblocke/stewart-light/blob/f277cac54801d85366cbadbf11804f6643f6a869/.agents/skills/docs-sync/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/reblocke/VBG_interpreter/blob/acf41152fc3212016703eccedacf786eb8df562c/.agents/skills/docs-sync/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/cskwork/web-legacy-compass/blob/1dfc0bce908a4ba192007eed33fe7d839ff5758e/skills/web-legacy-compass/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/matteobortolazzo/cenci/blob/c7e0b7de0f8b0e80a917d9f0043621fde528c185/flow/skills/stack-angular/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/majiayu000/claude-skill-registry-data/blob/f75d9bac47991ca32973048f0a1e258528c41321/orchestration/search-party-euda1mon1a-autonomous-assignmen/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/davidpiontransactions-eng/pariscore/blob/91bcf0a5ea73d29ce479cd5fbbb899a0d15250d2/.agents/tools/loop-factory/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/OXOYO/skill_universe/blob/b0f5372c853192c20e5198db4fcbfa25224f2f07/skills/acai-space/SKILL.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/DEEPX-AI/dx_stream/blob/33024ecc8824b3b4fdbf054eaf679e959745b1bb/.deepx/skills/dx-agent-stream-build-pipeline/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/NagareNegishi/project-seed/blob/aa5649f66ccbe3cd8ac39c36829a538a844ee5d9/.claude/skills/session-start/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/FurlanLuka/crew/blob/a23ba89f1d5ccf8fe1a9e937c04a169eefb34033/registry/skills/web-designer/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/alunadev/ald-skills/blob/6c4c707b8c91ba57e73406fc8939602b60c9d651/skills/prompt-engineering-patterns/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/atc-net/atc-agentic-toolkit/blob/45df393fa17d0f8ab7e55f29dab00408d3862e71/plugins/azure/skills/azure-blob-storage/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/Lord1Egypt/awesome-skill-forge/blob/4aa004da461d820f4ea5499e58eb8d196cf99016/community/clawhub/v/viral-content-score/SKILL.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/badowhp/skill-mania/blob/45faa1841c922b09101ae43cb2e3d8d07845574f/skills/senior-devops-engineer/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/kbarbel640-del/skills/blob/7f57c1b6749e40d3530c6d95e356ecb2f1007a29/skills/cyberengage/rememberall/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/hfadhlullah/Tanya/blob/9a86d3028fd4734ece1d85414e4879de306b547c/.claude/skills/apply/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/418-teapot/ZooKeeper/blob/b44f26e67e8158863b38d6160dcd5bd4c194aea9/core/skills/wiki-ingest/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/alexandervashurin/semaphore/blob/871ab2c2e7b0091c2ce5cd04ca51c7e5607b4842/.claude/skills/gstack/office-hours/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/kapilvirenahuja/garura/blob/45d5d1413baf69d0bdd2c1cc332ccc1196a3d157/core/components/skills/refine-quality-profile/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/subvisual/the-a-team/blob/81e7b7285df928dcde8325ccd9311ae685f6ed2b/.claude/skills/page-brief/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 1,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/sultan9723/AegisNex/blob/ae9715608169d37eda4f186378006d5719a0bde0/.agents/skills/ci-pipeline/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/jochst/dotfiles/blob/26f8fb72edfdb6c5ce4b6295df577d78589f7185/.claude/skills/setup-deploy/SKILL.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/KamiJeong/tech-bridge-book/blob/f63cbeda06f538763e3b8965647031cae2558605/.claude/skills/speckit-plan/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/Matrixx0070/sudo-skills/blob/6bc5cc2f77b1ae38553e590c7511fbfdd5e1317e/docs/skills/ai-eval-harness/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/monang404/lunawave/blob/93802f38c6aa4f2fa3707da873054b4cb6d875af/.agent/skills/error-debugging-multi-agent-review/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/NagareNegishi/Job-Application-Tracker/blob/febf1a99b9f91aa5132cf8aa162ee897feed6901/.claude/skills/session-start/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/kobishi0401/Yuruicamp/blob/cf89a85a1fc76f0bad888f5fb0f438d55adfc029/.agents/skills/frontend-spec/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/levalencia/agent-god-mode/blob/fa638b97a18ff6d9f26cf0eaf3dfa123531bcc87/organized-skills/seo-opportunity-finder/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/sheevu/ai-agents-skills/blob/958dd316b2ea95ca4e7dc088eaa88ef17d9a93c0/skills/gemini-cli-copywriting/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/Yuxiang-Ma/agent-skills/blob/f5c2b09d46fd2332649bb41fd74a132cb3b89271/plugins/research-kit/skills/render-verify/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/gchittora/Pulsetrack/blob/8f2f37fe4377cb9efeff586c8c2b077852040d38/.agent/skills/audio-transcriber/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": [
+      "spawns a subprocess"
+    ]
+  },
+  {
+    "html_url": "https://github.com/kaikunay/psyprofiler-io/blob/4ce453d50dbf7ab9f0dd70c901691ee90bc439bb/.agent/skills/audio-transcriber/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": [
+      "spawns a subprocess"
+    ]
+  },
+  {
+    "html_url": "https://github.com/wAyNecheRui/uhuru-safi-mradi/blob/794620490997418a9a297c6b860e7f86484f7e71/.agent/skills/audio-transcriber/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": [
+      "spawns a subprocess"
+    ]
+  },
+  {
+    "html_url": "https://github.com/generic-automation-and-it/smooth-ai-stockanalysis/blob/e25652d1251a9ed5ac3a7a8bc3f0077229eaa571/.agents/skills/agile-github-task-from-diff/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/NeuralBlitz/ncx/blob/ac7ff83e9fea3192019a56aafddd015fae19ab13/buggy/ncx/.opencode/skills/multivariate-cosmology-debugging/SKILL.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/Sandeeprdy1729/skill_galaxy/blob/2dd36c8ab8f1c6d17fed619a98f8e93a69095dde/skills/product/product-specialized-skill-92/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/KasonBraley/dotfiles/blob/3cafd8f7ba77110218ecc8e1e3f30a38a4e687c4/home/.agents/skills/grill-with-docs/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/eli0shin/.dotfiles/blob/e2ca891b9d84e0b99f4570b89d1049c14e1986df/home/.agents/skills/grill-with-docs/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/mohokh67/dotfiles/blob/1518e96b964cc9d6c8a8bb353e9ab98c12514217/home/.agents/skills/grill-with-docs/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/pietdaniel/workstation-setup/blob/aeeb0fcac0a5240c362c0edadb52ea70ca6e53d1/roles/opencode/files/skills/grill-me/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/mit-network/Antigravity-awesome-skills/blob/ff3df3aee3ca73c66771fc63add36acd1538c1bf/plugins/antigravity-awesome-skills/skills/async-python-patterns/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/NeuralBlitz/buggy/blob/e06cf7ed7ed3d3a90d0443b1b31cb2be4221454c/ncx/.opencode/skills/practical-classical-mechanics-simulation/SKILL.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/GalacticVraj/Vraj-Portfolio/blob/2b6f17d71f4c81580db214b02cbe5b213673e3b1/.agent/skills/audio-transcriber/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": [
+      "spawns a subprocess"
+    ]
+  },
+  {
+    "html_url": "https://github.com/AnoushkaSamanta/receipt-verification/blob/1b9ff0213243f650d356817f7304f7bca5fadb01/.agent/git-pr-workflows-onboard/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/afnanpvt/ai-agent-skills/blob/ad7474b3da109a10cda59bcff18855c879e3fa8b/plugins/antigravity-awesome-skills/skills/async-python-patterns/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/deco31416/antigravity-awesome-skills/blob/8bd20cedf0f459508067d7a55da5967747ae97b7/plugins/antigravity-awesome-skills/skills/async-python-patterns/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/lactuphong/antigravity-awesome-skills/blob/a9e6b3ed2a9b17d1410043dd8cd0f24ca93071aa/plugins/antigravity-awesome-skills/skills/async-python-patterns/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/jonathoneco/dotfiles/blob/914688a7782d7bb00d7469314d23179d24fda4a9/home/.agents/skills/grill-with-docs/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/David-Li0406/meta-skill-evloving/blob/ca3a335628981df10c36e00cb9850df2c247ab9a/skill-flow/data/skills-refined-autoskill-36k/skillsmp/reciprocity-mandate-sync/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/ibragimov-oasis/oasis-languages-jp/blob/36f87a34072a3c2d35533a009bc5d41567fc6f94/.antigravity/skills/skills-antigravity/source-antigravity-awesome-skills/plugins/antigravity-awesome-skills/skills/apify-content-analytics/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/ibragimov-oasis/name-navigator/blob/e74ebb4a85a0c6146735ee8f69f76b51a8902b51/.antigravity/skills/skills-antigravity/source-antigravity-awesome-skills/plugins/antigravity-awesome-skills/skills/apify-content-analytics/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/ahmedfawzy8866/arc/blob/8031109cdd5637b7ac27ca70b85a148aad51c1a8/sierra-blu-platform/back/68e6-main/May 4 last plan/Applications_Data/Gemini/antigravity/scratch/antigravity-awesome-skills/plugins/antigravity-awesome-skills/skills/dwarf-expert/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/micsapp/micstec-skills/blob/3f5d983eb4ef375b749adcd6b07ec03bd82ae8a8/claude-code/plugins-plus-skills/plugins/testing/chaos-engineering-toolkit/skills/running-chaos-tests/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/HaoNgo232/agent-bridge-kit/blob/ab3a7d2f3147c7cb4fdc735688d99d6a8ec22a14/.github/skills/rust-pro/SKILL.md",
+    "parse_ok": true,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/javiertarazon/agente-freejt7-extension-funcional/blob/9a82a20a3e12da4389f16e3ed6a52bc08c29202d/.github/skills/business-analyst/SKILL.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/javiertarazon/ide-agente-free-jt7-/blob/a92ea02bcf7e2b3dbaf46d49696c29a3cb490d4f/.github/skills/business-analyst/SKILL.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/javiertarazon/agente-copilot/blob/704bde776c1fe69ffb67f0cca549ab129d12df90/.github/skills/business-analyst/SKILL.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  },
+  {
+    "html_url": "https://github.com/fsales/curso-android-capgemini-proway/blob/102b13b9c4c56fc0e8f76ad05fff919c16b5bd7d/modulo-02/Rumo/.github/skills/android-expert/SKILL.md",
+    "parse_ok": false,
+    "lint_issue_count": 0,
+    "injection_flags": [],
+    "code_pattern_flags": []
+  }
+]
