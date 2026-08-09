@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "skillsmith"
+version = "0.1.0"
+description = "Author, lint, and package Claude Agent Skills (SKILL.md) with confidence."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "skillsmith contributors" }]
+keywords = ["claude", "anthropic", "agent-skills", "ai-agents", "cli", "linter"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Software Development :: Libraries",
+]
+dependencies = ["pyyaml>=6.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+skillsmith = "skillsmith.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["skillsmith*"]
