@@ -1,0 +1,87 @@
+name: "skillsmith"
+description: "Lint and security-scan Claude Agent Skills (SKILL.md) in CI. Fails the build on lint errors or high-risk security findings."
+author: "skillsmith contributors"
+branding:
+  icon: "shield"
+  color: "green"
+
+inputs:
+  path:
+    description: "Directory to search for SKILL.md files (recursively)."
+    required: false
+    default: "."
+  fail-on-lint-errors:
+    description: "Fail the action if any skill has lint errors (missing frontmatter fields, empty body, etc.)."
+    required: false
+    default: "true"
+  fail-on-high-risk:
+    description: "Fail the action if the security scan finds a skill scoring 'high' risk."
+    required: false
+    default: "true"
+  skillsmith-version:
+    description: "Version/ref of skillsmith to install, e.g. a git tag. Defaults to the latest release on PyPI once published; until then installs from GitHub main."
+    required: false
+    default: ""
+
+outputs:
+  lint-result:
+    description: "'pass' or 'fail'"
+    value: ${{ steps.lint.outputs.result }}
+  scan-result:
+    description: "'pass' or 'fail'"
+    value: ${{ steps.scan.outputs.result }}
+
+runs:
+  using: "composite"
+  steps:
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.11"
+
+    - name: Install skillsmith
+      shell: bash
+      run: |
+        if [ -n "${{ inputs.skillsmith-version }}" ]; then
+          pip install "git+https://github.com/Larslllllll/skillsmith.git@${{ inputs.skillsmith-version }}"
+        else
+          pip install "git+https://github.com/Larslllllll/skillsmith.git"
+        fi
+
+    - name: Lint skills
+      id: lint
+      shell: bash
+      run: |
+        set +e
+        skillsmith lint "${{ inputs.path }}"
+        code=$?
+        set -e
+        if [ "$code" -ne 0 ]; then
+          echo "result=fail" >> "$GITHUB_OUTPUT"
+          if [ "${{ inputs.fail-on-lint-errors }}" = "true" ]; then
+            echo "::error::skillsmith lint found errors under ${{ inputs.path }}"
+            exit 1
+          fi
+        else
+          echo "result=pass" >> "$GITHUB_OUTPUT"
+        fi
+
+    - name: Security scan skills
+      id: scan
+      shell: bash
+      run: |
+        set +e
+        if [ "${{ inputs.fail-on-high-risk }}" = "true" ]; then
+          skillsmith scan "${{ inputs.path }}" --fail-on-high
+        else
+          skillsmith scan "${{ inputs.path }}"
+        fi
+        code=$?
+        set -e
+        if [ "$code" -ne 0 ]; then
+          echo "result=fail" >> "$GITHUB_OUTPUT"
+          echo "::error::skillsmith scan found high-risk findings under ${{ inputs.path }}"
+          exit 1
+        else
+          echo "result=pass" >> "$GITHUB_OUTPUT"
+        fi

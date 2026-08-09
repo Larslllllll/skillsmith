@@ -114,6 +114,20 @@ for skill_dir in find_skill_dirs("."):
         raise SystemExit(f"{skill_dir} failed lint: {result.errors}")
 ```
 
+## Use it in CI (GitHub Action)
+
+```yaml
+# .github/workflows/skillsmith.yml
+- uses: actions/checkout@v4
+- uses: Larslllllll/skillsmith@main
+  with:
+    path: .
+```
+
+Lints and security-scans every `SKILL.md` in the repo on every PR, fails
+the build on lint errors or a `high` risk finding. Full docs, inputs, and
+outputs: [GITHUB_ACTION.md](GITHUB_ACTION.md).
+
 ## Security scanning
 
 ```bash

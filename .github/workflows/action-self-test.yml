@@ -1,0 +1,16 @@
+name: action-self-test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test-action:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run skillsmith action against this repo's own example skill
+        uses: ./
+        with:
+          path: examples/skill-doctor
