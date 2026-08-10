@@ -2,7 +2,7 @@
 
 **Author, lint, package, and security-scan Claude Agent Skills with confidence.**
 
-**Try it live, no install:** [skillsmith-web.vercel.app](https://skillsmith-web.vercel.app) — paste a SKILL.md, get instant lint + security-scan results.
+**Try it live, no install:** [skillsmith.ch](https://skillsmith.ch) — paste a SKILL.md, get instant lint + security-scan results.
 
 [![CI](https://github.com/Larslllllll/skillsmith/actions/workflows/ci.yml/badge.svg)](https://github.com/Larslllllll/skillsmith/actions/workflows/ci.yml)
 [![PyPI-ready](https://img.shields.io/badge/pypi-ready-blue)](https://pypi.org/)
