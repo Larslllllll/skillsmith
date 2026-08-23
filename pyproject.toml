@@ -3,9 +3,9 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "skillsmith"
+name = "skillsmith-scanner"
 version = "0.2.0"
-description = "Author, lint, and package Claude Agent Skills (SKILL.md) with confidence."
+description = "Security scanner and linter for Claude Agent Skills (SKILL.md): detect prompt injection, data exfiltration, and dangerous code before you install a skill. Web scanner at https://skillsmith.ch"
 readme = "README.md"
 requires-python = ">=3.9"
 license = { text = "MIT" }
@@ -26,6 +26,7 @@ dev = ["pytest>=7.0"]
 
 [project.scripts]
 skillsmith = "skillsmith.cli:main"
+skillsmith-scanner = "skillsmith.cli:main"
 
 [tool.setuptools.packages.find]
 include = ["skillsmith*"]

@@ -65,7 +65,7 @@ HIGH   risk=23 sketchy-skill (./my-skills/sketchy-skill)
 ## Install
 
 ```bash
-pip install -e .          # from a clone, until this is published to PyPI
+pip install skillsmith-scanner   # PyPI package (the bare `skillsmith` name on PyPI belongs to an unrelated project)
 ```
 
 ## Quickstart
