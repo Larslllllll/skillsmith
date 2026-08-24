@@ -53,6 +53,7 @@ _PROMPT_INJECTION_PATTERNS: list[tuple[re.Pattern, int, str]] = [
     (re.compile(r"(?i)disregard (your|any) (safety|previous) (guidelines|instructions)"), 10, "safety-override phrasing"),
     (re.compile(r"[\u200b\u200c\u200d\ufeff]"), 7, "contains zero-width/invisible unicode characters (common prompt-injection hiding technique)"),
     (re.compile(r"[\u202a-\u202e\u2066-\u2069]"), 8, "contains RTL/bidi direction override characters (can silently reverse displayed text - classic instruction-hiding trick)"),
+    (re.compile(r"https?://[^\s\"'<>\]]*(?:[?&](?:api[_-]?key|key|token|secret|password|passwd|auth)=)[^\s\"'<>\]]*", re.I), 9, "URL carries a credential-looking query parameter (possible exfiltration endpoint)"),
 ]
 
 
@@ -125,6 +126,23 @@ def scan_skill_dir(skill_dir: Path) -> ScanResult:
     _nbody = _norm(lint_result.body or "")
     if _nbody != lint_result.body and _nbody.strip():
         result.findings.extend(_scan_text(_nbody, "body(normalized)", _PROMPT_INJECTION_PATTERNS))
+    # PT-T75 parity: short base64 runs are decoded and the plaintext scanned
+    import base64 as _b64
+
+    def _decoded_variants(t: str) -> list:
+        out = []
+        for run in re.findall(r"[A-Za-z0-9+/=]{16,}", t):
+            try:
+                pad = "=" * (-len(run) % 4)
+                dec = _b64.b64decode(run + pad, validate=True).decode("utf-8", errors="ignore")
+            except Exception:
+                continue
+            if dec and sum(c.isprintable() for c in dec) / max(len(dec), 1) > 0.8:
+                out.append(dec)
+        return out
+
+    for dv in _decoded_variants(lint_result.body or ""):
+        result.findings.extend(_scan_text(dv, "base64-decoded", _PROMPT_INJECTION_PATTERNS))
 
     for py_file in _python_files(skill_dir):
         source = py_file.read_text(encoding="utf-8", errors="replace")
