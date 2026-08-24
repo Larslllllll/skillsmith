@@ -98,6 +98,19 @@ skillsmith package ./my-great-skill --out my-great-skill.zip
 | `description-length` | warning | description is unusually long (context-budget smell) |
 | `python-import-unresolved` | warning | `python_import` doesn't resolve to a local module or an installed package |
 
+**Risk scoring** (static engine) additionally flags, among others:
+
+- prompt-injection phrasing (incl. paraphrases and frontmatter `description`)
+- credential/environment snooping, exfiltration instructions
+- URLs carrying `key=`/`token=`/`secret=`/`password=`/`auth=` query parameters
+- obfuscation: zero-width & RTL/bidi override characters, fullwidth characters,
+  combining-mark stacking, base64-encoded payloads (decoded and re-scanned)
+- dangerous code patterns (`eval`, `exec`, pickle deserialization, raw sockets,
+  destructive shell commands)
+
+Verdicts: `clean` (0), `low`, `medium`, `high`. Every finding is listed with its
+rule name so you can judge the reasoning yourself.
+
 ## Library usage
 
 `skillsmith` is also a small, well-tested Python library, so you can wire
