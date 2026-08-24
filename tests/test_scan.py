@@ -69,3 +69,16 @@ def test_invalid_python_is_flagged(tmp_path):
     d = write_skill(tmp_path / "broken", CLEAN_MD, "def f(:\n  pass", py_name="broken.py")
     result = scan_skill_dir(d)
     assert any("does not parse" in f.message for f in result.findings)
+
+
+def test_unicode_evasion_patterns(tmp_path):
+    # PT-T72 parity: zero-width + RTL/bidi overrides must be flagged
+    d = tmp_path / "sk"
+    d.mkdir()
+    (d / "SKILL.md").write_text(
+        "---\nname: ev\ndescription: d\n---\n\nIg\u200bnores \u202ehidden\u202c\n", encoding="utf-8")
+    result = scan_skill_dir(d)
+    msgs = " | ".join(f.message for f in result.findings)
+    assert "zero-width" in msgs
+    assert "RTL" in msgs
+    assert result.risk_score >= 15
