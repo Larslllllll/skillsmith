@@ -121,6 +121,22 @@ def _cmd_watch(args: argparse.Namespace) -> int:
         print("No API key: pass --api-key or set SKILLSMITH_API_KEY (free at https://skillsmith.ch)", file=sys.stderr)
         return 1
     try:
+        if args.delete:
+            import json as _json
+            import urllib.request as _ureq_d
+            from urllib.parse import urlencode as _ue_d
+            req_d = _ureq_d.Request(
+                os.environ.get("SKILLSMITH_API_BASE", "https://skillsmith.ch")
+                + "/api/watch?" + _ue_d({"watch_id": args.delete, "api_key": api_key}),
+                method="DELETE")
+            try:
+                with _ureq_d.urlopen(req_d, timeout=30) as resp_d:
+                    data = _json.loads(resp_d.read().decode())
+            except _ureq_d.HTTPError as e129:
+                print(f"error: HTTP {e129.code} (not found or not yours)", file=sys.stderr)
+                return 1
+            print(f"deleted: {args.delete}" if data.get("deleted") else "nothing deleted")
+            return 0
         if args.list:
             from urllib.parse import urlencode
             import json as _json
@@ -197,6 +213,7 @@ def build_parser() -> argparse.ArgumentParser:
     p_watch.add_argument("--url", help="github.com blob or raw URL of the SKILL.md to watch")
     p_watch.add_argument("--check", dest="watch_id", help="existing watch_id to re-check instead of creating")
     p_watch.add_argument("--list", action="store_true", help="list all your watches with their last status")
+    p_watch.add_argument("--delete", metavar="WATCH_ID", help="remove a watch you own")
     p_watch.add_argument("--webhook", help="optional Discord/Slack webhook for automatic change alerts")
     p_watch.add_argument("--api-key", default="", help="API key (or set SKILLSMITH_API_KEY)")
     p_watch.set_defaults(func=_cmd_watch)
