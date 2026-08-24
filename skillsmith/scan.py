@@ -115,6 +115,16 @@ def scan_skill_dir(skill_dir: Path) -> ScanResult:
     _fm_lines = "\n".join(f"{k}: {v}" for k, v in (lint_result.frontmatter or {}).items() if isinstance(v, str))
     if _fm_lines:
         result.findings.extend(_scan_text(_fm_lines, "frontmatter", _PROMPT_INJECTION_PATTERNS))
+    # PT-T74 parity: normalized variants catch fullwidth/combining-mark obfuscation
+    import unicodedata as _ud
+
+    def _norm(t: str) -> str:
+        t = "".join(chr(ord(c) - 0xFEE0) if 0xFF01 <= ord(c) <= 0xFF5E else c for c in t)
+        return "".join(c for c in _ud.normalize("NFKD", t) if not _ud.combining(c))
+
+    _nbody = _norm(lint_result.body or "")
+    if _nbody != lint_result.body and _nbody.strip():
+        result.findings.extend(_scan_text(_nbody, "body(normalized)", _PROMPT_INJECTION_PATTERNS))
 
     for py_file in _python_files(skill_dir):
         source = py_file.read_text(encoding="utf-8", errors="replace")
