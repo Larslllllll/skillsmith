@@ -157,3 +157,17 @@ pytest -q
 ## License
 
 MIT — see [LICENSE](LICENSE).
+
+
+## Releasing (maintainers)
+
+Releases are published to PyPI as [`skillsmith-scanner`](https://pypi.org/project/skillsmith-scanner/) via
+GitHub Actions trusted publishing (OIDC — no API token stored in the repo):
+
+1. Bump `version` in `pyproject.toml`.
+2. Tag + create a GitHub **Release** (`workflow_dispatch` also works for manual runs).
+3. The `publish.yml` workflow builds sdist+wheel with `uv build`, smoke-tests the wheel,
+   and uploads via `pypa/gh-action-pypi-publish`.
+
+One-time setup on PyPI: add a *pending publisher* for project `skillsmith-scanner`
+→ owner `Larslllllll`, repo `skillsmith`, workflow `publish.yml`, environment `pypi`.
