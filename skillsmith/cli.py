@@ -101,7 +101,10 @@ def _cmd_lookup(args: argparse.Namespace) -> int:
     try:
         out = public_scan(digest)
     except Exception as e127:  # noqa: BLE001 - CLI surface
-        print(f"error: {e127}", file=sys.stderr)
+        if "503" in str(e127) or "Service Unavailable" in str(e127):
+            print("service temporarily unavailable - please retry in a few minutes", file=sys.stderr)
+        else:
+            print(f"error: {e127}", file=sys.stderr)
         return 1
     if out.get("error"):
         print(f"unknown hash ({digest[:16]}...) - not scanned yet, or scan it at https://skillsmith.ch")
