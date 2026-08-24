@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import os
 import sys
 from pathlib import Path
 
@@ -9,6 +10,7 @@ from .lint import find_skill_dirs, lint_skill_dir
 from .package import package_skill
 from .scaffold import scaffold_skill
 from .scan import scan_skill_dir
+from .watch import check_watch, create_watch
 
 
 def _cmd_init(args: argparse.Namespace) -> int:
@@ -86,6 +88,36 @@ def _cmd_scan(args: argparse.Namespace) -> int:
     return exit_code
 
 
+def _cmd_watch(args: argparse.Namespace) -> int:
+    api_key = args.api_key or os.environ.get("SKILLSMITH_API_KEY", "")
+    if not api_key:
+        print("No API key: pass --api-key or set SKILLSMITH_API_KEY (free at https://skillsmith.ch)", file=sys.stderr)
+        return 1
+    try:
+        if args.watch_id:
+            out = check_watch(args.watch_id, api_key)
+            status = out.get("status", "?")
+            marks = {"changed": "CHANGED", "unchanged": "ok", "unreachable": "unreachable"}
+            print(f"{marks.get(status, status):12} {args.watch_id} (checks: {out.get('checks', '?')})")
+            if status == "changed":
+                print("The watched skill changed after you vetted it. Re-run your full audit!", file=sys.stderr)
+                return 2
+            if status == "unreachable":
+                return 3
+            return 0
+        out = create_watch(args.url, api_key, webhook_url=args.webhook or "")
+        print(f"Watching {args.url}")
+        print(f"  watch_id:       {out.get('watch_id')}")
+        print(f"  baseline_sha256: {out.get('baseline_sha256')}")
+        if args.webhook:
+            print(f"  webhook alerts: enabled ({args.webhook.split('/')}...)")
+        print("Check anytime: skillsmith watch --check <watch_id>")
+        return 0
+    except Exception as e126:  # noqa: BLE001 - CLI surface, show server message
+        print(f"error: {e126}", file=sys.stderr)
+        return 1
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="skillsmith", description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
@@ -115,6 +147,13 @@ def build_parser() -> argparse.ArgumentParser:
     p_scan.add_argument("--verbose", action="store_true", help="also print clean skills")
     p_scan.add_argument("--fail-on-high", action="store_true", help="exit 1 if any skill scores 'high' risk")
     p_scan.set_defaults(func=_cmd_scan)
+
+    p_watch = sub.add_parser("watch", help="rug-pull watch for a GitHub-hosted SKILL.md")
+    p_watch.add_argument("--url", help="github.com blob or raw URL of the SKILL.md to watch")
+    p_watch.add_argument("--check", dest="watch_id", help="existing watch_id to re-check instead of creating")
+    p_watch.add_argument("--webhook", help="optional Discord/Slack webhook for automatic change alerts")
+    p_watch.add_argument("--api-key", default="", help="API key (or set SKILLSMITH_API_KEY)")
+    p_watch.set_defaults(func=_cmd_watch)
 
     return parser
 
