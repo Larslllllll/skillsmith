@@ -121,6 +121,19 @@ def _cmd_watch(args: argparse.Namespace) -> int:
         print("No API key: pass --api-key or set SKILLSMITH_API_KEY (free at https://skillsmith.ch)", file=sys.stderr)
         return 1
     try:
+        if args.list:
+            from urllib.parse import urlencode
+            import json as _json
+            import urllib.request as _ureq
+            req_l = _ureq.Request(
+                os.environ.get("SKILLSMITH_API_BASE", "https://skillsmith.ch")
+                + "/api/watch?" + urlencode({"list": 1, "api_key": api_key}))
+            with _ureq.urlopen(req_l, timeout=30) as resp_l:
+                data = _json.loads(resp_l.read().decode())
+            for it in data.get("watches", []):
+                print(f"{it.get('watch_id','?'):18} {it.get('last_status') or '?':12} checks={it.get('checks', 0):<4} {it.get('url','')}")
+            print(f"({data.get('count', 0)} watch(es))")
+            return 0
         if args.watch_id:
             out = check_watch(args.watch_id, api_key)
             status = out.get("status", "?")
@@ -183,6 +196,7 @@ def build_parser() -> argparse.ArgumentParser:
     p_watch = sub.add_parser("watch", help="rug-pull watch for a GitHub-hosted SKILL.md")
     p_watch.add_argument("--url", help="github.com blob or raw URL of the SKILL.md to watch")
     p_watch.add_argument("--check", dest="watch_id", help="existing watch_id to re-check instead of creating")
+    p_watch.add_argument("--list", action="store_true", help="list all your watches with their last status")
     p_watch.add_argument("--webhook", help="optional Discord/Slack webhook for automatic change alerts")
     p_watch.add_argument("--api-key", default="", help="API key (or set SKILLSMITH_API_KEY)")
     p_watch.set_defaults(func=_cmd_watch)
