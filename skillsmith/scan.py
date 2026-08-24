@@ -111,6 +111,10 @@ def scan_skill_dir(skill_dir: Path) -> ScanResult:
     lint_result = lint_skill_dir(skill_dir)
     if lint_result.body:
         result.findings.extend(_scan_text(lint_result.body, "SKILL.md body", _PROMPT_INJECTION_PATTERNS))
+    # PT-T73 parity: frontmatter values (esp. description) are scanned too
+    _fm_lines = "\n".join(f"{k}: {v}" for k, v in (lint_result.frontmatter or {}).items() if isinstance(v, str))
+    if _fm_lines:
+        result.findings.extend(_scan_text(_fm_lines, "frontmatter", _PROMPT_INJECTION_PATTERNS))
 
     for py_file in _python_files(skill_dir):
         source = py_file.read_text(encoding="utf-8", errors="replace")
