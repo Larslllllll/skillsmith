@@ -25,3 +25,19 @@ def test_watch_changed_exit_code(monkeypatch):
     import argparse
     a = argparse.Namespace(url=None, watch_id="X", webhook="", api_key="k" * 20)
     assert _cmd_watch(a) == 2  # changed -> exit 2
+
+
+def test_lookup_clean_and_unknown(monkeypatch, capsys):
+    import skillsmith.cli as cl
+    monkeypatch.setattr(cl, "public_scan", lambda d: {
+        "name": "demo", "risk_level": "clean", "risk_score": 100,
+        "lint_ok": True, "parse_ok": True, "seen_count": 2})
+    from skillsmith.cli import _cmd_lookup
+    a = argparse.Namespace(hash="a" * 64, file=None)
+    assert _cmd_lookup(a) == 0
+    out = capsys.readouterr().out
+    assert "demo" in out and "clean" in out
+    monkeypatch.setattr(cl, "public_scan", lambda d: {"error": "unknown_hash"})
+    b = argparse.Namespace(hash="b" * 64, file=None)
+    assert _cmd_lookup(b) == 1
+    assert "not scanned yet" in capsys.readouterr().out

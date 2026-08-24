@@ -10,6 +10,7 @@ from .lint import find_skill_dirs, lint_skill_dir
 from .package import package_skill
 from .scaffold import scaffold_skill
 from .scan import scan_skill_dir
+from .lookup import public_scan, sha256_of_file
 from .watch import check_watch, create_watch
 
 
@@ -88,6 +89,32 @@ def _cmd_scan(args: argparse.Namespace) -> int:
     return exit_code
 
 
+def _cmd_lookup(args: argparse.Namespace) -> int:
+    if args.hash:
+        digest = args.hash.strip().lower()
+    else:
+        path = Path(args.file)
+        if not path.exists():
+            print(f"file not found: {path}", file=sys.stderr)
+            return 1
+        digest = sha256_of_file(path)
+    try:
+        out = public_scan(digest)
+    except Exception as e127:  # noqa: BLE001 - CLI surface
+        print(f"error: {e127}", file=sys.stderr)
+        return 1
+    if out.get("error"):
+        print(f"unknown hash ({digest[:16]}...) - not scanned yet, or scan it at https://skillsmith.ch")
+        return 1
+    print(f"skill:      {out.get('name') or '(unnamed)'}")
+    print(f"risk_level: {out.get('risk_level')}  (risk_score {out.get('risk_score')})")
+    print(f"lint_ok: {out.get('lint_ok')}  parse_ok: {out.get('parse_ok')}  seen: {out.get('seen_count')}x")
+    if out.get("has_content"):
+        print("published: yes (fetchable via /api/skill with an API key)")
+    lvl = (out.get("risk_level") or "").lower()
+    return 0 if lvl == "clean" else 2
+
+
 def _cmd_watch(args: argparse.Namespace) -> int:
     api_key = args.api_key or os.environ.get("SKILLSMITH_API_KEY", "")
     if not api_key:
@@ -147,6 +174,11 @@ def build_parser() -> argparse.ArgumentParser:
     p_scan.add_argument("--verbose", action="store_true", help="also print clean skills")
     p_scan.add_argument("--fail-on-high", action="store_true", help="exit 1 if any skill scores 'high' risk")
     p_scan.set_defaults(func=_cmd_scan)
+
+    p_lookup = sub.add_parser("lookup", help="key-less verdict lookup for a skill hash")
+    p_lookup.add_argument("--hash", help="SHA-256 hex of the SKILL.md text")
+    p_lookup.add_argument("--file", help="local SKILL.md file (hashed automatically)")
+    p_lookup.set_defaults(func=_cmd_lookup)
 
     p_watch = sub.add_parser("watch", help="rug-pull watch for a GitHub-hosted SKILL.md")
     p_watch.add_argument("--url", help="github.com blob or raw URL of the SKILL.md to watch")
