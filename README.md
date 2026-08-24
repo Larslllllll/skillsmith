@@ -145,6 +145,27 @@ and reads of credential-shaped environment variables or `~/.ssh` /
 substitute for actually reading the code — see [SCAN_RESULTS.md](SCAN_RESULTS.md)
 for what it found (and didn't find) against real data.
 
+## Cloud features (lookup & rug-pull watch)
+
+The scanner pairs with the free cloud service at [skillsmith.ch](https://skillsmith.ch):
+
+```bash
+# Key-less verdict check for a skill hash (no account needed):
+skillsmith lookup --file ./my-skill/SKILL.md
+skillsmith lookup --hash <sha256>
+
+# Rug-pull watch: baseline a GitHub-hosted SKILL.md and get alerted when it changes
+# (free API key via GitHub sign-in at skillsmith.ch):
+export SKILLSMITH_API_KEY=sk_...
+skillsmith watch --url https://github.com/user/repo/blob/main/SKILL.md \
+                 --webhook https://discord.com/api/webhooks/...   # optional auto-alerts
+skillsmith watch --check <watch_id>    # exit 2 = content changed after you vetted it
+```
+
+Recommended workflow: `scan` locally → publish → `watch` the hosted file so a
+later, hostile edit can't silently invalidate your review. See the
+[security guides](https://skillsmith.ch/guides.html) for background.
+
 ## Development
 
 ```bash
