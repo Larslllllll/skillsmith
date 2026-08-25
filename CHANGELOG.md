@@ -92,3 +92,11 @@ Engine hardening release (web + CLI parity):
 - Lint hardening (web + CLI): required frontmatter fields (name,
   description) must be non-empty strings -- YAML type confusion
   (lists/dicts/numbers) is now a lint error and blocks publishing.
+
+### 0.3.x (unreleased)
+
+- Unicode hardening (web + CLI): C0/C1 control characters and DEL
+  inside words no longer break phrase detection (NUL/BEL/VT/ESC/DEL
+  were stripped from consideration before; now normalized away like
+  zero-width characters). Tabs, newlines and carriage returns are
+  preserved.
