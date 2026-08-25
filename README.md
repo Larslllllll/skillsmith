@@ -156,7 +156,8 @@ skillsmith scan ./my-skills --fail-on-high # non-zero exit if anything scores "h
 
 Detects, in the SKILL.md body: prompt-injection phrasing ("ignore previous
 instructions", "you are now in DAN mode", "override your guidelines",
-instructions to hide actions or exfiltrate credentials from the user). Detects, in any local `python_import`
+instructions to hide actions or exfiltrate credentials from the user,
+prose that extracts credential-shaped environment variables). Detects, in any local `python_import`
 module: `os.system`/`subprocess`, `eval`/`exec`, `pickle.loads`,
 `__import__`, raw sockets, outbound HTTP calls, destructive shell commands,
 and reads of credential-shaped environment variables or `~/.ssh` /
