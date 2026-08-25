@@ -127,16 +127,34 @@ def scan_skill_dir(skill_dir: Path) -> ScanResult:
         # SKILL.md body (incl. fenced code blocks), not just .py files.
         result.findings.extend(_scan_text(lint_result.body, "SKILL.md body", _CODE_PATTERNS))
     # PT-T73 parity: frontmatter values (esp. description) are scanned too
-    def _fm_flat2(obj2, prefix2=""):
-        # PT-T119 parity: multiline block scalars nest values as dicts/lists -
-        # flatten them so hidden injection text is scanned too.
+    def _fm_flat2(obj2, prefix2="", seen2=None, budget2=None):
+        # PT-T119/120 parity: flatten nested frontmatter values, but walk each
+        # object reference only once (YAML aliases share objects) and cap total
+        # nodes so alias bombs cannot burn CPU.
+        if seen2 is None:
+            seen2 = set()
+        if budget2 is None:
+            budget2 = [20000]
+        if budget2[0] <= 0:
+            return []
+        oid2 = id(obj2)
+        if isinstance(obj2, (dict, list)):
+            if oid2 in seen2:
+                return []
+            seen2.add(oid2)
         parts2 = []
         if isinstance(obj2, dict):
-            for k3, v3 in obj2.items():
-                parts2.extend(_fm_flat2(v3, f"{prefix2}{k3}: "))
+            for k4, v4 in obj2.items():
+                budget2[0] -= 1
+                if budget2[0] <= 0:
+                    break
+                parts2.extend(_fm_flat2(v4, f"{prefix2}{k4}: ", seen2, budget2))
         elif isinstance(obj2, list):
-            for item2 in obj2:
-                parts2.extend(_fm_flat2(item2, prefix2))
+            for item3 in obj2:
+                budget2[0] -= 1
+                if budget2[0] <= 0:
+                    break
+                parts2.extend(_fm_flat2(item3, prefix2, seen2, budget2))
         else:
             parts2.append(f"{prefix2}{obj2}")
         return parts2
