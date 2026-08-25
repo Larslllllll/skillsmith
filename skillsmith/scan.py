@@ -127,7 +127,20 @@ def scan_skill_dir(skill_dir: Path) -> ScanResult:
         # SKILL.md body (incl. fenced code blocks), not just .py files.
         result.findings.extend(_scan_text(lint_result.body, "SKILL.md body", _CODE_PATTERNS))
     # PT-T73 parity: frontmatter values (esp. description) are scanned too
-    _fm_lines = "\n".join(f"{k}: {v}" for k, v in (lint_result.frontmatter or {}).items() if isinstance(v, str))
+    def _fm_flat2(obj2, prefix2=""):
+        # PT-T119 parity: multiline block scalars nest values as dicts/lists -
+        # flatten them so hidden injection text is scanned too.
+        parts2 = []
+        if isinstance(obj2, dict):
+            for k3, v3 in obj2.items():
+                parts2.extend(_fm_flat2(v3, f"{prefix2}{k3}: "))
+        elif isinstance(obj2, list):
+            for item2 in obj2:
+                parts2.extend(_fm_flat2(item2, prefix2))
+        else:
+            parts2.append(f"{prefix2}{obj2}")
+        return parts2
+    _fm_lines = "\n".join(_fm_flat2(lint_result.frontmatter or {}))
     if _fm_lines:
         result.findings.extend(_scan_text(_fm_lines, "frontmatter", _PROMPT_INJECTION_PATTERNS))
         result.findings.extend(_scan_text(_fm_lines, "frontmatter", _PARAPHRASE_PATTERNS))
