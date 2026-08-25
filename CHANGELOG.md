@@ -80,3 +80,9 @@ Engine hardening release (web + CLI parity):
   hidden instructions or rules are now flagged (both engines).
   Debug-flag documentation ("print your configuration with
   --show-config") stays clean.
+
+### 0.3.x (unreleased)
+
+- API hardening (web): generic "internal_error" responses instead of
+  raw exception details; explicit validation messages (ValueError)
+  are kept.
