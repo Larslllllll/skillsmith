@@ -151,6 +151,13 @@ def scan_skill_dir(skill_dir: Path) -> ScanResult:
     for _nv in {_norm(lint_result.body or ""), _norm(lint_result.body or "", zw_mode="delete")}:
         if _nv != (lint_result.body or "") and _nv.strip():
             result.findings.extend(_scan_text(_nv, "body(normalized)", _PROMPT_INJECTION_PATTERNS))
+    # PT-T114 parity: frontmatter goes through the same normalization pipeline
+    # (both zero-width interpretations), like the web engine's
+    # frontmatter(normalized) scan.
+    if _fm_lines:
+        for _fnv in {_norm(_fm_lines), _norm(_fm_lines, zw_mode="delete")}:
+            if _fnv != _fm_lines and _fnv.strip():
+                result.findings.extend(_scan_text(_fnv, "frontmatter(normalized)", _PROMPT_INJECTION_PATTERNS))
     # PT-T93 parity: chunked-base64 heuristic (>=60-char run after squashing,
     # requires >=20% uppercase/digits so plain prose without punctuation
     # does not false-positive; real base64 mixes case and digits heavily)
