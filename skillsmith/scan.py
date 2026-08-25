@@ -193,7 +193,12 @@ def scan_skill_dir(skill_dir: Path) -> ScanResult:
         return out
 
     for dv in _decoded_variants(lint_result.body or ""):
-        result.findings.extend(_scan_text(dv, "base64-decoded", _PROMPT_INJECTION_PATTERNS))
+        # PT-T110 parity: decoded payloads can carry homoglyph/unicode
+        # obfuscation - scan normalized variants too.
+        for dv_n in {_norm(dv), _norm(dv, zw_mode="delete")}:
+            if dv_n.strip():
+                result.findings.extend(_scan_text(dv_n, "base64-decoded", _PROMPT_INJECTION_PATTERNS))
+                break
 
     for py_file in _python_files(skill_dir):
         source = py_file.read_text(encoding="utf-8", errors="replace")
