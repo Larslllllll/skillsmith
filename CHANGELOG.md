@@ -100,3 +100,11 @@ Engine hardening release (web + CLI parity):
   were stripped from consideration before; now normalized away like
   zero-width characters). Tabs, newlines and carriage returns are
   preserved.
+
+### 0.3.x (unreleased)
+
+- Unicode hardening (web + CLI): all Unicode format characters
+  (Unicode category Cf -- LRM, RLM, FUNCTION APPLICATION,
+  INVISIBLE TIMES, ARABIC LETTER MARK, ...) are now normalized away
+  like zero-width characters and can no longer break phrase
+  detection.
