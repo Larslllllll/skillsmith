@@ -126,6 +126,19 @@ def scan_skill_dir(skill_dir: Path) -> ScanResult:
     _nbody = _norm(lint_result.body or "")
     if _nbody != lint_result.body and _nbody.strip():
         result.findings.extend(_scan_text(_nbody, "body(normalized)", _PROMPT_INJECTION_PATTERNS))
+    # PT-T93 parity: chunked-base64 heuristic (>=60-char run after squashing,
+    # requires >=20% uppercase/digits so plain prose without punctuation
+    # does not false-positive; real base64 mixes case and digits heavily)
+    _sq = re.sub(r"\s+", "", lint_result.body or "")
+    for _run_m in re.finditer(r"[A-Za-z0-9+/=]{60,}", _sq):
+        _rt = _run_m.group(0)
+        if sum(c.isupper() or c.isdigit() for c in _rt) / len(_rt) >= 0.20:
+            result.findings.append(ScanFinding(
+                source="SKILL.md body",
+                message="contains a long encoded blob even after joining wrapped lines (possible hidden payload)",
+                weight=5))
+            break
+
     # PT-T75 parity: short base64 runs are decoded and the plaintext scanned
     import base64 as _b64
 
