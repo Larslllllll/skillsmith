@@ -116,3 +116,11 @@ Engine hardening release (web + CLI parity):
   separator/removal handling as zero-width characters; private-use
   characters and line/paragraph separators are normalized away.
   None of these can break phrase detection anymore.
+
+### 0.3.x (unreleased)
+
+- Secret detection (web + CLI): hardcoded secret material is now
+  flagged -- embedded PEM private key blocks, AWS access key ids
+  (AKIA...), GitHub personal access tokens (ghp_...), live API
+  secret keys (sk-live/...), Google API keys (AIza...) and Slack
+  tokens (xox*). Canonical documentation examples stay clean.

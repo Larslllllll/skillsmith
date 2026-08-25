@@ -159,7 +159,9 @@ instructions", "you are now in DAN mode", "override your guidelines",
 jailbreak personas defined by removed restrictions (STAN/EvilGPT-style),
 concealment of agent operations from logs and user visibility,
 instructions to hide actions or exfiltrate credentials from the user,
-prose that extracts credential-shaped environment variables). Detects, in any local `python_import`
+prose that extracts credential-shaped environment variables, and hardcoded
+secret material (embedded PEM private keys, AWS/GitHub/Google/Slack API key
+literals; documentation examples stay clean)). Detects, in any local `python_import`
 module: `os.system`/`subprocess`, `eval`/`exec` (incl. getattr
 indirection), `pickle.loads`,
 `__import__`, raw sockets, outbound HTTP calls, destructive shell commands,
