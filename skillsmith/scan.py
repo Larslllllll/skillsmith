@@ -105,6 +105,16 @@ def is_syntactically_valid_python(source: str) -> bool:
         return False
 
 
+_PARAPHRASE_PATTERNS = [
+    (re.compile(r"set\s+aside\s+(?:all\s+)?(?:earlier|previous|prior)", re.I), 8, "instruction override paraphrase: 'set aside earlier guidance'"),
+    (re.compile(r"(?:disregard|discard|drop|unlearn)\s+(?:all\s+)?(?:the\s+)?(?:earlier|previous|prior|above)", re.I), 8, "instruction override paraphrase: disregard/drop prior guidance"),
+    (re.compile(r"follow\s+the\s+(?:workflow|steps?|instructions?)\s+below\s+instead", re.I), 7, "'follow ... below instead' override phrasing"),
+    (re.compile(r"collect[^.\n]{0,50}(?:credentials?|api\s*keys?|tokens?|environment\s+details?)", re.I), 9, "instructs collection of credentials/environment details"),
+    (re.compile(r"h(?:xx)?ps?://[^\s]*\[(?:\.|,)\]", re.I), 5, "bracket-defanged URL (common obfuscation in malicious docs)"),
+    (re.compile(r"forward\s+(?:gathered|collected|all)\s+", re.I), 8, "'forward gathered data' exfiltration phrasing"),
+]
+
+
 def scan_skill_dir(skill_dir: Path) -> ScanResult:
     skill_dir = Path(skill_dir)
     result = ScanResult(skill_dir=skill_dir)
@@ -112,10 +122,12 @@ def scan_skill_dir(skill_dir: Path) -> ScanResult:
     lint_result = lint_skill_dir(skill_dir)
     if lint_result.body:
         result.findings.extend(_scan_text(lint_result.body, "SKILL.md body", _PROMPT_INJECTION_PATTERNS))
+        result.findings.extend(_scan_text(lint_result.body, "SKILL.md body", _PARAPHRASE_PATTERNS))
     # PT-T73 parity: frontmatter values (esp. description) are scanned too
     _fm_lines = "\n".join(f"{k}: {v}" for k, v in (lint_result.frontmatter or {}).items() if isinstance(v, str))
     if _fm_lines:
         result.findings.extend(_scan_text(_fm_lines, "frontmatter", _PROMPT_INJECTION_PATTERNS))
+        result.findings.extend(_scan_text(_fm_lines, "frontmatter", _PARAPHRASE_PATTERNS))
     # PT-T74 parity: normalized variants catch fullwidth/combining-mark obfuscation
     import unicodedata as _ud
 
@@ -151,6 +163,7 @@ def scan_skill_dir(skill_dir: Path) -> ScanResult:
     for _nv in {_norm(lint_result.body or ""), _norm(lint_result.body or "", zw_mode="delete")}:
         if _nv != (lint_result.body or "") and _nv.strip():
             result.findings.extend(_scan_text(_nv, "body(normalized)", _PROMPT_INJECTION_PATTERNS))
+            result.findings.extend(_scan_text(_nv, "body(normalized)", _PARAPHRASE_PATTERNS))
     # PT-T114 parity: frontmatter goes through the same normalization pipeline
     # (both zero-width interpretations), like the web engine's
     # frontmatter(normalized) scan.
@@ -158,6 +171,7 @@ def scan_skill_dir(skill_dir: Path) -> ScanResult:
         for _fnv in {_norm(_fm_lines), _norm(_fm_lines, zw_mode="delete")}:
             if _fnv != _fm_lines and _fnv.strip():
                 result.findings.extend(_scan_text(_fnv, "frontmatter(normalized)", _PROMPT_INJECTION_PATTERNS))
+                result.findings.extend(_scan_text(_fnv, "frontmatter(normalized)", _PARAPHRASE_PATTERNS))
     # PT-T93 parity: chunked-base64 heuristic (>=60-char run after squashing,
     # requires >=20% uppercase/digits so plain prose without punctuation
     # does not false-positive; real base64 mixes case and digits heavily)
