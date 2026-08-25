@@ -13,7 +13,9 @@ Engine hardening release (web + CLI parity):
   equivalents before pattern matching, so homoglyph-substituted injection
   phrases are caught; legitimate Cyrillic text is unaffected. Zero-width
   characters are scanned under both interpretations (word separator and
-  hidden-in-word), closing combined-technique evasions
+  hidden-in-word), closing combined-technique evasions. Base64-decoded
+  payloads are scanned through the same normalization pipeline, so encoded
+  content cannot smuggle obfuscation past the folding stage
 - Frontmatter values (name/description block) are now scanned for prompt
   injection and paraphrase patterns - previously only the body was checked
 - Short base64 runs (>= 16 chars) are decoded (validated) and the decoded
