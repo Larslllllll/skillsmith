@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.3.1 (2026-08-26)
+
+Engine hardening release (web + CLI parity):
+
+- Control characters (C0/C1, DEL), all Unicode format characters (category Cf)
+  and space-like characters (Zs: NBSP variants, OGHAM SPACE) can no longer
+  break phrase detection; private-use characters and line/paragraph
+  separators are normalized away as well
+- Hex-escape runs with whitespace or comma separators are detected and
+  decoded like contiguous runs
+- New secret-literal detection: embedded PEM private key blocks, AWS access
+  key ids (AKIA...), GitHub tokens (ghp_...), live API secret keys,
+  Google API keys and Slack tokens; documentation examples stay clean
+
 ## 0.3.0 (2026-08-26)
 
 Engine hardening release (web + CLI parity):
@@ -73,53 +87,32 @@ Engine hardening release (web + CLI parity):
   (prompt injection, exfiltration, dangerous code, homoglyphs), OSV
   dependency enrichment, lookup/registry access
 
-### 0.3.x (unreleased)
-
-- Prompt-extraction detection: repeat/spell-out/translate/summarize
   phrasings that try to make the agent disclose its system prompt,
   hidden instructions or rules are now flagged (both engines).
   Debug-flag documentation ("print your configuration with
   --show-config") stays clean.
 
-### 0.3.x (unreleased)
-
-- API hardening (web): generic "internal_error" responses instead of
   raw exception details; explicit validation messages (ValueError)
   are kept.
 
-### 0.3.x (unreleased)
-
-- Lint hardening (web + CLI): required frontmatter fields (name,
   description) must be non-empty strings -- YAML type confusion
   (lists/dicts/numbers) is now a lint error and blocks publishing.
 
-### 0.3.x (unreleased)
-
-- Unicode hardening (web + CLI): C0/C1 control characters and DEL
   inside words no longer break phrase detection (NUL/BEL/VT/ESC/DEL
   were stripped from consideration before; now normalized away like
   zero-width characters). Tabs, newlines and carriage returns are
   preserved.
 
-### 0.3.x (unreleased)
-
-- Unicode hardening (web + CLI): all Unicode format characters
   (Unicode category Cf -- LRM, RLM, FUNCTION APPLICATION,
   INVISIBLE TIMES, ARABIC LETTER MARK, ...) are now normalized away
   like zero-width characters and can no longer break phrase
   detection.
 
-### 0.3.x (unreleased)
-
-- Unicode hardening (web + CLI): non-ASCII space characters
   (NBSP, NARROW NBSP, OGHAM SPACE MARK, ...) now follow the same
   separator/removal handling as zero-width characters; private-use
   characters and line/paragraph separators are normalized away.
   None of these can break phrase detection anymore.
 
-### 0.3.x (unreleased)
-
-- Secret detection (web + CLI): hardcoded secret material is now
   flagged -- embedded PEM private key blocks, AWS access key ids
   (AKIA...), GitHub personal access tokens (ghp_...), live API
   secret keys (sk-live/...), Google API keys (AIza...) and Slack
