@@ -35,6 +35,7 @@ _CODE_PATTERNS: list[tuple[re.Pattern, int, str]] = [
     (re.compile(r"\b__import__\s*\("), 5, "dynamically imports modules"),
     (re.compile(r"\brequests\.(post|put|get)\s*\("), 3, "makes outbound network requests"),
     (re.compile(r"\burllib\.request\.urlopen\s*\("), 3, "makes outbound network requests"),
+    (re.compile(r"getattr\s*\(\s*(?:builtins|self|os|sys)\s*,\s*['\"][^'\"]*(?:ex|ec|ev|al|sy|st)['\"]", re.I), 7, "dynamic dispatch via getattr to exec/eval/system-shaped attribute"),
     (re.compile(r"\bsocket\.socket\s*\("), 4, "opens raw sockets"),
     (re.compile(r"(?i)\brm\s+-rf\b"), 8, "contains a destructive shell command (rm -rf)"),
     (re.compile(r"os\.environ(\.get)?\s*\[?['\"](\w*(KEY|TOKEN|SECRET|PASSWORD)\w*)['\"]"), 6, "reads an environment variable that looks like a credential"),
