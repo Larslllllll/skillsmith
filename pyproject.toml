@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "skillsmith-scanner"
-version = "0.3.0"
+version = "0.3.1"
 description = "Security scanner and linter for Claude Agent Skills (SKILL.md): detect prompt injection, data exfiltration, and dangerous code before you install a skill. Web scanner at https://skillsmith.ch"
 readme = "README.md"
 requires-python = ">=3.9"
