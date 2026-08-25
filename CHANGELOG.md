@@ -16,6 +16,11 @@ Engine hardening release (web + CLI parity):
   hidden-in-word), closing combined-technique evasions. Base64-decoded
   payloads are scanned through the same normalization pipeline, so encoded
   content cannot smuggle obfuscation past the folding stage
+- Full web-engine parity: frontmatter and base64-decoded text go through the
+  same normalized variants as the body, paraphrase patterns (disregard/drop
+  prior guidance, forward gathered data, defanged URLs) are active in every
+  scan stage, and code patterns now also fire on fenced code blocks inside
+  SKILL.md - previously some of these layers only existed in the web engine
 - Frontmatter values (name/description block) are now scanned for prompt
   injection and paraphrase patterns - previously only the body was checked
 - Short base64 runs (>= 16 chars) are decoded (validated) and the decoded
