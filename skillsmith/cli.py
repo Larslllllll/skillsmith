@@ -178,7 +178,9 @@ def _cmd_watch(args: argparse.Namespace) -> int:
 
 
 def build_parser() -> argparse.ArgumentParser:
+    from . import __version__
     parser = argparse.ArgumentParser(prog="skillsmith", description=__doc__)
+    parser.add_argument("--version", action="version", version=f"skillsmith {__version__}")
     sub = parser.add_subparsers(dest="command", required=True)
 
     p_init = sub.add_parser("init", help="scaffold a new skill")
