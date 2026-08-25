@@ -86,3 +86,9 @@ Engine hardening release (web + CLI parity):
 - API hardening (web): generic "internal_error" responses instead of
   raw exception details; explicit validation messages (ValueError)
   are kept.
+
+### 0.3.x (unreleased)
+
+- Lint hardening (web + CLI): required frontmatter fields (name,
+  description) must be non-empty strings -- YAML type confusion
+  (lists/dicts/numbers) is now a lint error and blocks publishing.

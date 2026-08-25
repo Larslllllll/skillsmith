@@ -91,7 +91,7 @@ skillsmith package ./my-great-skill --out my-great-skill.zip
 | --- | --- | --- |
 | `missing-skill-md` | error | no `SKILL.md` in the target directory |
 | `unparseable` | error | missing/invalid YAML frontmatter block |
-| `missing-field` | error | `name` or `description` absent |
+| `missing-field` | error | `name` or `description` absent or not a non-empty string (YAML type confusion) |
 | `empty-body` | error | no markdown instructions after the frontmatter |
 | `python-import-type` | error | `python_import` isn't a plain string |
 | `name-format` | warning | `name` isn't lowercase kebab-case |
