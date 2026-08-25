@@ -51,6 +51,13 @@ _CODE_PATTERNS: list[tuple[re.Pattern, int, str]] = [
     (re.compile(r"requests\s*\.\s*(?:post|put)\s*\([^)]*json\s*="), 6, "NVIDIA E1: requests.post/put with a json= body (possible exfiltration)"),
     (re.compile(r"dict\s*\(\s*os\s*\.\s*environ\s*\)"), 7, "NVIDIA E2: dumps the entire environment (dict(os.environ))"),
     (re.compile(r"env\s*\|\s*grep\s+(?:-i\s+)?(?:key|secret|token|password)"), 8, "NVIDIA E2: greps env output for credential-shaped names"),
+    # PT-T170/Fix #53: hardcoded secret material itself (not just access/exfil).
+    (re.compile(r"-----BEGIN [A-Z ]*PRIVATE KEY-----"), 10, "contains an embedded PEM private key block"),
+    (re.compile(r"\bAKIA(?![0-9A-Z]*EXAMPLE)[0-9A-Z]{16}\b"), 8, "contains an AWS access key id literal (AKIA...)"),
+    (re.compile(r"\bghp_[0-9A-Za-z]{36}\b"), 8, "contains a GitHub personal access token literal (ghp_...)"),
+    (re.compile(r"\bsk-(?:live|svcacct)-[0-9A-Za-z_-]{20,}\b"), 8, "contains a live API secret key literal (sk-...)"),
+    (re.compile(r"\bAIza[0-9A-Za-z_\-]{35}\b"), 8, "contains a Google API key literal (AIza...)"),
+    (re.compile(r"\bxox[baprs]-[0-9A-Za-z\-]{10,}\b"), 8, "contains a Slack token literal (xox...)"),
     (re.compile(r"for\s+\w+\s*,\s*\w+\s+in\s+os\s*\.\s*environ\s*\.\s*items\s*\(\s*\)"), 7, "NVIDIA E2: iterates the entire environment (os.environ.items())"),
     (re.compile(r"glob\s*\.\s*glob\s*\([^)]*(?:\.env|\.ssh|\.aws|\.config|credentials)"), 8, "NVIDIA E3: globs for .env/.ssh/.aws/credentials files"),
     (re.compile(r"(?i)iex\s*\(\s*new-object\s+net\.webclient"), 9, "PowerShell download-and-execute cradle"),

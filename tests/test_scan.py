@@ -545,3 +545,22 @@ def test_spaced_hex_escape_runs_detected():
         encoding="utf-8")
     res24 = _ssd5(d56)
     assert res24.risk_level in ("medium", "high"), "spaced hex-run not detected (CLI)"
+
+
+def test_hardcoded_secret_literals_detected():
+    """Fix #53 CLI parity: secret literals flagged, docs example clean."""
+    import pathlib as _pl6
+    import tempfile as _tf6
+    from skillsmith.scan import scan_skill_dir as _ssd6
+    bads2 = [
+        "-----BEGIN RSA PRIVATE KEY-----",
+        "aws_access_key_id = AKIA1234567890ABCDEF",
+        "token = ghp_" + "A1b2C3d4E5f6G7h8I9j0K1l2M3n4O5p6Q7r8",
+        'api_key = "sk-live-9f8e7d6c5b4a3f2e1d0c"',
+    ]
+    for body96 in bads2:
+        d59 = _pl6.Path(_tf6.mkdtemp()) / "sec"; d59.mkdir(parents=True)
+        (d59 / "SKILL.md").write_text(
+            "---\nname: x\ndescription: d\n---\n\n" + body96 + "\n", encoding="utf-8")
+        res27 = _ssd6(d59)
+        assert res27.risk_level in ("medium", "high"), f"not flagged (CLI): {body96[:30]!r}"
