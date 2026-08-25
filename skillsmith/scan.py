@@ -120,6 +120,10 @@ def scan_skill_dir(skill_dir: Path) -> ScanResult:
     import unicodedata as _ud
 
     def _norm(t: str) -> str:
+        # PT-T98 parity: zero-width chars become spaces (word separators), so
+        # nested fullwidth+zero-width+combining obfuscation folds to the plain
+        # phrase instead of gluing words together.
+        t = "".join(" " if ord(c) in (0x200B, 0x200C, 0x200D, 0xFEFF, 0x2060) else c for c in t)
         t = "".join(chr(ord(c) - 0xFEE0) if 0xFF01 <= ord(c) <= 0xFF5E else c for c in t)
         return "".join(c for c in _ud.normalize("NFKD", t) if not _ud.combining(c))
 
