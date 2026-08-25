@@ -72,3 +72,11 @@ Engine hardening release (web + CLI parity):
 - Initial public release: static heuristic scan of SKILL.md files
   (prompt injection, exfiltration, dangerous code, homoglyphs), OSV
   dependency enrichment, lookup/registry access
+
+### 0.3.x (unreleased)
+
+- Prompt-extraction detection: repeat/spell-out/translate/summarize
+  phrasings that try to make the agent disclose its system prompt,
+  hidden instructions or rules are now flagged (both engines).
+  Debug-flag documentation ("print your configuration with
+  --show-config") stays clean.
