@@ -104,8 +104,8 @@ skillsmith package ./my-great-skill --out my-great-skill.zip
 - credential/environment snooping, exfiltration instructions
 - URLs carrying `key=`/`token=`/`secret=`/`password=`/`auth=` query parameters
 - obfuscation: zero-width & RTL/bidi override characters, fullwidth characters,
-  combining-mark stacking, base64-encoded payloads (decoded and re-scanned),
-  long encoded blobs hidden across wrapped lines
+  combining-mark stacking (incl. stacked combinations of these), base64-encoded
+  payloads (decoded and re-scanned), long encoded blobs hidden across wrapped lines
 - dangerous code patterns (`eval`, `exec`, pickle deserialization, raw sockets,
   destructive shell commands)
 

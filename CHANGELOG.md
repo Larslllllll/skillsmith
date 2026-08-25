@@ -6,7 +6,9 @@ Engine hardening release (web + CLI parity):
 
 - Unicode evasion detection: zero-width characters, RTL/bidi overrides,
   fullwidth folding and combining-mark stripping (normalized variants are
-  scanned in addition to the raw text)
+  scanned in addition to the raw text); stacked combinations of these
+  techniques (e.g. fullwidth + zero-width + combining) fold to the plain
+  phrase and are detected
 - Frontmatter values (name/description block) are now scanned for prompt
   injection and paraphrase patterns - previously only the body was checked
 - Short base64 runs (>= 16 chars) are decoded (validated) and the decoded
