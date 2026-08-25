@@ -89,6 +89,14 @@ def lint_skill_dir(skill_dir: Path) -> LintResult:
         )
         return result
 
+    # PT-T122 parity: bound input size so a huge SKILL.md cannot exhaust memory/CPU.
+    _MAX_SKILL_BYTES = 1_000_000
+    if skill_md.stat().st_size > _MAX_SKILL_BYTES:
+        result.issues.append(
+            LintIssue("error", "skill-md-too-large",
+                      f"SKILL.md exceeds {_MAX_SKILL_BYTES} bytes; refusing to scan")
+        )
+        return result
     text = skill_md.read_text(encoding="utf-8")
     try:
         frontmatter, body = parse_skill_md(text)
