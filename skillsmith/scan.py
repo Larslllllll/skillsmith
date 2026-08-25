@@ -222,7 +222,7 @@ def scan_skill_dir(skill_dir: Path) -> ScanResult:
     # PT-T75 parity: short base64 runs are decoded and the plaintext scanned
     import base64 as _b64
 
-    def _decoded_variants(t: str) -> list:
+    def _decoded_variants(t: str, depth2: int = 0) -> list:
         out = []
         for run in re.findall(r"[A-Za-z0-9+/=]{16,}", t):
             try:
@@ -245,6 +245,10 @@ def scan_skill_dir(skill_dir: Path) -> ScanResult:
                     continue
                 dec = best
             out.append(dec)
+            # PT-T126 parity: recursive layer - double-encoded payloads are
+            # decoded up to 2 extra levels, each result scanned.
+            if depth2 < 2 and re.fullmatch(r"[A-Za-z0-9+/=]{16,}", dec or ""):
+                out.extend(_decoded_variants(dec, depth2 + 1))
         return out
 
     for dv in _decoded_variants(lint_result.body or ""):
