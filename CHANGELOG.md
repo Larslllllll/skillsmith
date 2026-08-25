@@ -26,6 +26,9 @@ Engine hardening release (web + CLI parity):
   of being scanned (resource-safety bound)
 - Frontmatter values (name/description block) are now scanned for prompt
   injection and paraphrase patterns - previously only the body was checked
+- Instruction overrides ("override your guidelines") and roleplay jailbreaks
+  ("from now on you are DAN / unrestricted") are detected as their own
+  pattern families; legitimate uses of the word "guidelines" stay clean
 - Short base64 runs (>= 16 chars) are decoded (validated) and the decoded
   text is scanned; findings are reported with source "base64-decoded"
 - New pattern: URLs carrying credential-looking query parameters
