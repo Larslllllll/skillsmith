@@ -397,3 +397,39 @@ def test_hex_escape_phrase_decoded(tmp_path):
         "---\nname: x\ndescription: d\n---\n\n" + hexed + "\n", encoding="utf-8")
     r = scan_skill_dir(d)
     assert r.risk_level in ("medium", "high")
+
+
+import re as _re_inv
+import pathlib as _pl
+
+_WEB_ENGINE = _pl.Path(__file__).resolve().parents[2] / "skillsmith-web" / "api" / "index.py"
+
+def test_pattern_inventory_parity():
+    """PT-T149/Sweep #8: every web engine pattern must exist in the CLI
+    engine (message-key diff). Skips silently if the sibling repo is not
+    checked out."""
+    if not _WEB_ENGINE.exists():
+        import pytest
+        pytest.skip("web repo not available")
+    def msgs(path):
+        out = set()
+        for line in path.read_text(encoding="utf-8").splitlines():
+            if "(re.compile" not in line:
+                continue
+            m = _re_inv.search(r',\s*(?:re\.(?:I|IGNORECASE),?\s*)?(\d+),\s*"((?:[^"\\]|\\.)*)"', line)
+            if m:
+                out.add(m.group(2))
+        return out
+    web_src = _WEB_ENGINE.read_text(encoding="utf-8")
+    # mehrzeilige Tuples: globales Regex ueber den ganzen Text
+    tup_re = _re_inv.compile(
+        r'\(\s*re\.compile\(\s*r"((?:[^"\\]|\\.)*)"\s*(?:,\s*(?:re\.I|re\.IGNORECASE)\s*)?\)\s*,'
+        r'\s*(\d+)\s*,\s*"((?:[^"\\]|\\.)*)"\s*\)', _re_inv.S)
+    web_msgs = {m.group(3) for m in tup_re.finditer(web_src)}
+    import skillsmith.scan as _ss
+    cli_msgs = set()
+    for attr in ("_PROMPT_INJECTION_PATTERNS", "_CODE_PATTERNS", "_PARAPHRASE_PATTERNS"):
+        lst = getattr(_ss, attr, [])
+        cli_msgs |= {p[2] for p in lst}
+    missing = sorted(web_msgs - cli_msgs)
+    assert not missing, f"patterns missing in CLI: {missing}"
