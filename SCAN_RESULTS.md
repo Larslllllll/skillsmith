@@ -1,5 +1,10 @@
 # Live scan results
 
+> **Note:** Results captured 2026-08-09 with engine v0.2.x. Detection coverage has since
+> expanded significantly (frontmatter scanning, unicode-obfuscation normalization,
+> base64 decoding, credential-URL patterns — see CHANGELOG 0.3.0). Re-run for current numbers.
+
+
 `skillsmith` isn't just tested against synthetic fixtures — it's been run
 against real, in-production skill sets.
 

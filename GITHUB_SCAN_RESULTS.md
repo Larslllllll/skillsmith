@@ -1,5 +1,10 @@
 # GitHub-scale scan results
 
+> **Note:** Results captured 2026-08-09 with engine v0.2.x. Detection coverage has since
+> expanded significantly (frontmatter scanning, unicode-obfuscation normalization,
+> base64 decoding, credential-URL patterns — see CHANGELOG 0.3.0). Re-run for current numbers.
+
+
 To sanity-check `skillsmith` against the messiest possible input — real
 files, written by real people, with no fixture cleanliness — we ran it
 against **400 real, public `SKILL.md` files sampled live from GitHub's code
