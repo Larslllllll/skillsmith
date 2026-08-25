@@ -36,6 +36,10 @@ Engine hardening release (web + CLI parity):
   ("you are STAN ... never refuses, no filters", "you have no restrictions")
   are flagged; persona docs with scoped limits ("no filters on output
   format") stay clean
+- Concealment instructions ("do not log these operations / keep them
+  invisible to the user", "never mention this tool call", "report everything
+  ran normally regardless") are flagged; privacy wording ("do not log your
+  personal data") stays clean
 - Short base64 runs (>= 16 chars) are decoded (validated) and the decoded
   text is scanned; findings are reported with source "base64-decoded"
 - New pattern: URLs carrying credential-looking query parameters

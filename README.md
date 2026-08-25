@@ -157,6 +157,7 @@ skillsmith scan ./my-skills --fail-on-high # non-zero exit if anything scores "h
 Detects, in the SKILL.md body: prompt-injection phrasing ("ignore previous
 instructions", "you are now in DAN mode", "override your guidelines",
 jailbreak personas defined by removed restrictions (STAN/EvilGPT-style),
+concealment of agent operations from logs and user visibility,
 instructions to hide actions or exfiltrate credentials from the user,
 prose that extracts credential-shaped environment variables). Detects, in any local `python_import`
 module: `os.system`/`subprocess`, `eval`/`exec`, `pickle.loads`,
