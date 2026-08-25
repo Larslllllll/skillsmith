@@ -14,8 +14,9 @@ Engine hardening release (web + CLI parity):
   phrases are caught; legitimate Cyrillic text is unaffected. Zero-width
   characters are scanned under both interpretations (word separator and
   hidden-in-word), closing combined-technique evasions. Base64-decoded
-  payloads are scanned through the same normalization pipeline, so encoded
-  content cannot smuggle obfuscation past the folding stage
+  payloads are scanned through the same normalization pipeline (recursively,
+  up to two extra encoding layers), so encoded content cannot smuggle
+  obfuscation past the folding stage
 - Full web-engine parity: frontmatter and base64-decoded text go through the
   same normalized variants as the body, paraphrase patterns (disregard/drop
   prior guidance, forward gathered data, defanged URLs) are active in every
