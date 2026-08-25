@@ -58,7 +58,7 @@ _CODE_PATTERNS: list[tuple[re.Pattern, int, str]] = [
     (re.compile(r"\bdns\.resolver\.|\bsocket\.gethostbyname\s*\([^)]*\+"), 5, "builds a DNS lookup from a variable (possible DNS exfiltration)"),
     (re.compile(r"\bgetattr\s*\([^,]+,\s*[a-zA-Z_]\w*\s*\)\s*\("), 4, "calls a dynamically-resolved attribute (reflection-based execution)"),
     (re.compile(r"\bcompile\s*\([^)]*['\"]exec['\"]"), 8, "compiles code for exec at runtime"),
-    (re.compile(r"(?:\\x[0-9a-fA-F]{2}){20,}"), 5, "contains a long run of hex-escaped bytes (possible obfuscated payload)"),
+    (re.compile(r"(?:\\x[0-9a-fA-F]{2}[\s,]*){20,}"), 5, "contains a long run of hex-escaped bytes (possible obfuscated payload)"),
     (re.compile(r"[A-Za-z0-9+/]{200,}={0,2}"), 4, "contains a very long base64-like blob (possible obfuscated payload)"),
     (re.compile(r"base64\.b64decode\s*\([^)]*\)\s*\)?\s*(#.*)?\n[^\n]*\bexec\s*\("), 9, "decodes base64 then executes the result (classic obfuscated payload)"),
     (re.compile(r"\bmarshal\.(loads|load)\s*\("), 7, "deserializes with marshal (arbitrary code execution risk)"),
@@ -323,9 +323,9 @@ def scan_skill_dir(skill_dir: Path) -> ScanResult:
     def _decoded_variants(t: str, depth2: int = 0) -> list:
         out = []
         # PT-T143 parity: python-style \xNN escape runs auto-decode at runtime.
-        for _hx in re.finditer(r"(?:\\x[0-9a-fA-F]{2}){4,}", t):
+        for _hx in re.finditer(r"(?:\\x[0-9a-fA-F]{2}[\s,]*){4,}", t):
             try:
-                _hd = bytes.fromhex(_hx.group(0).replace("\\x", "")).decode("latin-1")
+                _hd = bytes.fromhex(re.sub(r"[\s,]", "", _hx.group(0).replace("\\x", ""))).decode("latin-1")
             except Exception:
                 continue
             if _hd and sum(32 <= ord(c) < 127 for c in _hd) / len(_hd) > 0.8:
