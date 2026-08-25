@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.3.0 (2026-08-24)
+## 0.3.0 (2026-08-26)
 
 Engine hardening release (web + CLI parity):
 
