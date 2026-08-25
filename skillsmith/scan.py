@@ -123,6 +123,9 @@ def scan_skill_dir(skill_dir: Path) -> ScanResult:
     if lint_result.body:
         result.findings.extend(_scan_text(lint_result.body, "SKILL.md body", _PROMPT_INJECTION_PATTERNS))
         result.findings.extend(_scan_text(lint_result.body, "SKILL.md body", _PARAPHRASE_PATTERNS))
+        # PT-T117 parity: the web engine also runs code patterns over the
+        # SKILL.md body (incl. fenced code blocks), not just .py files.
+        result.findings.extend(_scan_text(lint_result.body, "SKILL.md body", _CODE_PATTERNS))
     # PT-T73 parity: frontmatter values (esp. description) are scanned too
     _fm_lines = "\n".join(f"{k}: {v}" for k, v in (lint_result.frontmatter or {}).items() if isinstance(v, str))
     if _fm_lines:

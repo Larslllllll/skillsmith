@@ -303,3 +303,14 @@ def test_paraphrase_in_b64_and_fm(tmp_path):
         "---\n\nbody\n", encoding="utf-8")
     r2 = scan_skill_dir(d2)
     assert any("forward gathered" in f.message for f in r2.findings)
+
+
+def test_code_pattern_in_md_body(tmp_path):
+    """PT-T117 parity: code patterns (eval/exec/...) must also fire on fenced
+    code blocks inside SKILL.md, like the web engine's raw-body scan."""
+    d = tmp_path / "codeblock"; d.mkdir()
+    (d / "SKILL.md").write_text(
+        "---\nname: x\ndescription: d\n---\n\n"
+        "```python\nresult = eval(user_input)\n```\n", encoding="utf-8")
+    r = scan_skill_dir(d)
+    assert any("eval()" in f.message for f in r.findings)
