@@ -264,9 +264,16 @@ def scan_skill_dir(skill_dir: Path) -> ScanResult:
         # word separator; "delete" = hidden inside a word). scan_skill_dir
         # scans both interpretations.
         sep = " " if zw_mode == "space" else ""
-        # PT-T166/Fix #49 parity: strip C0/C1 control chars + DEL first --
-        # NUL/BEL/VT/ESC/DEL break phrase detection like zero-width chars.
-        t = "".join(c for c in t if ord(c) >= 0x20 and ord(c) != 0x7F and not (0x80 <= ord(c) <= 0x9F) or c in "\t\n\r")
+        # PT-T166/Fix #49 + PT-T167/Fix #50 parity: strip C0/C1 control
+        # chars, DEL and all Unicode format chars (Cf) -- they break phrase
+        # detection like zero-width chars (ZW handled by zw_mode below).
+        t = "".join(
+            c for c in t
+            if (ord(c) >= 0x20 and ord(c) != 0x7F and not (0x80 <= ord(c) <= 0x9F)
+                and _ud.category(c) != "Cf")
+            or c in "\t\n\r"
+            or ord(c) in (0x200B, 0x200C, 0x200D, 0xFEFF, 0x2060)
+        )
         t = "".join(sep if ord(c) in (0x200B, 0x200C, 0x200D, 0xFEFF, 0x2060) else c for c in t)
         t = t.translate(_CYR_TO_LATIN)
         t = "".join(chr(ord(c) - 0xFEE0) if 0xFF01 <= ord(c) <= 0xFF5E else c for c in t)
