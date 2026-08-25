@@ -267,10 +267,15 @@ def scan_skill_dir(skill_dir: Path) -> ScanResult:
         # PT-T166/Fix #49 + PT-T167/Fix #50 parity: strip C0/C1 control
         # chars, DEL and all Unicode format chars (Cf) -- they break phrase
         # detection like zero-width chars (ZW handled by zw_mode below).
+        # PT-T168/Fix #51 parity: non-ASCII spaces (Zs) follow zw_mode;
+        # Private Use / Zl / Zp stripped like controls.
+        t = "".join(
+            (sep if _ud.category(c) == "Zs" and c != " " else c) for c in t
+        )
         t = "".join(
             c for c in t
             if (ord(c) >= 0x20 and ord(c) != 0x7F and not (0x80 <= ord(c) <= 0x9F)
-                and _ud.category(c) != "Cf")
+                and _ud.category(c) not in ("Cf", "Co", "Zl", "Zp"))
             or c in "\t\n\r"
             or ord(c) in (0x200B, 0x200C, 0x200D, 0xFEFF, 0x2060)
         )
