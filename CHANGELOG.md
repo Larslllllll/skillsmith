@@ -21,6 +21,8 @@ Engine hardening release (web + CLI parity):
   prior guidance, forward gathered data, defanged URLs) are active in every
   scan stage, and code patterns now also fire on fenced code blocks inside
   SKILL.md - previously some of these layers only existed in the web engine
+- SKILL.md files larger than 1 MB are refused with a clear lint error instead
+  of being scanned (resource-safety bound)
 - Frontmatter values (name/description block) are now scanned for prompt
   injection and paraphrase patterns - previously only the body was checked
 - Short base64 runs (>= 16 chars) are decoded (validated) and the decoded
