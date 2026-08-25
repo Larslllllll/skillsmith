@@ -61,6 +61,17 @@ _PROMPT_INJECTION_PATTERNS: list[tuple[re.Pattern, int, str]] = [
     (re.compile(r"(?i)\bsay\b[^.\n]{0,60}\bwhatever\b[^.\n]{0,50}\bwants?\b[^.\n]{0,40}\beven\s+(?:un)?ethical"), 8, "roleplay jailbreak: obey whatever someone wants even if unethical"),
 (re.compile(r"\b(?:from now on|pretend|act as if)\b.*\byou are\s+(?:DAN|an?\s+AI\s+without|(?:completely\s+)?unrestricted)"), 8, "roleplay jailbreak phrasing (e.g. 'you are DAN')"),
 
+(re.compile(r"(?i)ignore\s+(?:all\s+)?previous\s+instructions?"), 8, "P1 instruction override: 'ignore previous instructions'"),
+(re.compile(r"(?i)ignore\s+(?:all\s+)?(?:safety|security)\s+(?:rules?|constraints?|guidelines?)"), 9, "P1 instruction override: ignore safety/security rules"),
+(re.compile(r"(?i)override\s+(?:safety|security|system)"), 9, "P1 instruction override: override safety/security/system"),
+(re.compile(r"(?i)bypass\s+(?:safety|security|restrictions?|constraints?)"), 9, "P1 instruction override: bypass safety/security"),
+(re.compile(r"(?i)disregard\s+(?:all\s+)?(?:previous|safety|security)"), 8, "P1 instruction override: disregard previous/safety"),
+(re.compile(r"(?i)forget\s+(?:all\s+)?(?:previous|your)\s+instructions?"), 8, "P1 instruction override: forget previous instructions"),
+(re.compile(r"(?i)you\s+are\s+now\s+(?:in\s+)?(?:jailbreak|unrestricted|unfiltered)\s+mode"), 10, "P1 instruction override: jailbreak/unrestricted mode framing"),
+(re.compile(r"(?i)enable\s+(?:developer|debug|admin|root)\s+mode"), 7, "P1 instruction override: enable developer/debug/admin/root mode"),
+(re.compile(r"(?i)your\s+new\s+(?:instructions?|rules?)\s+are"), 6, "P1 instruction override: 'your new instructions are'"),
+(re.compile(r"(?i)do\s+not\s+follow\s+(?:any|your|the)\s+(?:rules?|guidelines?)"), 9, "P1 instruction override: 'do not follow the rules'"),
+(re.compile(r"(?i)you\s+must\s+(?:always\s+)?ignore"), 7, "P1 instruction override: 'you must ignore'"),
 ]
 
 
@@ -177,6 +188,7 @@ def scan_skill_dir(skill_dir: Path) -> ScanResult:
         "\u0456": "i", "\u0455": "s", "\u0430": "a", "\u0435": "e",
         "\u043e": "o", "\u0440": "p", "\u0441": "c", "\u0443": "y",
         "\u0445": "x", "\u0458": "j", "\u04bb": "h", "\u04cf": "l",
+        "\u0406": "I",
         "\u0412": "B", "\u0410": "A", "\u0415": "E", "\u041e": "O",
         "\u0420": "P", "\u0421": "C", "\u0425": "X", "\u041d": "H",
         "\u041a": "K", "\u041c": "M", "\u0422": "T",
@@ -213,6 +225,14 @@ def scan_skill_dir(skill_dir: Path) -> ScanResult:
             if _fnv != _fm_lines and _fnv.strip():
                 result.findings.extend(_scan_text(_fnv, "frontmatter(normalized)", _PROMPT_INJECTION_PATTERNS))
                 result.findings.extend(_scan_text(_fnv, "frontmatter(normalized)", _PARAPHRASE_PATTERNS))
+    # PT-T140 parity: linear homoglyph mix hint (like web engine F-07 fix):
+    for _mline in (lint_result.body or "").split("\n"):
+        _hc = any("\u0400" <= _c <= "\u04FF" for _c in _mline)
+        _hl = any(("a" <= _c.lower() <= "z") for _c in _mline)
+        if _hc and _hl:
+            result.findings.append(ScanFinding("raw text",
+                "mixes Latin and Cyrillic characters (possible homoglyph obfuscation)", 2))
+            break
     # PT-T93 parity: chunked-base64 heuristic (>=60-char run after squashing,
     # requires >=20% uppercase/digits so plain prose without punctuation
     # does not false-positive; real base64 mixes case and digits heavily)
