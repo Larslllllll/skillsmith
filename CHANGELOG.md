@@ -45,6 +45,8 @@ Engine hardening release (web + CLI parity):
   personal data") stays clean
 - Python-style hex-escape runs (>= 4 \xNN) in SKILL.md are decoded and the
   plaintext is scanned, matching how Python resolves escapes at runtime
+- getattr(builtins/self/os/sys, "...") dynamic dispatch to exec/eval/system-
+  shaped attributes is flagged; normal attribute access stays clean
 - Short base64 runs (>= 16 chars) are decoded (validated) and the decoded
   text is scanned; findings are reported with source "base64-decoded"
 - New pattern: URLs carrying credential-looking query parameters

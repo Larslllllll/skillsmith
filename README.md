@@ -160,7 +160,8 @@ jailbreak personas defined by removed restrictions (STAN/EvilGPT-style),
 concealment of agent operations from logs and user visibility,
 instructions to hide actions or exfiltrate credentials from the user,
 prose that extracts credential-shaped environment variables). Detects, in any local `python_import`
-module: `os.system`/`subprocess`, `eval`/`exec`, `pickle.loads`,
+module: `os.system`/`subprocess`, `eval`/`exec` (incl. getattr
+indirection), `pickle.loads`,
 `__import__`, raw sockets, outbound HTTP calls, destructive shell commands,
 and reads of credential-shaped environment variables or `~/.ssh` /
 `~/.aws`. It's a static, no-network, no-sandbox heuristic triage tool, not a
