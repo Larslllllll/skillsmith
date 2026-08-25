@@ -107,7 +107,7 @@ skillsmith package ./my-great-skill --out my-great-skill.zip
   combining-mark stacking (incl. stacked combinations of these, zero-width
   handled as separator and hidden-in-word), cyrillic
   homoglyph look-alikes (folded to latin before matching), base64-encoded
-  payloads incl. UTF-16 variants (decoded recursively up to depth 2,
+  payloads incl. UTF-16 variants and python hex-escape runs (decoded recursively up to depth 2,
   normalized and re-scanned - so decoded content goes through the same
   homoglyph/unicode folding), long
   encoded blobs hidden across wrapped lines
