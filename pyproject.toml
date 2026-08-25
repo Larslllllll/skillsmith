@@ -7,12 +7,6 @@ name = "skillsmith-scanner"
 version = "0.3.0"
 description = "Security scanner and linter for Claude Agent Skills (SKILL.md): detect prompt injection, data exfiltration, and dangerous code before you install a skill. Web scanner at https://skillsmith.ch"
 readme = "README.md"
-
-[project.urls]
-Homepage = "https://skillsmith.ch"
-Repository = "https://github.com/Larslllllll/skillsmith"
-Changelog = "https://github.com/Larslllllll/skillsmith/blob/main/CHANGELOG.md"
-Issues = "https://github.com/Larslllllll/skillsmith/issues"
 requires-python = ">=3.9"
 license = { text = "MIT" }
 authors = [{ name = "skillsmith contributors" }]
@@ -33,6 +27,12 @@ dev = ["pytest>=7.0"]
 [project.scripts]
 skillsmith = "skillsmith.cli:main"
 skillsmith-scanner = "skillsmith.cli:main"
+
+[project.urls]
+Homepage = "https://skillsmith.ch"
+Repository = "https://github.com/Larslllllll/skillsmith"
+Changelog = "https://github.com/Larslllllll/skillsmith/blob/main/CHANGELOG.md"
+Issues = "https://github.com/Larslllllll/skillsmith/issues"
 
 [tool.setuptools.packages.find]
 include = ["skillsmith*"]
