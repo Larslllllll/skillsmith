@@ -454,3 +454,24 @@ def test_prompt_extraction_and_flag_doc_fp():
     hits = [f for f in _st(fp, "t", _s._PROMPT_INJECTION_PATTERNS)
             if "disclosure" in f.message or "recital" in f.message]
     assert not hits, "flag-doc FP"
+
+
+def test_frontmatter_type_confusion_fails_lint():
+    """Fix #48 CLI parity: non-string required fields must be lint errors."""
+    import skillsmith.lint as _sl
+    probes4 = [
+        "---\nname: [a, b]\ndescription: d\n---\n\nBody\n",
+        "---\nname: x\ndescription: 12345\n---\n\nBody\n",
+        "---\nname: {a: b}\ndescription: d\n---\n\nBody\n",
+    ]
+    for sk3 in probes4:
+        res14 = _sl.parse_and_lint_text(sk3) if hasattr(_sl, "parse_and_lint_text") else None
+        if res14 is None:
+            break
+    # fallback: via lint_skill_dir on tempdir
+    import pathlib as _pl, tempfile as _tf
+    for sk4 in probes4:
+        d46 = _pl.Path(_tf.mkdtemp()) / "tcs"; d46.mkdir(parents=True)
+        (d46 / "SKILL.md").write_text(sk4, encoding="utf-8")
+        lr2 = _sl.lint_skill_dir(d46)
+        assert not lr2.ok, f"type-confused FM passed CLI lint: {sk4[:40]}"

@@ -108,7 +108,8 @@ def lint_skill_dir(skill_dir: Path) -> LintResult:
     result.body = body
 
     for key in REQUIRED_KEYS:
-        if not frontmatter.get(key):
+        _v = frontmatter.get(key)
+        if not isinstance(_v, str) or not _v.strip():
             result.issues.append(
                 LintIssue("error", "missing-field", f"frontmatter is missing required key '{key}'")
             )
