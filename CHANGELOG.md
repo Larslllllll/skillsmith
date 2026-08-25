@@ -108,3 +108,11 @@ Engine hardening release (web + CLI parity):
   INVISIBLE TIMES, ARABIC LETTER MARK, ...) are now normalized away
   like zero-width characters and can no longer break phrase
   detection.
+
+### 0.3.x (unreleased)
+
+- Unicode hardening (web + CLI): non-ASCII space characters
+  (NBSP, NARROW NBSP, OGHAM SPACE MARK, ...) now follow the same
+  separator/removal handling as zero-width characters; private-use
+  characters and line/paragraph separators are normalized away.
+  None of these can break phrase detection anymore.
