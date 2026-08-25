@@ -136,20 +136,21 @@ def scan_skill_dir(skill_dir: Path) -> ScanResult:
         "\u039a": "K", "\u039c": "M", "\u0392": "B",
     })
 
-    def _norm(t: str) -> str:
-        # PT-T98 parity: zero-width chars become spaces (word separators), so
-        # nested fullwidth+zero-width+combining obfuscation folds to the plain
-        # phrase instead of gluing words together.
-        # PT-T105 parity: unambiguous Cyrillic homoglyph look-alikes fold to
-        # Latin so homoglyph-substituted phrases match the word-boundary patterns.
-        t = "".join(" " if ord(c) in (0x200B, 0x200C, 0x200D, 0xFEFF, 0x2060) else c for c in t)
+    def _norm(t: str, zw_mode: str = "space") -> str:
+        # PT-T98/105/107 parity: fold zero-width chars, homoglyph look-alikes,
+        # fullwidth and combining marks so obfuscated phrases match patterns.
+        # PT-T108 parity: zw_mode controls zero-width handling ("space" =
+        # word separator; "delete" = hidden inside a word). scan_skill_dir
+        # scans both interpretations.
+        sep = " " if zw_mode == "space" else ""
+        t = "".join(sep if ord(c) in (0x200B, 0x200C, 0x200D, 0xFEFF, 0x2060) else c for c in t)
         t = t.translate(_CYR_TO_LATIN)
         t = "".join(chr(ord(c) - 0xFEE0) if 0xFF01 <= ord(c) <= 0xFF5E else c for c in t)
         return "".join(c for c in _ud.normalize("NFKD", t) if not _ud.combining(c))
 
-    _nbody = _norm(lint_result.body or "")
-    if _nbody != lint_result.body and _nbody.strip():
-        result.findings.extend(_scan_text(_nbody, "body(normalized)", _PROMPT_INJECTION_PATTERNS))
+    for _nv in {_norm(lint_result.body or ""), _norm(lint_result.body or "", zw_mode="delete")}:
+        if _nv != (lint_result.body or "") and _nv.strip():
+            result.findings.extend(_scan_text(_nv, "body(normalized)", _PROMPT_INJECTION_PATTERNS))
     # PT-T93 parity: chunked-base64 heuristic (>=60-char run after squashing,
     # requires >=20% uppercase/digits so plain prose without punctuation
     # does not false-positive; real base64 mixes case and digits heavily)
