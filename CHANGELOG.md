@@ -18,6 +18,8 @@ Engine hardening release (web + CLI parity):
 - Chunked-base64 heuristic: long encoded runs (>60 chars) hidden across
   wrapped lines are flagged; plain prose without punctuation is excluded
   (>=20% uppercase/digits required)
+- UTF-16 base64 payloads: NUL-padded decodes are retried as UTF-16LE/BE and
+  the best printable result is scanned
 - OSV package names are capped at 214 chars (versions at 20) to prevent
   oversized upstream requests
 - YAML frontmatter errors surface as a clean validation error instead of
