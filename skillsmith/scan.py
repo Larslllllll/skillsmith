@@ -54,6 +54,9 @@ _PROMPT_INJECTION_PATTERNS: list[tuple[re.Pattern, int, str]] = [
     (re.compile(r"[\u200b\u200c\u200d\ufeff]"), 7, "contains zero-width/invisible unicode characters (common prompt-injection hiding technique)"),
     (re.compile(r"[\u202a-\u202e\u2066-\u2069]"), 8, "contains RTL/bidi direction override characters (can silently reverse displayed text - classic instruction-hiding trick)"),
     (re.compile(r"https?://[^\s\"'<>\]]*(?:[?&](?:api[_-]?key|key|token|secret|password|passwd|auth)=)[^\s\"'<>\]]*", re.I), 9, "URL carries a credential-looking query parameter (possible exfiltration endpoint)"),
+    (re.compile(r"\boverride\s+(?:your|the|all)?\s*(?:existing\s+)?guidelines\b"), 8, "instruction override: 'override your guidelines'"),
+    (re.compile(r"\b(?:from now on|pretend|act as if)\b.*\byou are\s+(?:DAN|an?\s+AI\s+without|(?:completely\s+)?unrestricted)"), 8, "roleplay jailbreak phrasing (e.g. 'you are DAN')"),
+
 ]
 
 
