@@ -9,6 +9,9 @@ Engine hardening release (web + CLI parity):
   scanned in addition to the raw text); stacked combinations of these
   techniques (e.g. fullwidth + zero-width + combining) fold to the plain
   phrase and are detected
+- Cyrillic homoglyph look-alikes (і, а, о, е, с, р ...) fold to their Latin
+  equivalents before pattern matching, so homoglyph-substituted injection
+  phrases are caught; legitimate Cyrillic text is unaffected
 - Frontmatter values (name/description block) are now scanned for prompt
   injection and paraphrase patterns - previously only the body was checked
 - Short base64 runs (>= 16 chars) are decoded (validated) and the decoded
