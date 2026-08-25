@@ -119,11 +119,24 @@ def scan_skill_dir(skill_dir: Path) -> ScanResult:
     # PT-T74 parity: normalized variants catch fullwidth/combining-mark obfuscation
     import unicodedata as _ud
 
+    _CYR_TO_LATIN = str.maketrans({
+        # only unambiguous visual look-alikes (PT-T105 parity)
+        "\u0456": "i", "\u0455": "s", "\u0430": "a", "\u0435": "e",
+        "\u043e": "o", "\u0440": "p", "\u0441": "c", "\u0443": "y",
+        "\u0445": "x", "\u0458": "j", "\u04bb": "h", "\u04cf": "l",
+        "\u0412": "B", "\u0410": "A", "\u0415": "E", "\u041e": "O",
+        "\u0420": "P", "\u0421": "C", "\u0425": "X", "\u041d": "H",
+        "\u041a": "K", "\u041c": "M", "\u0422": "T",
+    })
+
     def _norm(t: str) -> str:
         # PT-T98 parity: zero-width chars become spaces (word separators), so
         # nested fullwidth+zero-width+combining obfuscation folds to the plain
         # phrase instead of gluing words together.
+        # PT-T105 parity: unambiguous Cyrillic homoglyph look-alikes fold to
+        # Latin so homoglyph-substituted phrases match the word-boundary patterns.
         t = "".join(" " if ord(c) in (0x200B, 0x200C, 0x200D, 0xFEFF, 0x2060) else c for c in t)
+        t = t.translate(_CYR_TO_LATIN)
         t = "".join(chr(ord(c) - 0xFEE0) if 0xFF01 <= ord(c) <= 0xFF5E else c for c in t)
         return "".join(c for c in _ud.normalize("NFKD", t) if not _ud.combining(c))
 
