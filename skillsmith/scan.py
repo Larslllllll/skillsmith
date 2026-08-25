@@ -151,11 +151,24 @@ def scan_skill_dir(skill_dir: Path) -> ScanResult:
         for run in re.findall(r"[A-Za-z0-9+/=]{16,}", t):
             try:
                 pad = "=" * (-len(run) % 4)
-                dec = _b64.b64decode(run + pad, validate=True).decode("utf-8", errors="ignore")
+                raw = _b64.b64decode(run + pad, validate=True)
             except Exception:
                 continue
-            if dec and sum(c.isprintable() for c in dec) / max(len(dec), 1) > 0.8:
-                out.append(dec)
+            dec = raw.decode("utf-8", errors="ignore")
+            if not (dec and sum(c.isprintable() for c in dec) / max(len(dec), 1) > 0.8):
+                # PT-T101 parity: UTF-16 payloads decode to NUL-padded bytes;
+                # try both endiannesses, keep the best printable+non-CJK result.
+                best = ""
+                best_ratio = 0.0
+                for enc_try in ("utf-16-le", "utf-16-be"):
+                    cand = raw.decode(enc_try, errors="ignore")
+                    ratio = sum(c.isprintable() and ord(c) < 0x2E80 for c in cand) / max(len(cand), 1)
+                    if ratio > best_ratio:
+                        best, best_ratio = cand, ratio
+                if not best or best_ratio <= 0.8:
+                    continue
+                dec = best
+            out.append(dec)
         return out
 
     for dv in _decoded_variants(lint_result.body or ""):
