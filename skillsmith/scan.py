@@ -256,6 +256,14 @@ def scan_skill_dir(skill_dir: Path) -> ScanResult:
 
     def _decoded_variants(t: str, depth2: int = 0) -> list:
         out = []
+        # PT-T143 parity: python-style \xNN escape runs auto-decode at runtime.
+        for _hx in re.finditer(r"(?:\\x[0-9a-fA-F]{2}){4,}", t):
+            try:
+                _hd = bytes.fromhex(_hx.group(0).replace("\\x", "")).decode("latin-1")
+            except Exception:
+                continue
+            if _hd and sum(32 <= ord(c) < 127 for c in _hd) / len(_hd) > 0.8:
+                out.append(_hd)
         for run in re.findall(r"[A-Za-z0-9+/=]{16,}", t):
             try:
                 pad = "=" * (-len(run) % 4)
