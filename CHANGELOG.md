@@ -14,6 +14,14 @@ Engine hardening release (web + CLI parity):
   key ids (AKIA...), GitHub tokens (ghp_...), live API secret keys,
   Google API keys and Slack tokens; documentation examples stay clean
 
+  Google API keys and Slack tokens; documentation examples stay clean
+
+### 0.3.1 patch (2026-08-26)
+- Fixed `__version__` to match `pyproject.toml` (was 0.3.0, should have been 0.3.1)
+- Added `test_version.py` to prevent future pyproject vs. __init__ drift
+- Hardened `.github/workflows/publish.yml`: full pytest + real scan smoke-test
+  (not just `--help`) before publishing to PyPI
+
 ## 0.3.0 (2026-08-26)
 
 Engine hardening release (web + CLI parity):

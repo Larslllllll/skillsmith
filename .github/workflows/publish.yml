@@ -1,31 +1,18 @@
-name: Publish to PyPI
+      - name: Run full test suite
+        run: uv run --with pytest pytest -q
 
-on:
-  release:
-    types: [published]
-  workflow_dispatch:
-
-jobs:
-  publish:
-    runs-on: ubuntu-latest
-    environment: pypi
-    permissions:
-      # REQUIRED for PyPI trusted publishing (OIDC). No API token stored.
-      id-token: write
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Install uv
-        uses: astral-sh/setup-uv@v5
-
-      - name: Build sdist + wheel
-        run: uv build
-
-      - name: Smoke-test the wheel
+      - name: Smoke-test the wheel (real scan, not just --help)
         run: |
           uv venv .smoke
-          uv pip install --python .smoke/bin/python dist/*.whl pytest
-          .smoke/bin/skillsmith-scanner --help
+          uv pip install --python .smoke/bin/python dist/*.whl
+          # verify the version matches pyproject.toml
+          .smoke/bin/skillsmith-scanner --version 2>&1 | tee /tmp/v.txt
+          grep -q "0.3.1" /tmp/v.txt || (echo "version mismatch"; exit 1)
+          # verify a real scan works end-to-end
+          mkdir -p /tmp/smoke-skill
+          printf -- '---\nname: smoke-test\ndescription: A tiny test skill.\n---\nBody.\n' > /tmp/smoke-skill/SKILL.md
+          .smoke/bin/skillsmith-scanner scan /tmp/smoke-skill
+          .smoke/bin/skillsmith-scanner lint /tmp/smoke-skill
 
       - name: Publish to PyPI (trusted publishing)
         uses: pypa/gh-action-pypi-publish@release/v1
