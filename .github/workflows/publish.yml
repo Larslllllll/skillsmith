@@ -1,3 +1,30 @@
+name: Publish to PyPI
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:  # manual trigger for re-runs
+    inputs:
+      version:
+        description: Version to publish (must match pyproject.toml and __init__.py)
+        required: true
+        type: string
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write  # required for trusted publishing
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build dist
+        run: |
+          pip install build
+          python -m build
+
       - name: Run full test suite
         run: uv run --with pytest pytest -q
 
@@ -7,7 +34,7 @@
           uv pip install --python .smoke/bin/python dist/*.whl
           # verify the version matches pyproject.toml
           .smoke/bin/skillsmith-scanner --version 2>&1 | tee /tmp/v.txt
-          grep -q "0.3.1" /tmp/v.txt || (echo "version mismatch"; exit 1)
+          grep -q "${{ github.event.inputs.version || github.event.release.tag_name }}" /tmp/v.txt || (echo "version mismatch"; exit 1)
           # verify a real scan works end-to-end
           mkdir -p /tmp/smoke-skill
           printf -- '---\nname: smoke-test\ndescription: A tiny test skill.\n---\nBody.\n' > /tmp/smoke-skill/SKILL.md
