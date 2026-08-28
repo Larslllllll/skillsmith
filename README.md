@@ -198,7 +198,7 @@ pip install -e ".[dev]"
 pytest -q
 ```
 
-18 tests, no network calls, runs in well under a second.
+57 tests, no network calls, runs in well under a second.
 
 ## License
 
@@ -217,3 +217,4 @@ GitHub Actions trusted publishing (OIDC — no API token stored in the repo):
 
 One-time setup on PyPI: add a *pending publisher* for project `skillsmith-scanner`
 → owner `Larslllllll`, repo `skillsmith`, workflow `publish.yml`, environment `pypi`.
+See [TROUBLESHOOTING.md](TROUBLESHOOTING.md) if the publish workflow fails.
