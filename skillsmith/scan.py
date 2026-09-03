@@ -165,6 +165,16 @@ class ScanResult:
             return "medium"
         return "high"
 
+    @property
+    def security_score(self) -> int:
+        """0-100 score (PT-T207 parity with web engine). Higher = safer.
+
+        Formula: max(0, 100 - risk_score * 4) — matches the web engine's
+        ``security_score`` field so CLI scan output, badge JSON, and the
+        ``/api/lookup``/``/api/public_scan`` payloads all use one number.
+        """
+        return max(0, 100 - self.risk_score * 4)
+
 
 def _scan_text(text: str, source: str, patterns: Iterable[tuple[re.Pattern, int, str]]) -> list[ScanFinding]:
     findings = []

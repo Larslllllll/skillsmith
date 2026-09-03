@@ -77,7 +77,7 @@ def _cmd_scan(args: argparse.Namespace) -> int:
             if args.verbose:
                 print(f"clean   {label}")
             continue
-        print(f"{result.risk_level.upper():6} risk={result.risk_score:<3} {label} ({skill_dir})")
+        print(f"{result.risk_level.upper():6} score={result.security_score:<3} risk={result.risk_score:<3} {label} ({skill_dir})")
         for finding in result.findings:
             print(f"        [{finding.source}] {finding.message} (+{finding.weight})")
         if result.risk_level == "high":
@@ -110,7 +110,7 @@ def _cmd_lookup(args: argparse.Namespace) -> int:
         print(f"unknown hash ({digest[:16]}...) - not scanned yet, or scan it at https://skillsmith.ch")
         return 1
     print(f"skill:      {out.get('name') or '(unnamed)'}")
-    print(f"risk_level: {out.get('risk_level')}  (risk_score {out.get('risk_score')})")
+    print(f"risk_level: {out.get('risk_level')}  score={out.get('security_score')}  (risk_score {out.get('risk_score')})")
     print(f"lint_ok: {out.get('lint_ok')}  parse_ok: {out.get('parse_ok')}  seen: {out.get('seen_count')}x")
     if out.get("has_content"):
         print("published: yes (fetchable via /api/skill with an API key)")
