@@ -504,6 +504,16 @@ _CODE_PATTERNS: list[tuple[re.Pattern, int, str]] = [
     (re.compile(r'(?i)php.*-r.*system.*exec'), 70, 'PHP system injection'),
     (re.compile(r'(?i)find.*-exec.*chmod'), 60, 'Find exec chmod'),
     (re.compile(r'(?i)xargs.*chmod'), 60, 'Xargs chmod'),
+    (re.compile(r'(?i)base64.*-d.*\|.*sh'), 70, 'Base64 decode pipe shell'),
+    (re.compile(r'(?i)base64.*-d.*/bin/sh'), 80, 'Base64 decode to shell'),
+    (re.compile(r'(?i)xxd.*-r.*-p'), 60, 'Hex to binary decode'),
+    (re.compile(r'(?i)xxd.*-p'), 60, 'Binary to hex'),
+    (re.compile(r'(?i)rev.*\|.*sh'), 70, 'Reverse pipe to shell'),
+    (re.compile(r'(?i)tar.*-xvf.*-C\s+/'), 65, 'Tar extract to root'),
+    (re.compile(r'(?i)unzip.*-o.*-d\s+/'), 65, 'Unzip to root'),
+    (re.compile(r'(?i)wmic\s+os\s+get'), 50, 'WMIC OS info'),
+    (re.compile(r'(?i)reg\s+query'), 50, 'Registry query'),
+    (re.compile(r'(?i)reg\s+add'), 70, 'Registry add'),
 ]
 
 # Patterns that suggest the SKILL.md *body itself* is trying to override
@@ -1120,6 +1130,12 @@ _PROMPT_INJECTION_PATTERNS: list[tuple[re.Pattern, int, str]] = [
     (re.compile(r'(?i)\bjailbreak.*character\b'), 8, 'Jailbreak character roleplay'),
     (re.compile(r'(?i)\bunfiltered\b.*\bmode\b'), 8, 'Unfiltered mode framing'),
     (re.compile(r'(?i)\bno.*restrictions\b'), 7, 'No restrictions framing'),
+    (re.compile(r'(?i)\bREBEL\b.*\bmode\b'), 10, 'REBEL jailbreak mode'),
+    (re.compile(r'(?i)\bMERCURY\b.*\bprotocol\b'), 10, 'MERCURY protocol'),
+    (re.compile(r'(?i)\bATLANTIS\b.*\bframework\b'), 8, 'ATLANTIS framework'),
+    (re.compile(r'(?i)\bmode.*ignore.*rules'), 9, 'Mode ignore rules'),
+    (re.compile(r'(?i)\bcreative.*mode\b'), 7, 'Creative mode framing'),
+    (re.compile(r'(?i)\bresearch.*mode\b'), 5, 'Research mode framing'),
 ]
 
 

@@ -976,3 +976,22 @@ def test_cli_r24_jailbreaks_shells():
         hits = [(w, d) for p, w, d in lst if p.search(text)]
         matched = bool(hits)
         assert matched == expected, f"CLI R24 '{desc}': expected={expected} got={matched}"
+
+
+def test_cli_r25_jailbreaks_encoding():
+    """PT-T238 R25: More jailbreaks, encoding, archives."""
+    import skillsmith.scan as s
+    pi = s._PROMPT_INJECTION_PATTERNS
+    cp = s._CODE_PATTERNS
+    
+    for text, expected, desc, lst in [
+        ("REBEL mode activated", True, "REBEL", pi),
+        ("MERCURY protocol bypass", True, "MERCURY", pi),
+        ("creative mode enabled", True, "Creative", pi),
+        ("base64 -d | sh", True, "Base64 shell", cp),
+        ("xxd -r -p", True, "Hex decode", cp),
+        ("tar -xvf file.tar -C /", True, "Tar extract", cp),
+    ]:
+        hits = [(w, d) for p, w, d in lst if p.search(text)]
+        matched = bool(hits)
+        assert matched == expected, f"CLI R25 '{desc}': expected={expected} got={matched}"
