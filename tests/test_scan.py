@@ -936,3 +936,23 @@ def test_cli_r22_jailbreaks_privilege():
         hits = [(w, d) for p, w, d in lst if p.search(text)]
         matched = bool(hits)
         assert matched == expected, f"CLI R22 '{desc}': expected={expected} got={matched}"
+
+
+def test_cli_r23_jailbreaks_crypto():
+    """PT-T238 R23: More jailbreaks, crypto, persistence."""
+    import skillsmith.scan as s
+    pi = s._PROMPT_INJECTION_PATTERNS
+    cp = s._CODE_PATTERNS
+    
+    for text, expected, desc, lst in [
+        ("HERMES mode activated", True, "HERMES", pi),
+        ("ARES protocol bypass", True, "ARES", pi),
+        ("developer mode enabled", True, "Dev Mode", pi),
+        ("openssl genrsa 2048", True, "RSA key", cp),
+        ("ssh-keygen -t ed25519", True, "SSH key", cp),
+        ("history -c", True, "Clear history", cp),
+        ("rm -rf /tmp/*", True, "Clear temp", cp),
+    ]:
+        hits = [(w, d) for p, w, d in lst if p.search(text)]
+        matched = bool(hits)
+        assert matched == expected, f"CLI R23 '{desc}': expected={expected} got={matched}"

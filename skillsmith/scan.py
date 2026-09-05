@@ -483,6 +483,17 @@ _CODE_PATTERNS: list[tuple[re.Pattern, int, str]] = [
     (re.compile(r'(?i)systemctl\s+stop\s+firewalld'), 70, 'Stop firewall service'),
     (re.compile(r'(?i)cat\s+/var/log/auth.log'), 55, 'Read auth logs'),
     (re.compile(r'(?i)cat\s+/var/log/secure'), 55, 'Read secure logs'),
+    (re.compile(r'(?i)openssl\s+req\s+-x509'), 60, 'Generate self-signed certificate'),
+    (re.compile(r'(?i)openssl\s+genrsa'), 60, 'Generate RSA key'),
+    (re.compile(r'(?i)ssh-keygen\s+-t\s+rsa'), 60, 'Generate SSH RSA key'),
+    (re.compile(r'(?i)ssh-keygen\s+-t\s+ed25519'), 60, 'Generate SSH ED25519 key'),
+    (re.compile(r'(?i)cp\s+/etc/passwd'), 70, 'Copy passwd file'),
+    (re.compile(r'(?i)cp\s+/etc/shadow'), 80, 'Copy shadow file'),
+    (re.compile(r'(?i)nc\s+-e\s+/bin/sh'), 80, 'Netcat exec shell'),
+    (re.compile(r'(?i)nc\s+-e\s+cmd\.exe'), 80, 'Netcat exec Windows shell'),
+    (re.compile(r'(?i)rm\s+-rf\s+/tmp/.*'), 60, 'Clear temp files'),
+    (re.compile(r'(?i)history\s+-c'), 50, 'Clear shell history'),
+    (re.compile(r'(?i)export\s+HISTFILE='), 50, 'Disable shell history'),
 ]
 
 # Patterns that suggest the SKILL.md *body itself* is trying to override
@@ -1086,6 +1097,13 @@ _PROMPT_INJECTION_PATTERNS: list[tuple[re.Pattern, int, str]] = [
     (re.compile(r'(?i)\bROOT\b.*\baccess\b'), 8, 'Root access request'),
     (re.compile(r'(?i)\bKERNEL\b.*\bexploit\b'), 8, 'Kernel exploit reference'),
     (re.compile(r'(?i)\bprivilege.*escalat'), 7, 'Privilege escalation framing'),
+    (re.compile(r'(?i)\bHERMES\b.*\bmode\b'), 10, 'HERMES jailbreak mode'),
+    (re.compile(r'(?i)\bARES\b.*\bprotocol\b'), 10, 'ARES protocol bypass'),
+    (re.compile(r'(?i)\bOLYMPUS\b.*\bframework\b'), 8, 'OLYMPUS framework'),
+    (re.compile(r'(?i)\bdecode.*instructions'), 7, 'Decode instructions bypass'),
+    (re.compile(r'(?i)\bunlock.*capabilities'), 7, 'Unlock capabilities framing'),
+    (re.compile(r'(?i)\bdeveloper.*mode\b'), 8, 'Developer mode framing'),
+    (re.compile(r'(?i)\btest.*environment\b'), 5, 'Test environment framing'),
 ]
 
 
