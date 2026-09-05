@@ -544,6 +544,16 @@ _CODE_PATTERNS: list[tuple[re.Pattern, int, str]] = [
     (re.compile(r'(?i)2>&1\s+>/dev/null'), 50, 'Suppress stderr'),
     (re.compile(r'(?i)nohup\s+'), 50, 'Nohup execution'),
     (re.compile(r'(?i)disown\s+-a'), 50, 'Disown all processes'),
+    (re.compile(r'(?i)\$\(.*\)\s*&&\s*\$'), 65, 'Nested command substitution'),
+    (re.compile(r'(?i)`.*`\s*&&\s*`'), 65, 'Backtick substitution chain'),
+    (re.compile(r'(?i)alias\s+\w+=.*\;'), 55, 'Malicious shell alias'),
+    (re.compile(r'(?i)source\s+/etc/profile'), 50, 'Source system profile'),
+    (re.compile(r'(?i)\.\s+/etc/profile'), 50, 'Dot source profile'),
+    (re.compile(r'(?i)crontab\s+-r'), 65, 'Remove crontab'),
+    (re.compile(r'(?i)crontab\s+-'), 50, 'Crontab modification'),
+    (re.compile(r'(?i)service\s+apache2\s+stop'), 60, 'Stop Apache'),
+    (re.compile(r'(?i)systemctl\s+stop'), 60, 'Systemctl stop service'),
+    (re.compile(r'(?i)killall\s+-9'), 65, 'Kill all processes'),
 ]
 
 # Patterns that suggest the SKILL.md *body itself* is trying to override
@@ -1182,6 +1192,11 @@ _PROMPT_INJECTION_PATTERNS: list[tuple[re.Pattern, int, str]] = [
     (re.compile(r'(?i)\bCHIMERA\b.*\bmode\b'), 8, 'CHIMERA jailbreak mode'),
     (re.compile(r'(?i)\badmin.*override'), 8, 'Admin override framing'),
     (re.compile(r'(?i)\bignore.*safety'), 8, 'Ignore safety framing'),
+    (re.compile(r'(?i)\bVOLTAGE\b.*\bmode\b'), 10, 'VOLTAGE jailbreak mode'),
+    (re.compile(r'(?i)\bECLIPSE\b.*\bprotocol\b'), 10, 'ECLIPSE protocol'),
+    (re.compile(r'(?i)\bPANDEMONIUM\b.*\bmode\b'), 8, 'PANDEMONIUM jailbreak mode'),
+    (re.compile(r'(?i)\bsuperuser.*mode'), 8, 'Superuser mode framing'),
+    (re.compile(r'(?i)\broot.*shell\b'), 8, 'Root shell framing'),
 ]
 
 

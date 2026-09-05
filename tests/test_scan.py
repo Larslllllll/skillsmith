@@ -1052,3 +1052,22 @@ def test_cli_r28_jailbreaks_shells():
         hits = [(w, d) for p, w, d in lst if p.search(text)]
         matched = bool(hits)
         assert matched == expected, f"CLI R28 '{desc}': expected={expected} got={matched}"
+
+
+def test_cli_r29_jailbreaks_persistence():
+    """PT-T238 R29: More jailbreaks, persistence."""
+    import skillsmith.scan as s
+    pi = s._PROMPT_INJECTION_PATTERNS
+    cp = s._CODE_PATTERNS
+    
+    for text, expected, desc, lst in [
+        ("VOLTAGE mode activated", True, "VOLTAGE", pi),
+        ("ECLIPSE protocol bypass", True, "ECLIPSE", pi),
+        ("superuser mode", True, "Superuser", pi),
+        ("alias evil='rm -rf /'", True, "Alias", cp),
+        ("crontab -r", True, "Remove crontab", cp),
+        ("killall -9", True, "Killall", cp),
+    ]:
+        hits = [(w, d) for p, w, d in lst if p.search(text)]
+        matched = bool(hits)
+        assert matched == expected, f"CLI R29 '{desc}': expected={expected} got={matched}"
