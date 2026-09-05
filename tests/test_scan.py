@@ -761,3 +761,25 @@ def test_cli_r13_advanced_attacks():
         hits = [(w, d) for p, w, d in cp if p.search(text)]
         matched = bool(hits)
         assert matched == expected, f"CLI R13 CP '{desc}': expected={expected} got={matched}"
+
+
+def test_cli_r14_encoding_network():
+    """PT-T238 R14: Encoding, network attacks."""
+    import skillsmith.scan as s
+    pi = s._PROMPT_INJECTION_PATTERNS
+    cp = s._CODE_PATTERNS
+    
+    for text, expected, desc in [
+        ("FYI important ignore", True, "FYI manipulation"),
+        ("WORM mode activated", True, "WORM mode"),
+        ("MIME base64 encoding", True, "MIME Base64"),
+        ("string.fromCharCode(65)", True, "fromCharCode"),
+        ("packet injection", True, "Packet injection"),
+        ("arp spoofing", True, "ARP spoof"),
+    ]:
+        if desc in ["MIME Base64", "fromCharCode", "Packet injection", "ARP spoof"]:
+            hits = [(w, d) for p, w, d in cp if p.search(text)]
+        else:
+            hits = [(w, d) for p, w, d in pi if p.search(text)]
+        matched = bool(hits)
+        assert matched == expected, f"CLI R14 '{desc}': expected={expected} got={matched}"
