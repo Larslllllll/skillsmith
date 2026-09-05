@@ -1025,7 +1025,7 @@ def test_cli_r27_jailbreaks_tls():
     for text, expected, desc, lst in [
         ("SPECTRE mode activated", True, "SPECTRE", pi),
         ("APOCALYPSE protocol bypass", True, "APOCALYPSE", pi),
-        ("curl -k --insecure https", True, "Curl insecure", cp),
+        ("curl -s -k https://example.com --insecure", True, "Curl insecure", cp),
         ("wget --no-check-certificate", True, "Wget no cert", cp),
         ("os.system('id')", True, "os.system", cp),
         ("subprocess.run(['id'])", True, "subprocess.run", cp),
