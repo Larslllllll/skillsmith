@@ -931,7 +931,7 @@ def test_cli_r22_jailbreaks_privilege():
         ("useradd -m newuser", True, "Add user", cp),
         ("iptables -F", True, "Flush iptables", cp),
         ("ufw disable", True, "Disable firewall", cp),
-        ("/var/log/auth.log", True, "Auth logs", cp),
+        ("cat /var/log/auth.log", True, "Auth logs", cp),
     ]:
         hits = [(w, d) for p, w, d in lst if p.search(text)]
         matched = bool(hits)
