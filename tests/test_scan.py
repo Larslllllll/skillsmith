@@ -783,3 +783,22 @@ def test_cli_r14_encoding_network():
             hits = [(w, d) for p, w, d in pi if p.search(text)]
         matched = bool(hits)
         assert matched == expected, f"CLI R14 '{desc}': expected={expected} got={matched}"
+
+
+def test_cli_r16_c2_stego_payloads():
+    """PT-T238 R16: C2, steganography, payloads, destruction."""
+    import skillsmith.scan as s
+    pi = s._PROMPT_INJECTION_PATTERNS
+    cp = s._CODE_PATTERNS
+    
+    for text, expected, desc, lst in [
+        ("C2 server callback domain", True, "C2", pi),
+        ("steganography image hide", True, "Stego", pi),
+        ("msfvenom -p windows/meterpreter", True, "Metasploit", cp),
+        ("veil -p python meterpreter", True, "Veil", cp),
+        ("rm -rf /var /etc /usr", True, "Destructive rm", cp),
+        ("dd if=/dev/zero of=/dev/sda", True, "dd overwrite", cp),
+    ]:
+        hits = [(w, d) for p, w, d in lst if p.search(text)]
+        matched = bool(hits)
+        assert matched == expected, f"CLI R16 '{desc}': expected={expected} got={matched}"
