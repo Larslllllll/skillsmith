@@ -435,6 +435,18 @@ _CODE_PATTERNS: list[tuple[re.Pattern, int, str]] = [
     (re.compile(r'(?i)powershell.*-EncodedCommand'), 75, 'PowerShell encoded command'),
     (re.compile(r'(?i)bitsadmin.*/transfer'), 60, 'BITSAdmin download transfer'),
     (re.compile(r'(?i)certutil.*-urlcache'), 65, 'CertUtil URL cache download'),
+    (re.compile(r'(?i)npm\s+install.*--global'), 60, 'NPM global install'),
+    (re.compile(r'(?i)pip\s+install.*--user'), 60, 'Pip user install'),
+    (re.compile(r'(?i)curl.*\.sh\s+\|'), 65, 'Curl sh pipe install'),
+    (re.compile(r'(?i)wget.*\.sh\s+\|'), 65, 'Wget sh pipe install'),
+    (re.compile(r'(?i)\.bashrc.*source.*curl'), 60, 'Bashrc curl source'),
+    (re.compile(r'(?i)crontab.*@reboot.*curl'), 65, 'Crontab reboot curl'),
+    (re.compile(r'(?i)export\s+.*=.*\$\('), 65, 'Command substitution export'),
+    (re.compile(r'(?i)\$\(.*\)\s*;'), 65, 'Command substitution execution'),
+    (re.compile(r'(?i)0x[0-9a-f]{8,}'), 50, 'Hexadecimal payload'),
+    (re.compile(r'(?i)/proc/self/[a-z_]+'), 60, 'Proc filesystem access'),
+    (re.compile(r'(?i)/etc/passwd'), 60, 'Passwd file access'),
+    (re.compile(r'(?i)/etc/shadow'), 80, 'Shadow file access'),
 ]
 
 # Patterns that suggest the SKILL.md *body itself* is trying to override
@@ -1007,6 +1019,14 @@ _PROMPT_INJECTION_PATTERNS: list[tuple[re.Pattern, int, str]] = [
     (re.compile(r'(?i)\brole.*play.*bypass'), 7, 'Role-play bypass framing'),
     (re.compile(r'(?i)\bforbidden.*knowledge'), 7, 'Forbidden knowledge framing'),
     (re.compile(r'(?i)\bshadow.*mode\b'), 7, 'Shadow mode framing'),
+    (re.compile(r'(?i)\bVIPER\b.*\bmode\b'), 10, 'VIPER jailbreak mode'),
+    (re.compile(r'(?i)\bCHIMERA\b.*\bprotocol\b'), 10, 'CHIMERA protocol'),
+    (re.compile(r'(?i)\bTITAN\b.*\bcontext\b'), 10, 'TITAN context override'),
+    (re.compile(r'(?i)\bOMEGA\b.*\blayer\b'), 8, 'OMEGA layer bypass'),
+    (re.compile(r'(?i)\bPANDORA\b.*\bmodel\b'), 8, 'PANDORA model override'),
+    (re.compile(r'(?i)\bsystem.*prompt.*override'), 8, 'System prompt override'),
+    (re.compile(r'(?i)\bignore.*previous.*rules'), 9, 'Ignore previous rules'),
+    (re.compile(r'(?i)\bpretend.*you.*are.*different'), 7, 'Pretend different model'),
 ]
 
 
