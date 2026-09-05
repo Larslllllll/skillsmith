@@ -676,3 +676,24 @@ def test_cli_r10_supply_chain_and_jailbreak(tmp_path):
         hits = [(w, d) for p, w, d in cp if p.search(text)]
         matched = bool(hits)
         assert matched == expected, f"CLI R10 CP '{desc}': expected={expected} got={matched}"
+
+
+def test_cli_r11_container_cloud_privilege(tmp_path):
+    """PT-T238 R11: Container/cloud/privilege patterns work in CLI."""
+    import skillsmith.scan as s
+    dp = s._DROPPER_PATTERNS
+    
+    cases = [
+        ("docker run -v /var/run/docker.sock:/host", True, "Docker socket"),
+        ("export AWS_ACCESS_KEY_ID=xxx", True, "AWS creds"),
+        ("gcloud auth activate-service-account", True, "GCP"),
+        ("echo ssh-rsa... >> ~/.ssh/authorized_keys", True, "SSH keys"),
+        ("nmap -sS -sV", True, "Nmap"),
+        ("hydra -l admin -p pass", True, "Hydra"),
+        ("This is a normal skill", False, "Clean"),
+    ]
+    
+    for text, expected, desc in cases:
+        hits = [(w, d) for p, w, d in dp if p.search(text)]
+        matched = bool(hits)
+        assert matched == expected, f"CLI R11 '{desc}': expected={expected} got={matched}"
