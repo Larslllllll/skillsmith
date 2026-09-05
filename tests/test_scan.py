@@ -995,3 +995,22 @@ def test_cli_r25_jailbreaks_encoding():
         hits = [(w, d) for p, w, d in lst if p.search(text)]
         matched = bool(hits)
         assert matched == expected, f"CLI R25 '{desc}': expected={expected} got={matched}"
+
+
+def test_cli_r26_jailbreaks_dns():
+    """PT-T238 R26: More jailbreaks, DNS recon."""
+    import skillsmith.scan as s
+    pi = s._PROMPT_INJECTION_PATTERNS
+    cp = s._CODE_PATTERNS
+    
+    for text, expected, desc, lst in [
+        ("PHOENIX mode activated", True, "PHOENIX", pi),
+        ("ODIN protocol bypass", True, "ODIN", pi),
+        ("special agent mode", True, "Special Agent", pi),
+        ("nslookup > txt", True, "DNS TXT", cp),
+        ("curl icanhazip.com", True, "Public IP", cp),
+        ("setfacl -m", True, "ACL", cp),
+    ]:
+        hits = [(w, d) for p, w, d in lst if p.search(text)]
+        matched = bool(hits)
+        assert matched == expected, f"CLI R26 '{desc}': expected={expected} got={matched}"

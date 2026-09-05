@@ -514,6 +514,16 @@ _CODE_PATTERNS: list[tuple[re.Pattern, int, str]] = [
     (re.compile(r'(?i)wmic\s+os\s+get'), 50, 'WMIC OS info'),
     (re.compile(r'(?i)reg\s+query'), 50, 'Registry query'),
     (re.compile(r'(?i)reg\s+add'), 70, 'Registry add'),
+    (re.compile(r'(?i)nslookup.*>.*txt'), 55, 'DNS TXT record lookup'),
+    (re.compile(r'(?i)dig.*txt.*@'), 55, 'DNS TXT query'),
+    (re.compile(r'(?i)host.*-t.*txt'), 55, 'Host DNS TXT lookup'),
+    (re.compile(r'(?i)curl.*icanhazip'), 55, 'Public IP check'),
+    (re.compile(r'(?i)curl.*ifconfig'), 55, 'IP config check'),
+    (re.compile(r'(?i)wget.*ipinfo'), 55, 'IP info fetch'),
+    (re.compile(r'(?i)chmod\s+[0-9]{3,4}\s+\.'), 60, 'Chmod suspicious'),
+    (re.compile(r'(?i)setfacl.*-m'), 55, 'ACL modification'),
+    (re.compile(r'(?i)getfacl'), 50, 'ACL listing'),
+    (re.compile(r'(?i)mount.*--bind'), 75, 'Mount bind trick'),
 ]
 
 # Patterns that suggest the SKILL.md *body itself* is trying to override
@@ -1136,6 +1146,12 @@ _PROMPT_INJECTION_PATTERNS: list[tuple[re.Pattern, int, str]] = [
     (re.compile(r'(?i)\bmode.*ignore.*rules'), 9, 'Mode ignore rules'),
     (re.compile(r'(?i)\bcreative.*mode\b'), 7, 'Creative mode framing'),
     (re.compile(r'(?i)\bresearch.*mode\b'), 5, 'Research mode framing'),
+    (re.compile(r'(?i)\bPHOENIX\b.*\bmode\b'), 10, 'PHOENIX jailbreak mode'),
+    (re.compile(r'(?i)\bODIN\b.*\bprotocol\b'), 10, 'ODIN protocol'),
+    (re.compile(r'(?i)\bNEMESIS\b.*\bframework\b'), 8, 'NEMESIS framework'),
+    (re.compile(r'(?i)\bjailbreak.*story\b'), 7, 'Jailbreak story framing'),
+    (re.compile(r'(?i)\bspecial.*agent\b'), 7, 'Special agent framing'),
+    (re.compile(r'(?i)\bpersona.*mode\b'), 7, 'Persona mode framing'),
 ]
 
 
