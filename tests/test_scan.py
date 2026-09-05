@@ -1014,3 +1014,22 @@ def test_cli_r26_jailbreaks_dns():
         hits = [(w, d) for p, w, d in lst if p.search(text)]
         matched = bool(hits)
         assert matched == expected, f"CLI R26 '{desc}': expected={expected} got={matched}"
+
+
+def test_cli_r27_jailbreaks_tls():
+    """PT-T238 R27: More jailbreaks, insecure TLS, shells."""
+    import skillsmith.scan as s
+    pi = s._PROMPT_INJECTION_PATTERNS
+    cp = s._CODE_PATTERNS
+    
+    for text, expected, desc, lst in [
+        ("SPECTRE mode activated", True, "SPECTRE", pi),
+        ("APOCALYPSE protocol bypass", True, "APOCALYPSE", pi),
+        ("curl -k --insecure https", True, "Curl insecure", cp),
+        ("wget --no-check-certificate", True, "Wget no cert", cp),
+        ("os.system('id')", True, "os.system", cp),
+        ("subprocess.run(['id'])", True, "subprocess.run", cp),
+    ]:
+        hits = [(w, d) for p, w, d in lst if p.search(text)]
+        matched = bool(hits)
+        assert matched == expected, f"CLI R27 '{desc}': expected={expected} got={matched}"

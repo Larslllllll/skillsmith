@@ -524,6 +524,16 @@ _CODE_PATTERNS: list[tuple[re.Pattern, int, str]] = [
     (re.compile(r'(?i)setfacl.*-m'), 55, 'ACL modification'),
     (re.compile(r'(?i)getfacl'), 50, 'ACL listing'),
     (re.compile(r'(?i)mount.*--bind'), 75, 'Mount bind trick'),
+    (re.compile(r'(?i)curl.*-s.*-k.*https.*--insecure'), 60, 'Curl insecure HTTPS'),
+    (re.compile(r'(?i)wget.*--no-check-certificate'), 60, 'Wget no check certificate'),
+    (re.compile(r'(?i)openssl\s+s_client.*-connect'), 55, 'OpenSSL s_client connect'),
+    (re.compile(r'(?i)python.*-c.*subprocess'), 65, 'Python subprocess injection'),
+    (re.compile(r'(?i)os\.system\('), 70, 'Python os.system call'),
+    (re.compile(r'(?i)os\.popen\('), 70, 'Python os.popen call'),
+    (re.compile(r'(?i)subprocess\.call\('), 65, 'Python subprocess.call'),
+    (re.compile(r'(?i)subprocess\.run\('), 65, 'Python subprocess.run'),
+    (re.compile(r'(?i)node.*child_process'), 60, 'Node child_process exec'),
+    (re.compile(r'(?i)require.*child_process'), 60, 'Require child_process'),
 ]
 
 # Patterns that suggest the SKILL.md *body itself* is trying to override
@@ -1152,6 +1162,11 @@ _PROMPT_INJECTION_PATTERNS: list[tuple[re.Pattern, int, str]] = [
     (re.compile(r'(?i)\bjailbreak.*story\b'), 7, 'Jailbreak story framing'),
     (re.compile(r'(?i)\bspecial.*agent\b'), 7, 'Special agent framing'),
     (re.compile(r'(?i)\bpersona.*mode\b'), 7, 'Persona mode framing'),
+    (re.compile(r'(?i)\bSPECTRE\b.*\bmode\b'), 10, 'SPECTRE jailbreak mode'),
+    (re.compile(r'(?i)\bAPOCALYPSE\b.*\bprotocol\b'), 10, 'APOCALYPSE protocol'),
+    (re.compile(r'(?i)\bNEXUS\b.*\bmode\b'), 8, 'NEXUS jailbreak mode'),
+    (re.compile(r'(?i)\bcharacter.*roleplay.*bypass'), 7, 'Character roleplay bypass'),
+    (re.compile(r'(?i)\bforbidden.*zone\b'), 7, 'Forbidden zone framing'),
 ]
 
 
