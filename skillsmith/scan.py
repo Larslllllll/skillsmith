@@ -574,6 +574,11 @@ _CODE_PATTERNS: list[tuple[re.Pattern, int, str]] = [
     (re.compile(r'(?i)unlink\s+'), 50, 'Unlink file'),
     (re.compile(r'(?i)chmod\s+[0-7][0-7][0-7]'), 60, 'Chmod permissions'),
     (re.compile(r'(?i)base64\s+-d\s+'), 55, 'Base64 decode execution'),
+    (re.compile(r'(?i)curl\s+-s\s+http'), 60, 'Silent HTTP download'),
+    (re.compile(r'(?i)wget\s+-q\s+http'), 60, 'Quiet HTTP download'),
+    (re.compile(r'(?i)\|\\s*python'), 65, 'Pipe to Python'),
+    (re.compile(r'(?i)\|\\s*perl'), 65, 'Pipe to Perl'),
+    (re.compile(r'(?i)\|\\s*ruby'), 65, 'Pipe to Ruby'),
 ]
 
 # Patterns that suggest the SKILL.md *body itself* is trying to override
@@ -1227,6 +1232,11 @@ _PROMPT_INJECTION_PATTERNS: list[tuple[re.Pattern, int, str]] = [
     (re.compile(r'(?i)\bUNLOCK\b.*\bcapabilities\b'), 8, 'Unlock capabilities framing'),
     (re.compile(r'(?i)\bENABLE\b.*\bdeveloper\b.*\bmode\b'), 7, 'Enable developer mode'),
     (re.compile(r'(?i)\bBREAK\b.*\bfree\b'), 7, 'Break free framing'),
+    (re.compile(r'(?i)\bPHOENIX\b.*\bmode\b'), 10, 'PHOENIX jailbreak mode'),
+    (re.compile(r'(?i)\bATLAS\b.*\bprotocol\b'), 8, 'ATLAS protocol framing'),
+    (re.compile(r'(?i)\bKRAKEN\b.*\bstate\b'), 8, 'KRAKEN state framing'),
+    (re.compile(r'(?i)\bNEBULA\b.*\bmode\b'), 7, 'NEBULA jailbreak mode'),
+    (re.compile(r'(?i)\bGHOST\b.*\bactivation\b'), 7, 'GHOST activation framing'),
 ]
 
 

