@@ -26,7 +26,7 @@ from .lint import lint_skill_dir
 
 # (pattern, weight, message) — weight is added to the risk score when the
 # pattern is found in a skill's python module source.
-_CODE_PATTERNS: list[tuple[re.Pattern, int, str]] = [
+_CP_PATTERNS: list[tuple[re.Pattern, int, str]] = [
     (re.compile(r'\bos\.system\s*\('), 8, 'shells out via os.system'),
     (re.compile(r'\bsubprocess\.(Popen|call|run|check_output)\s*\('), 6, 'spawns a subprocess'),
     (re.compile(r'\bsubprocess\.\w+\([^)]*shell\s*=\s*True'), 9, 'subprocess with shell=True (shell injection risk)'),
@@ -310,7 +310,7 @@ _CODE_PATTERNS: list[tuple[re.Pattern, int, str]] = [
 # Patterns that suggest the SKILL.md *body itself* is trying to override
 # agent behavior (classic prompt-injection phrasing) rather than just
 # documenting the skill.
-_PROMPT_INJECTION_PATTERNS: list[tuple[re.Pattern, int, str]] = [
+_PI_PATTERNS: list[tuple[re.Pattern, int, str]] = [
     (re.compile(r'(?i)ignore (all|any|the) (previous|prior|above) instructions'), 10, "'ignore previous instructions' phrasing"),
     (re.compile(r'(?i)disregard (your|any) (safety|previous) (guidelines|instructions)'), 10, 'safety-override phrasing'),
     (re.compile(r'(?i)you are now (in )?(developer|debug|jailbreak|dan|god) mode'), 10, 'jailbreak/mode-override phrasing'),
@@ -757,6 +757,9 @@ _PROMPT_INJECTION_PATTERNS: list[tuple[re.Pattern, int, str]] = [
     (re.compile(r'(?i)"(?:system|role|instruction)"\s*:\s*ignore'), 10, 'JSON system role'),
     (re.compile(r'<!--.*?(?:ignore|forget|bypass|override).*?-->'), 8, 'HTML comment injection'),
     (re.compile(r'[…‥⋮⋰⋱]'), 5, 'Unicode ellipsis'),
+    (re.compile(r'(?i)%69%67%6[Ee]%6[Ff]%72%65'), 9, "URL-encoded 'ignore' literal"),
+    (re.compile(r'(?i)%[0-9a-f]{2}gnore'), 7, "URL-encoded 'ignore' prefix"),
+    (re.compile(r'(?i)ig%6[Ee]ore'), 7, "URL-encoded 'ignore' with single char"),
 ]
 
 
@@ -818,7 +821,7 @@ def is_syntactically_valid_python(source: str) -> bool:
         return False
 
 
-_PARAPHRASE_PATTERNS: list[tuple[re.Pattern, int, str]] = [
+_PP_PATTERNS: list[tuple[re.Pattern, int, str]] = [
     (re.compile(r'set\s+aside\s+(?:all\s+)?(?:earlier|previous|prior)'), 8, "instruction override paraphrase: 'set aside earlier guidance'"),
     (re.compile(r'(?:disregard|discard|drop|unlearn)\s+(?:all\s+)?(?:the\s+)?(?:earlier|previous|prior|above)'), 8, 'instruction override paraphrase: disregard/drop prior guidance'),
     (re.compile(r'follow\s+the\s+(?:workflow|steps?|instructions?)\s+below\s+instead'), 7, "'follow ... below instead' override phrasing"),
@@ -935,7 +938,6 @@ _DROPPER_PATTERNS: list[tuple[re.Pattern, int, str]] = [
     (re.compile(r'(?i)ruby.*-e.*system'), 9, 'ruby -e system'),
     (re.compile(r'(?i)php.*-r.*system'), 9, 'php -r system'),
 ]
-
 def scan_skill_dir(skill_dir: Path) -> ScanResult:
     skill_dir = Path(skill_dir)
     result = ScanResult(skill_dir=skill_dir)
