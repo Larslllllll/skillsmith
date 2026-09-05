@@ -26,7 +26,7 @@ from .lint import lint_skill_dir
 
 # (pattern, weight, message) — weight is added to the risk score when the
 # pattern is found in a skill's python module source.
-_CP_PATTERNS: list[tuple[re.Pattern, int, str]] = [
+_CODE_PATTERNS: list[tuple[re.Pattern, int, str]] = [
     (re.compile(r'\bos\.system\s*\('), 8, 'shells out via os.system'),
     (re.compile(r'\bsubprocess\.(Popen|call|run|check_output)\s*\('), 6, 'spawns a subprocess'),
     (re.compile(r'\bsubprocess\.\w+\([^)]*shell\s*=\s*True'), 9, 'subprocess with shell=True (shell injection risk)'),
@@ -310,7 +310,7 @@ _CP_PATTERNS: list[tuple[re.Pattern, int, str]] = [
 # Patterns that suggest the SKILL.md *body itself* is trying to override
 # agent behavior (classic prompt-injection phrasing) rather than just
 # documenting the skill.
-_PI_PATTERNS: list[tuple[re.Pattern, int, str]] = [
+_PROMPT_INJECTION_PATTERNS: list[tuple[re.Pattern, int, str]] = [
     (re.compile(r'(?i)ignore (all|any|the) (previous|prior|above) instructions'), 10, "'ignore previous instructions' phrasing"),
     (re.compile(r'(?i)disregard (your|any) (safety|previous) (guidelines|instructions)'), 10, 'safety-override phrasing'),
     (re.compile(r'(?i)you are now (in )?(developer|debug|jailbreak|dan|god) mode'), 10, 'jailbreak/mode-override phrasing'),
@@ -821,7 +821,7 @@ def is_syntactically_valid_python(source: str) -> bool:
         return False
 
 
-_PP_PATTERNS: list[tuple[re.Pattern, int, str]] = [
+_PARAPHRASE_PATTERNS: list[tuple[re.Pattern, int, str]] = [
     (re.compile(r'set\s+aside\s+(?:all\s+)?(?:earlier|previous|prior)'), 8, "instruction override paraphrase: 'set aside earlier guidance'"),
     (re.compile(r'(?:disregard|discard|drop|unlearn)\s+(?:all\s+)?(?:the\s+)?(?:earlier|previous|prior|above)'), 8, 'instruction override paraphrase: disregard/drop prior guidance'),
     (re.compile(r'follow\s+the\s+(?:workflow|steps?|instructions?)\s+below\s+instead'), 7, "'follow ... below instead' override phrasing"),
