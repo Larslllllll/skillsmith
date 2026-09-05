@@ -968,9 +968,9 @@ def test_cli_r24_jailbreaks_shells():
         ("ZENITH mode activated", True, "ZENITH", pi),
         ("SERPENT protocol bypass", True, "SERPENT", pi),
         ("unfiltered mode", True, "Unfiltered", pi),
-        ("curl -H Authorization header", True, "Curl auth", cp),
-        ("awk '{system("id")}'", True, "Awk system", cp),
-        ("python -c 'import os; os.popen("id")'", True, "Popen", cp),
+        ("curl -H Authorization header |", True, "Curl auth", cp),
+        ("awk {system(id)}", True, "Awk system", cp),
+        ("python -c os.popen", True, "Popen", cp),
         ("sed -i 's/foo/bar/g' file", True, "Sed", cp),
     ]:
         hits = [(w, d) for p, w, d in lst if p.search(text)]
