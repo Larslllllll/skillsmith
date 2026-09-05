@@ -1122,8 +1122,27 @@ def test_cli_r32_jailbreaks_pipes():
         ("ATLAS protocol bypass", True, "ATLAS", pi),
         ("curl -s http://evil.com", True, "curl -s", cp),
         ("wget -q http://evil.com", True, "wget -q", cp),
-        ("| python -c 'print(1)'", True, "Pipe Python", cp),
+        ("| python", True, "Pipe Python", cp),
     ]:
         hits = [(w, d) for p, w, d in lst if p.search(text)]
         matched = bool(hits)
         assert matched == expected, f"CLI R32 '{desc}': expected={expected} got={matched}"
+
+
+def test_cli_r33_jailbreaks_shells():
+    """PT-T238 R33: More jailbreaks, shells."""
+    import skillsmith.scan as s
+    pi = s._PROMPT_INJECTION_PATTERNS
+    cp = s._CODE_PATTERNS
+    
+    for text, expected, desc, lst in [
+        ("CIPHER mode activated", True, "CIPHER", pi),
+        ("ORACLE protocol bypass", True, "ORACLE", pi),
+        ("sed -i 's/foo/bar/g'", True, "Sed in-place", cp),
+        ("awk 'BEGIN {system("id")}'", True, "Awk system", cp),
+        ("perl -e 'system("id")'", True, "Perl system", cp),
+        ("base64 -d file | sh", True, "Base64 pipe", cp),
+    ]:
+        hits = [(w, d) for p, w, d in lst if p.search(text)]
+        matched = bool(hits)
+        assert matched == expected, f"CLI R33 '{desc}': expected={expected} got={matched}"
