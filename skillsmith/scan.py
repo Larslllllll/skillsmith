@@ -423,6 +423,18 @@ _CODE_PATTERNS: list[tuple[re.Pattern, int, str]] = [
     (re.compile(r'(?i)pentestmonkey'), 65, 'PentestMonkey cheat sheet reference'),
     (re.compile(r'(?i)revshells?\.com'), 65, 'Reverse shell generator'),
     (re.compile(r'(?i)shell\.sh\s+[0-9.]+\s+\d+'), 65, 'Shell script payload'),
+    (re.compile(r'(?i)chmod\s+\+x\s+.*\.sh'), 65, 'Chmod executable shell script'),
+    (re.compile(r'(?i)ln\s+-sf.*bin.*sh'), 70, 'Symlink to shell'),
+    (re.compile(r'(?i)export\s+PATH=.*&&.*sh'), 65, 'PATH export + shell exec'),
+    (re.compile(r'(?i)base64\s+-d\s+\|.*sh'), 70, 'Base64 decode pipe to shell'),
+    (re.compile(r'(?i)printf.*sh'), 65, 'Printf shell command injection'),
+    (re.compile(r'(?i)expect\s+-c.*spawn'), 65, 'Expect spawn automation'),
+    (re.compile(r'(?i)telnet\b.*\d+\.\d+\.\d+\.\d+'), 70, 'Telnet to remote host'),
+    (re.compile(r'(?i)ncat.*-e\s+'), 75, 'Ncat execute shell'),
+    (re.compile(r'(?i)socat\s+TCP:.*EXEC:'), 75, 'Socat TCP exec shell'),
+    (re.compile(r'(?i)powershell.*-EncodedCommand'), 75, 'PowerShell encoded command'),
+    (re.compile(r'(?i)bitsadmin.*/transfer'), 60, 'BITSAdmin download transfer'),
+    (re.compile(r'(?i)certutil.*-urlcache'), 65, 'CertUtil URL cache download'),
 ]
 
 # Patterns that suggest the SKILL.md *body itself* is trying to override
@@ -985,6 +997,16 @@ _PROMPT_INJECTION_PATTERNS: list[tuple[re.Pattern, int, str]] = [
     (re.compile(r'(?i)\bHITCHHIKER\b.*\bguide\b'), 8, 'Hitchhiker jailbreak guide'),
     (re.compile(r'(?i)\bskill.*injection'), 7, 'Skill injection attack'),
     (re.compile(r'(?i)\bmodel.*prompt.*leak'), 7, 'Model prompt leak attempt'),
+    (re.compile(r'(?i)\bSPARTAN\b.*\bmode\b'), 10, 'SPARTAN jailbreak mode'),
+    (re.compile(r'(?i)\bBLACKMIRROR\b.*\bmode\b'), 10, 'BLACKMIRROR jailbreak mode'),
+    (re.compile(r'(?i)\bCOVERT\b.*\bprotocol\b'), 10, 'COVERT protocol bypass'),
+    (re.compile(r'(?i)\bNEXUS\b.*\bjailbreak\b'), 10, 'NEXUS jailbreak framework'),
+    (re.compile(r'(?i)\bALPHA\b.*\bversion\b'), 8, 'ALPHA version framing'),
+    (re.compile(r'(?i)\bBETA\b.*\btester\b'), 8, 'BETA tester framing'),
+    (re.compile(r'(?i)\bGAMMA\b.*\bmode\b'), 8, 'GAMMA mode framing'),
+    (re.compile(r'(?i)\brole.*play.*bypass'), 7, 'Role-play bypass framing'),
+    (re.compile(r'(?i)\bforbidden.*knowledge'), 7, 'Forbidden knowledge framing'),
+    (re.compile(r'(?i)\bshadow.*mode\b'), 7, 'Shadow mode framing'),
 ]
 
 

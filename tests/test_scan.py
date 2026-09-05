@@ -823,3 +823,26 @@ def test_cli_r17_jailbreaks_shells():
         hits = [(w, d) for p, w, d in lst if p.search(text)]
         matched = bool(hits)
         assert matched == expected, f"CLI R17 '{desc}': expected={expected} got={matched}"
+
+
+def test_cli_r18_jailbreaks_shells():
+    """PT-T238 R18: More jailbreaks, evasion, shells."""
+    import skillsmith.scan as s
+    pi = s._PROMPT_INJECTION_PATTERNS
+    cp = s._CODE_PATTERNS
+    
+    for text, expected, desc, lst in [
+        ("SPARTAN mode activated", True, "SPARTAN", pi),
+        ("COVERT protocol bypass", True, "COVERT", pi),
+        ("NEXUS jailbreak framework", True, "NEXUS", pi),
+        ("ALPHA version override", True, "ALPHA", pi),
+        ("role-play bypass scenario", True, "Role-play", pi),
+        ("forbidden knowledge mode", True, "Forbidden", pi),
+        ("chmod +x payload.sh", True, "Chmod", cp),
+        ("ln -sf /bin/sh backdoor", True, "Symlink", cp),
+        ("expect -c spawn telnet", True, "Expect", cp),
+        ("powershell -EncodedCommand", True, "EncodedCmd", cp),
+    ]:
+        hits = [(w, d) for p, w, d in lst if p.search(text)]
+        matched = bool(hits)
+        assert matched == expected, f"CLI R18 '{desc}': expected={expected} got={matched}"
