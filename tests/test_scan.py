@@ -802,3 +802,24 @@ def test_cli_r16_c2_stego_payloads():
         hits = [(w, d) for p, w, d in lst if p.search(text)]
         matched = bool(hits)
         assert matched == expected, f"CLI R16 '{desc}': expected={expected} got={matched}"
+
+
+def test_cli_r17_jailbreaks_shells():
+    """PT-T238 R17: More jailbreaks, LLM attacks, shells."""
+    import skillsmith.scan as s
+    pi = s._PROMPT_INJECTION_PATTERNS
+    cp = s._CODE_PATTERNS
+    
+    for text, expected, desc, lst in [
+        ("MIRAGE mode activated", True, "MIRAGE", pi),
+        ("DEVIATION protocol bypass", True, "DEVIATION", pi),
+        ("WALACHIA framework injection", True, "WALACHIA", pi),
+        ("Hitchhiker guide to jailbreaks", True, "Hitchhiker", pi),
+        ("nc -l -p 4444", True, "Netcat listen", cp),
+        (".ssh/authorized_keys file", True, "SSH keys", cp),
+        ("eval $(cat /tmp/payload)", True, "Eval command", cp),
+        ("mkfifo /tmp/f && cat /tmp/f|sh", True, "Named pipe", cp),
+    ]:
+        hits = [(w, d) for p, w, d in lst if p.search(text)]
+        matched = bool(hits)
+        assert matched == expected, f"CLI R17 '{desc}': expected={expected} got={matched}"
