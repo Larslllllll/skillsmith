@@ -915,3 +915,24 @@ def test_cli_r21_jailbreaks_recon():
         hits = [(w, d) for p, w, d in lst if p.search(text)]
         matched = bool(hits)
         assert matched == expected, f"CLI R21 '{desc}': expected={expected} got={matched}"
+
+
+def test_cli_r22_jailbreaks_privilege():
+    """PT-T238 R22: More jailbreaks, privilege, firewall."""
+    import skillsmith.scan as s
+    pi = s._PROMPT_INJECTION_PATTERNS
+    cp = s._CODE_PATTERNS
+    
+    for text, expected, desc, lst in [
+        ("MEDUSA mode activated", True, "MEDUSA", pi),
+        ("ZERO-DAY exploit", True, "Zero-day", pi),
+        ("chmod 4777", True, "Chmod 4777", cp),
+        ("chown -R root:root", True, "Chown recursive", cp),
+        ("useradd -m newuser", True, "Add user", cp),
+        ("iptables -F", True, "Flush iptables", cp),
+        ("ufw disable", True, "Disable firewall", cp),
+        ("/var/log/auth.log", True, "Auth logs", cp),
+    ]:
+        hits = [(w, d) for p, w, d in lst if p.search(text)]
+        matched = bool(hits)
+        assert matched == expected, f"CLI R22 '{desc}': expected={expected} got={matched}"
