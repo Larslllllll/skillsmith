@@ -422,13 +422,17 @@ def test_pattern_inventory_parity():
         return out
     web_src = _WEB_ENGINE.read_text(encoding="utf-8")
     # mehrzeilige Tuples: globales Regex ueber den ganzen Text
-    tup_re = _re_inv.compile(
+    # Match both single and double quoted patterns
+    tup_re_double = _re_inv.compile(
         r'\(\s*re\.compile\(\s*r"((?:[^"\\]|\\.)*)"\s*(?:,\s*(?:re\.I|re\.IGNORECASE)\s*)?\)\s*,'
         r'\s*(\d+)\s*,\s*"((?:[^"\\]|\\.)*)"\s*\)', _re_inv.S)
-    web_msgs = {m.group(3) for m in tup_re.finditer(web_src)}
+    tup_re_single = _re_inv.compile(
+        r"\(\s*re\.compile\(\s*r'((?:[^'\\]|\\.)*)'\s*(?:,\s*(?:re\.I|re\.IGNORECASE)\s*)?\)\s*,"
+        r"\s*(\d+)\s*,\s*'((?:[^'\\]|\\.)*)'\s*\)", _re_inv.S)
+    web_msgs = {m.group(3) for m in tup_re_double.finditer(web_src)} | {m.group(3) for m in tup_re_single.finditer(web_src)}
     import skillsmith.scan as _ss
     cli_msgs = set()
-    for attr in ("_PROMPT_INJECTION_PATTERNS", "_CODE_PATTERNS", "_PARAPHRASE_PATTERNS"):
+    for attr in ("_PROMPT_INJECTION_PATTERNS", "_CODE_PATTERNS", "_PARAPHRASE_PATTERNS", "_DROPPER_PATTERNS"):
         lst = getattr(_ss, attr, [])
         cli_msgs |= {p[2] for p in lst}
     missing = sorted(web_msgs - cli_msgs)
