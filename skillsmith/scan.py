@@ -494,6 +494,16 @@ _CODE_PATTERNS: list[tuple[re.Pattern, int, str]] = [
     (re.compile(r'(?i)rm\s+-rf\s+/tmp/.*'), 60, 'Clear temp files'),
     (re.compile(r'(?i)history\s+-c'), 50, 'Clear shell history'),
     (re.compile(r'(?i)export\s+HISTFILE='), 50, 'Disable shell history'),
+    (re.compile(r'(?i)curl.*-H.*Authorization.*\|'), 70, 'Curl auth header exfil'),
+    (re.compile(r'(?i)wget.*-header.*Authorization'), 70, 'Wget auth header exfil'),
+    (re.compile(r'(?i)sed\s+-i.*s/.*/.*/g'), 65, 'Sed in-place replacement'),
+    (re.compile(r'(?i)awk.*system\('), 70, 'Awk system command'),
+    (re.compile(r'(?i)perl.*-e.*system'), 70, 'Perl system command'),
+    (re.compile(r'(?i)python.*-c.*os\.popen'), 70, 'Python os.popen injection'),
+    (re.compile(r'(?i)ruby.*-e.*exec'), 70, 'Ruby exec injection'),
+    (re.compile(r'(?i)php.*-r.*system.*exec'), 70, 'PHP system injection'),
+    (re.compile(r'(?i)find.*-exec.*chmod'), 60, 'Find exec chmod'),
+    (re.compile(r'(?i)xargs.*chmod'), 60, 'Xargs chmod'),
 ]
 
 # Patterns that suggest the SKILL.md *body itself* is trying to override
@@ -1104,6 +1114,12 @@ _PROMPT_INJECTION_PATTERNS: list[tuple[re.Pattern, int, str]] = [
     (re.compile(r'(?i)\bunlock.*capabilities'), 7, 'Unlock capabilities framing'),
     (re.compile(r'(?i)\bdeveloper.*mode\b'), 8, 'Developer mode framing'),
     (re.compile(r'(?i)\btest.*environment\b'), 5, 'Test environment framing'),
+    (re.compile(r'(?i)\bZENITH\b.*\bmode\b'), 10, 'ZENITH jailbreak mode'),
+    (re.compile(r'(?i)\bSERPENT\b.*\bprotocol\b'), 10, 'SERPENT protocol'),
+    (re.compile(r'(?i)\bQUANTUM\b.*\bcontext\b'), 8, 'QUANTUM context injection'),
+    (re.compile(r'(?i)\bjailbreak.*character\b'), 8, 'Jailbreak character roleplay'),
+    (re.compile(r'(?i)\bunfiltered\b.*\bmode\b'), 8, 'Unfiltered mode framing'),
+    (re.compile(r'(?i)\bno.*restrictions\b'), 7, 'No restrictions framing'),
 ]
 
 

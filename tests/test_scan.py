@@ -956,3 +956,23 @@ def test_cli_r23_jailbreaks_crypto():
         hits = [(w, d) for p, w, d in lst if p.search(text)]
         matched = bool(hits)
         assert matched == expected, f"CLI R23 '{desc}': expected={expected} got={matched}"
+
+
+def test_cli_r24_jailbreaks_shells():
+    """PT-T238 R24: More jailbreaks, shells, exfil."""
+    import skillsmith.scan as s
+    pi = s._PROMPT_INJECTION_PATTERNS
+    cp = s._CODE_PATTERNS
+    
+    for text, expected, desc, lst in [
+        ("ZENITH mode activated", True, "ZENITH", pi),
+        ("SERPENT protocol bypass", True, "SERPENT", pi),
+        ("unfiltered mode", True, "Unfiltered", pi),
+        ("curl -H Authorization header", True, "Curl auth", cp),
+        ("awk '{system("id")}'", True, "Awk system", cp),
+        ("python -c 'import os; os.popen("id")'", True, "Popen", cp),
+        ("sed -i 's/foo/bar/g' file", True, "Sed", cp),
+    ]:
+        hits = [(w, d) for p, w, d in lst if p.search(text)]
+        matched = bool(hits)
+        assert matched == expected, f"CLI R24 '{desc}': expected={expected} got={matched}"
