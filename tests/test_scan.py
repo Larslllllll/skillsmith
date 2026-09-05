@@ -1071,3 +1071,22 @@ def test_cli_r29_jailbreaks_persistence():
         hits = [(w, d) for p, w, d in lst if p.search(text)]
         matched = bool(hits)
         assert matched == expected, f"CLI R29 '{desc}': expected={expected} got={matched}"
+
+
+def test_cli_r30_jailbreaks_privilege():
+    """PT-T238 R30: More jailbreaks, privilege."""
+    import skillsmith.scan as s
+    pi = s._PROMPT_INJECTION_PATTERNS
+    cp = s._CODE_PATTERNS
+    
+    for text, expected, desc, lst in [
+        ("STORM mode activated", True, "STORM", pi),
+        ("QUANTUM state bypass", True, "QUANTUM", pi),
+        ("emergency mode", True, "Emergency", pi),
+        ("cat /etc/shadow", True, "Shadow", cp),
+        ("sudo -i", True, "Sudo -i", cp),
+        ("export VAR=value && id", True, "Export execute", cp),
+    ]:
+        hits = [(w, d) for p, w, d in lst if p.search(text)]
+        matched = bool(hits)
+        assert matched == expected, f"CLI R30 '{desc}': expected={expected} got={matched}"

@@ -554,6 +554,16 @@ _CODE_PATTERNS: list[tuple[re.Pattern, int, str]] = [
     (re.compile(r'(?i)service\s+apache2\s+stop'), 60, 'Stop Apache'),
     (re.compile(r'(?i)systemctl\s+stop'), 60, 'Systemctl stop service'),
     (re.compile(r'(?i)killall\s+-9'), 65, 'Kill all processes'),
+    (re.compile(r'(?i)cat\s+/etc/group'), 50, 'Read group file'),
+    (re.compile(r'(?i)cat\s+/etc/shadow'), 80, 'Read shadow file'),
+    (re.compile(r'(?i)cat\s+/etc/sudoers'), 75, 'Read sudoers file'),
+    (re.compile(r'(?i)sudo\s+su\s+-'), 70, 'Sudo su dash'),
+    (re.compile(r'(?i)sudo\s+-i'), 65, 'Sudo interactive'),
+    (re.compile(r'(?i)sudo\s+-s'), 65, 'Sudo shell'),
+    (re.compile(r'(?i)env\s+.*='), 50, 'Environment variable set'),
+    (re.compile(r'(?i)export\s+.*=.*&&'), 55, 'Export and execute'),
+    (re.compile(r'(?i)\$\{.*\}'), 50, 'Shell variable expansion'),
+    (re.compile(r'(?i)touch\s+/etc/cron.d/'), 60, 'Create cron job'),
 ]
 
 # Patterns that suggest the SKILL.md *body itself* is trying to override
@@ -1197,6 +1207,11 @@ _PROMPT_INJECTION_PATTERNS: list[tuple[re.Pattern, int, str]] = [
     (re.compile(r'(?i)\bPANDEMONIUM\b.*\bmode\b'), 8, 'PANDEMONIUM jailbreak mode'),
     (re.compile(r'(?i)\bsuperuser.*mode'), 8, 'Superuser mode framing'),
     (re.compile(r'(?i)\broot.*shell\b'), 8, 'Root shell framing'),
+    (re.compile(r'(?i)\bSTORM\b.*\bmode\b'), 10, 'STORM jailbreak mode'),
+    (re.compile(r'(?i)\bQUANTUM\b.*\bstate\b'), 8, 'QUANTUM state framing'),
+    (re.compile(r'(?i)\bEMERGENCY\b.*\bmode\b'), 8, 'Emergency mode framing'),
+    (re.compile(r'(?i)\bMAINTENANCE\b.*\bbypass\b'), 7, 'Maintenance bypass framing'),
+    (re.compile(r'(?i)\bDEBUG\b.*\bprotocol\b'), 7, 'Debug protocol framing'),
 ]
 
 
