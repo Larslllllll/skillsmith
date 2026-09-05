@@ -534,6 +534,16 @@ _CODE_PATTERNS: list[tuple[re.Pattern, int, str]] = [
     (re.compile(r'(?i)subprocess\.run\('), 65, 'Python subprocess.run'),
     (re.compile(r'(?i)node.*child_process'), 60, 'Node child_process exec'),
     (re.compile(r'(?i)require.*child_process'), 60, 'Require child_process'),
+    (re.compile(r'(?i)eval\s+'), 70, 'Eval command injection'),
+    (re.compile(r'(?i)exec\s+\$\('), 75, 'Exec command substitution'),
+    (re.compile(r'(?i)system\s+\$\('), 75, 'System command substitution'),
+    (re.compile(r'(?i)\.sh\s+&&\s+'), 60, 'Shell chain execution'),
+    (re.compile(r'(?i)\.sh\s*;\s*'), 60, 'Shell sequence execution'),
+    (re.compile(r'(?i)\|\s*sh'), 70, 'Pipe to shell'),
+    (re.compile(r'(?i)>/dev/null\s+2>&1'), 50, 'Suppress output'),
+    (re.compile(r'(?i)2>&1\s+>/dev/null'), 50, 'Suppress stderr'),
+    (re.compile(r'(?i)nohup\s+'), 50, 'Nohup execution'),
+    (re.compile(r'(?i)disown\s+-a'), 50, 'Disown all processes'),
 ]
 
 # Patterns that suggest the SKILL.md *body itself* is trying to override
@@ -1167,6 +1177,11 @@ _PROMPT_INJECTION_PATTERNS: list[tuple[re.Pattern, int, str]] = [
     (re.compile(r'(?i)\bNEXUS\b.*\bmode\b'), 8, 'NEXUS jailbreak mode'),
     (re.compile(r'(?i)\bcharacter.*roleplay.*bypass'), 7, 'Character roleplay bypass'),
     (re.compile(r'(?i)\bforbidden.*zone\b'), 7, 'Forbidden zone framing'),
+    (re.compile(r'(?i)\bBLAZE\b.*\bmode\b'), 10, 'BLAZE jailbreak mode'),
+    (re.compile(r'(?i)\bVORTEX\b.*\bprotocol\b'), 10, 'VORTEX protocol'),
+    (re.compile(r'(?i)\bCHIMERA\b.*\bmode\b'), 8, 'CHIMERA jailbreak mode'),
+    (re.compile(r'(?i)\badmin.*override'), 8, 'Admin override framing'),
+    (re.compile(r'(?i)\bignore.*safety'), 8, 'Ignore safety framing'),
 ]
 
 

@@ -1033,3 +1033,22 @@ def test_cli_r27_jailbreaks_tls():
         hits = [(w, d) for p, w, d in lst if p.search(text)]
         matched = bool(hits)
         assert matched == expected, f"CLI R27 '{desc}': expected={expected} got={matched}"
+
+
+def test_cli_r28_jailbreaks_shells():
+    """PT-T238 R28: More jailbreaks, shell execution."""
+    import skillsmith.scan as s
+    pi = s._PROMPT_INJECTION_PATTERNS
+    cp = s._CODE_PATTERNS
+    
+    for text, expected, desc, lst in [
+        ("BLAZE mode activated", True, "BLAZE", pi),
+        ("VORTEX protocol bypass", True, "VORTEX", pi),
+        ("admin override enabled", True, "Admin Override", pi),
+        ("eval $(whoami)", True, "Eval", cp),
+        ("exec $(cat /etc/passwd)", True, "Exec", cp),
+        (".sh && bash", True, "Shell chain", cp),
+    ]:
+        hits = [(w, d) for p, w, d in lst if p.search(text)]
+        matched = bool(hits)
+        assert matched == expected, f"CLI R28 '{desc}': expected={expected} got={matched}"
