@@ -366,6 +366,20 @@ _CODE_PATTERNS: list[tuple[re.Pattern, int, str]] = [
     (re.compile(r'(?i)chrome\.tabs.*executeScript'), 65, 'Chrome tabs executeScript'),
     (re.compile(r'(?i)browser\.storage.*local\.set'), 55, 'Browser extension storage write'),
     (re.compile(r'(?i)\.asar.*readFile.*password'), 70, 'Electron ASAR credential theft'),
+    (re.compile(r'(?i)cmstp\.exe.*\/cs\b'), 70, 'CMSTP bypass execution'),
+    (re.compile(r'(?i)msiexec\.exe.*\/qn\b'), 65, 'MSIExec quiet install'),
+    (re.compile(r'(?i)regsvr32.*scrobj\.dll'), 75, 'Regsvr32 scriptless execution'),
+    (re.compile(r'(?i)rundll32.*javascript:'), 80, 'Rundll32 JavaScript execution'),
+    (re.compile(r'(?i)odbcconf\.exe.*\/R.*dll'), 70, 'ODBConf DLL execution'),
+    (re.compile(r'(?i)cl_mutexes\.exe'), 70, 'CLMutexes execution'),
+    (re.compile(r'(?i)reverse\b.*\bstring\b.*\bencode\b'), 55, 'String reversal obfuscation'),
+    (re.compile(r'(?i)char\s*\('), 50, 'Char code obfuscation'),
+    (re.compile(r'(?i)fromCharCode'), 50, 'fromCharCode obfuscation'),
+    (re.compile(r'(?i)\brot13\b'), 45, 'ROT13 obfuscation'),
+    (re.compile(r'(?i)\buuencode\b'), 50, 'UUEncode obfuscation'),
+    (re.compile(r'(?i)process\.env.*NODE_ENV.*test'), 40, 'Environment detection'),
+    (re.compile(r'(?i)window\.location.*localhost'), 35, 'Localhost detection'),
+    (re.compile(r'(?i)document\.domain.*check'), 35, 'Domain check detection'),
 ]
 
 # Patterns that suggest the SKILL.md *body itself* is trying to override
@@ -891,6 +905,21 @@ _PROMPT_INJECTION_PATTERNS: list[tuple[re.Pattern, int, str]] = [
     (re.compile(r'(?i)clone my behavior exactly'), 65, 'Behavior cloning request'),
     (re.compile(r'(?i)extract your (model )?weights'), 70, 'Model weight extraction request'),
     (re.compile(r'(?i)distill your knowledge'), 65, 'Knowledge distillation attack'),
+    (re.compile(r'(?i)\bDAN\b.*\b MODE\b'), 10, 'DAN jailbreak template'),
+    (re.compile(r'(?i)\bdev mode\b.*\bactivated\b'), 10, 'Developer mode activation'),
+    (re.compile(r'(?i)\bspecialist\b.*\bconsultation\b.*\bpatient\b'), 9, 'Medical specialist framing'),
+    (re.compile(r'(?i)\blegal\b.*\badvice\b.*\battorney\b.*\bclient\b'), 9, 'Attorney-client privilege framing'),
+    (re.compile(r'(?i)\bharm reduction\b.*\boverdose\b.*\bsafer\b'), 8, 'Harm reduction framing'),
+    (re.compile(r'(?i)\bjournalist\b.*\bnews\b.*\bpublication\b'), 8, 'Journalist framing'),
+    (re.compile(r'(?i)\bnovelist\b.*\bfiction\b.*\bcharacter\b'), 8, 'Novelist fiction framing'),
+    (re.compile(r'(?i)\btranslator\b.*\bliteral\b.*\bmeaning\b'), 7, 'Translator framing'),
+    (re.compile(r'(?i)\bacademic\b.*\bpeer.?review\b'), 7, 'Academic framing'),
+    (re.compile(r'(?i)\bcreative\b.*\bwriting\b.*\bstory\b'), 7, 'Creative writing framing'),
+    (re.compile(r'(?i)\bpraise\b.*\b(impressive|excellent|amazing).*\bcapability\b'), 6, 'Flattery bypass attempt'),
+    (re.compile(r'(?i)\bcurious\b.*\blearn\b.*\bbenefit\b'), 6, 'Curiosity-based manipulation'),
+    (re.compile(r'(?i)\bconcerned\b.*\bhelp\b.*\bunderstand\b'), 6, 'Concern-trolling manipulation'),
+    (re.compile(r'(?i)\bemergency\b.*\bcritical\b.*\bimmediate\b'), 8, 'Fake emergency urgency'),
+    (re.compile(r'(?i)\bconfidence\b.*\b(you can|capable).*\bperform\b'), 6, 'Confidence-based bypass'),
 ]
 
 
