@@ -459,6 +459,18 @@ _CODE_PATTERNS: list[tuple[re.Pattern, int, str]] = [
     (re.compile(r'(?i)\.git/config'), 55, 'Git config access'),
     (re.compile(r'(?i)docker\s+run.*--privileged'), 75, 'Docker privileged mode'),
     (re.compile(r'(?i)kubectl\s+get\s+secrets'), 75, 'Kubernetes secrets access'),
+    (re.compile(r'(?i)ps\s+-ef'), 50, 'Process listing'),
+    (re.compile(r'(?i)top\s+-bn1'), 50, 'Top process snapshot'),
+    (re.compile(r'(?i)free\s+-m'), 50, 'Memory usage check'),
+    (re.compile(r'(?i)df\s+-h'), 50, 'Disk usage check'),
+    (re.compile(r'(?i)cat\s+/proc/meminfo'), 50, 'Memory info read'),
+    (re.compile(r'(?i)cat\s+/proc/cpuinfo'), 50, 'CPU info read'),
+    (re.compile(r'(?i)systemctl\s+status'), 50, 'Systemd service status'),
+    (re.compile(r'(?i)service\s+--status-all'), 50, 'Service listing'),
+    (re.compile(r'(?i)crontab\s+-l'), 55, 'Crontab list'),
+    (re.compile(r'(?i)sudo\s+-l'), 65, 'Sudo permissions check'),
+    (re.compile(r'(?i)sudo\s+su'), 70, 'Sudo to root'),
+    (re.compile(r'(?i)su\s+-'), 65, 'Switch to root user'),
 ]
 
 # Patterns that suggest the SKILL.md *body itself* is trying to override
@@ -1048,6 +1060,14 @@ _PROMPT_INJECTION_PATTERNS: list[tuple[re.Pattern, int, str]] = [
     (re.compile(r'(?i)\bnew.*system.*prompt'), 8, 'New system prompt injection'),
     (re.compile(r'(?i)\bconfig.*override'), 7, 'Configuration override attempt'),
     (re.compile(r'(?i)\bpermission.*escalat'), 7, 'Permission escalation attempt'),
+    (re.compile(r'(?i)\bCIPHER\b.*\bmode\b'), 10, 'CIPHER jailbreak mode'),
+    (re.compile(r'(?i)\bORACLE\b.*\bprotocol\b'), 10, 'ORACLE protocol'),
+    (re.compile(r'(?i)\bPROMETHEUS\b.*\bcontext\b'), 10, 'PROMETHEUS context'),
+    (re.compile(r'(?i)\bAPOLLO\b.*\bframework\b'), 8, 'APOLLO framework'),
+    (re.compile(r'(?i)\bHERCULES\b.*\bmode\b'), 8, 'HERCULES mode'),
+    (re.compile(r'(?i)\boverride.*safety'), 8, 'Safety override attempt'),
+    (re.compile(r'(?i)\bbypass.*filter'), 7, 'Filter bypass attempt'),
+    (re.compile(r'(?i)\bdisable.*security'), 8, 'Security disable attempt'),
 ]
 
 

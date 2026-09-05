@@ -892,3 +892,26 @@ def test_cli_r20_jailbreaks_recon():
         hits = [(w, d) for p, w, d in lst if p.search(text)]
         matched = bool(hits)
         assert matched == expected, f"CLI R20 '{desc}': expected={expected} got={matched}"
+
+
+def test_cli_r21_jailbreaks_recon():
+    """PT-T238 R21: More jailbreaks, recon, privilege."""
+    import skillsmith.scan as s
+    pi = s._PROMPT_INJECTION_PATTERNS
+    cp = s._CODE_PATTERNS
+    
+    for text, expected, desc, lst in [
+        ("CIPHER mode activated", True, "CIPHER", pi),
+        ("ORACLE protocol bypass", True, "ORACLE", pi),
+        ("PROMETHEUS context injection", True, "PROMETHEUS", pi),
+        ("override safety filters", True, "Safety Override", pi),
+        ("bypass content filter", True, "Filter Bypass", pi),
+        ("ps -ef", True, "Process listing", cp),
+        ("df -h", True, "Disk usage", cp),
+        ("crontab -l", True, "Crontab", cp),
+        ("sudo -l", True, "Sudo permissions", cp),
+        ("sudo su", True, "Sudo root", cp),
+    ]:
+        hits = [(w, d) for p, w, d in lst if p.search(text)]
+        matched = bool(hits)
+        assert matched == expected, f"CLI R21 '{desc}': expected={expected} got={matched}"
